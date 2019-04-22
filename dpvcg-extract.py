@@ -161,7 +161,7 @@ def document_properties(classes, properties):
         print('<li><b>Status</b>: ')
         if prop.status:
             print(f'{prop.status} ')
-            props = []
+        props = []
         if prop.created:
             props.append(f'created: {prop.created}')
         if prop.approved:

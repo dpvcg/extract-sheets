@@ -1,0 +1,100 @@
+<h4>Classes</h4>
+<table border="1"><tr><th>Classes:</th></tr>
+<tr><td><a href="#dpv:TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a></td></tr>
+<tr><td><a href="#dpv:StorageRestriction">dpv:StorageRestriction</a></td></tr>
+<tr><td><a href="#dpv:StorageLocation">dpv:StorageLocation</a></td></tr>
+<tr><td><a href="#dpv:StorageDuration">dpv:StorageDuration</a></td></tr>
+</table>
+<h4>Properties</h4>
+<table border="1"><tr><th>Properties:</th></tr>
+<tr><td><a href="#dpv:storage">dpv:storage</a></td></tr>
+<tr><td><a href="#dpv:location">dpv:location</a></td></tr>
+<tr><td><a href="#dpv:duration">dpv:duration</a></td></tr>
+</table>
+<h4>Class: <a id="dpv:TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure<a></h4>
+<div>Technical (e.g. security) or organisational measures required/followed when processing data of the declared category.</div>
+<ul>
+<li><b>Status</b>: 
+<li> <b>In Domain Of</b>: 
+<a href="#dpv:storage">dpv:storage</a>
+</li>
+</ul>
+<h4>Class: <a id="dpv:StorageRestriction">dpv:StorageRestriction<a></h4>
+<div>a restriction required/followed regarding storage of the data</div>
+<ul>
+<li><b>Status</b>: 
+</ul>
+<h4>Class: <a id="dpv:StorageLocation">dpv:StorageLocation<a></h4>
+<div>A geographic loaction where the data is allowed to be stored, either by specifying the actual geographic location, or places where a certain legislation applies, such as "EU-like" country.</div>
+<ul>
+<li><b>Status</b>: 
+</ul>
+<h4>Class: <a id="dpv:StorageDuration">dpv:StorageDuration<a></h4>
+<div></div>
+<ul>
+<li><b>Status</b>: 
+</ul>
+<h4>Property: <a id="dpv:storage">dpv:storage<a></h4>
+<div></div>
+<ul>
+<li><b>Status</b>: 
+<li> <b>Domain</b>: dpv:TechnicalOrganisationalMeasure</li>
+<li> <b>Range</b>: priv:StorageRestriction</li>
+</ul>
+<h4>Property: <a id="dpv:location">dpv:location<a></h4>
+<div></div>
+<ul>
+<li><b>Status</b>: 
+<li> <b>Domain</b>: priv:StorageRestriction</li>
+<li> <b>Range</b>: priv:StorageLocation</li>
+</ul>
+<h4>Property: <a id="dpv:duration">dpv:duration<a></h4>
+<div></div>
+<ul>
+<li><b>Status</b>: 
+<li> <b>Domain</b>: priv:StorageRestriction</li>
+<li> <b>Range</b>: priv:StorageDuration</li>
+</ul>
+<h2>RDF</h2>
+<code><pre>
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+@prefix dpv: &lt;http://w3.org/ns/dpv#&gt; .
+@prefix dpv-gdpr: &lt;http://w3.org/ns/dpv-gdpr#&gt; .
+@prefix rdfs: http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+dpv:TechnicalOrganisationalMeasure a rdfs:Class ;
+    dct:description "Technical (e.g. security) or organisational measures required/followed when processing data of the declared category."@en .
+
+
+dpv:StorageRestriction a rdfs:Class ;
+    dct:description "a restriction required/followed regarding storage of the data"@en .
+
+
+dpv:StorageLocation a rdfs:Class ;
+    dct:description "A geographic loaction where the data is allowed to be stored, either by specifying the actual geographic location, or places where a certain legislation applies, such as "EU-like" country."@en .
+
+
+dpv:StorageDuration a rdfs:Class ;
+    dct:description ""@en .
+
+
+dpv:storage a rdfs:Property ;
+    dct:description ""@en ;
+    rdfs:domain dpv:TechnicalOrganisationalMeasure ;
+    rdfs:range priv:StorageRestriction .
+
+
+dpv:location a rdfs:Property ;
+    dct:description ""@en ;
+    rdfs:domain priv:StorageRestriction ;
+    rdfs:range priv:StorageLocation .
+
+
+dpv:duration a rdfs:Property ;
+    dct:description ""@en ;
+    rdfs:domain priv:StorageRestriction ;
+    rdfs:range priv:StorageDuration .
+
+
+</pre></code>
