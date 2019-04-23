@@ -56,7 +56,6 @@ def download_data(SHEET_NAME):
                                 range=SHEET_RANGE).execute()
     values = result.get('values', [])
 
-    
     if not values:
         print('No data found.')
 

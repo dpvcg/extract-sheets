@@ -11,12 +11,9 @@
 <tr><td><a href="#dpv:Anonymisation">dpv:Anonymisation</a></td></tr>
 <tr><td><a href="#dpv:AutomatedProcessing">dpv:AutomatedProcessing</a></td></tr>
 <tr><td><a href="#dpv:Automation">dpv:Automation</a></td></tr>
-<tr><td><a href="#dpv:Categories">dpv:Categories</a></td></tr>
 <tr><td><a href="#dpv:Collection">dpv:Collection</a></td></tr>
 <tr><td><a href="#dpv:Combination">dpv:Combination</a></td></tr>
 <tr><td><a href="#dpv:Consultation">dpv:Consultation</a></td></tr>
-<tr><td><a href="#dpv:CrossBorderProcessing">dpv:CrossBorderProcessing</a></td></tr>
-<tr><td><a href="#dpv:DataProcessing">dpv:DataProcessing</a></td></tr>
 <tr><td><a href="#dpv:Destruction">dpv:Destruction</a></td></tr>
 <tr><td><a href="#dpv:DiscloseData">dpv:DiscloseData</a></td></tr>
 <tr><td><a href="#dpv:DisclosureByTransmission">dpv:DisclosureByTransmission</a></td></tr>
@@ -89,46 +86,69 @@
 </li>
 </ul>
 <h4>Class: <a id="dpv:Acquisition">dpv:Acquisition<a></h4>
-<div></div>
+<div>to come into possession or control of the data</div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:ObtainData">dpv:ObtainData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Adaptation">dpv:Adaptation<a></h4>
-<div></div>
+<div>to modify the data, often rewritten into a new form for a new use</div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TransformData">dpv:TransformData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Alignment">dpv:Alignment<a></h4>
-<div></div>
+<div>to adjust the data to be in relation to another data</div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TransformData">dpv:TransformData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Alteration">dpv:Alteration<a></h4>
-<div></div>
+<div>to change the data withouth changing it into something else</div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TransformData">dpv:TransformData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Analysis">dpv:Analysis<a></h4>
-<div></div>
+<div>To study or examine the data in detail</div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:UseData">dpv:UseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Anonymisation">dpv:Anonymisation<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TransformData">dpv:TransformData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:AutomatedProcessing">dpv:AutomatedProcessing<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:Automation">dpv:Automation<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Automation">dpv:Automation<a></h4>
-<div></div>
-<ul>
-<li><b>Status</b>: 
-</ul>
-<h4>Class: <a id="dpv:Categories">dpv:Categories<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
@@ -137,31 +157,37 @@
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:ObtainData">dpv:ObtainData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Combination">dpv:Combination<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TransformData">dpv:TransformData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Consultation">dpv:Consultation<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
-</ul>
-<h4>Class: <a id="dpv:CrossBorderProcessing">dpv:CrossBorderProcessing<a></h4>
-<div></div>
-<ul>
-<li><b>Status</b>: 
-</ul>
-<h4>Class: <a id="dpv:DataProcessing">dpv:DataProcessing<a></h4>
-<div></div>
-<ul>
-<li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:UseData">dpv:UseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Destruction">dpv:Destruction<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:RemoveData">dpv:RemoveData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:DiscloseData">dpv:DiscloseData<a></h4>
 <div></div>
@@ -172,31 +198,55 @@
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:DiscloseData">dpv:DiscloseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Dissemination">dpv:Dissemination<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:DiscloseData">dpv:DiscloseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Erasure">dpv:Erasure<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:RemoveData">dpv:RemoveData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Exchange">dpv:Exchange<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:DiscloseData">dpv:DiscloseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:MakingAvailable">dpv:MakingAvailable<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:DiscloseData">dpv:DiscloseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:NonAutomatedProcessing">dpv:NonAutomatedProcessing<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:Automation">dpv:Automation<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:ObtainData">dpv:ObtainData<a></h4>
 <div></div>
@@ -207,6 +257,10 @@
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:OrganiseData">dpv:OrganiseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:OrganiseData">dpv:OrganiseData<a></h4>
 <div></div>
@@ -217,16 +271,29 @@
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:AutomatedProcessing">dpv:AutomatedProcessing<a>
+<a href="#dpv:UseData">dpv:UseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:PseudoAnonymisation">dpv:PseudoAnonymisation<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:Anonymisation">dpv:Anonymisation<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Recording">dpv:Recording<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:ObtainData">dpv:ObtainData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:RemoveData">dpv:RemoveData<a></h4>
 <div></div>
@@ -237,36 +304,64 @@
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TransformData">dpv:TransformData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Retrieval">dpv:Retrieval<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:ObtainData">dpv:ObtainData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Sharing">dpv:Sharing<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:DiscloseData">dpv:DiscloseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Storage">dpv:Storage<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TransformData">dpv:TransformData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:StoreData">dpv:StoreData<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:StoreData">dpv:StoreData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Structuring">dpv:Structuring<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:OrganiseData">dpv:OrganiseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Transfer">dpv:Transfer<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TransferData">dpv:TransferData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:TransferData">dpv:TransferData<a></h4>
 <div></div>
@@ -282,11 +377,19 @@
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:DiscloseData">dpv:DiscloseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:Use">dpv:Use<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:UseData">dpv:UseData<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:UseData">dpv:UseData<a></h4>
 <div></div>
@@ -362,63 +465,62 @@
 
 
 dpv:Acquisition a rdfs:Class ;
-    dct:description ""@en .
+    dct:description "to come into possession or control of the data"@en ;
+    rdfs:subClassOf dpv:ObtainData .
 
 
 dpv:Adaptation a rdfs:Class ;
-    dct:description ""@en .
+    dct:description "to modify the data, often rewritten into a new form for a new use"@en ;
+    rdfs:subClassOf dpv:TransformData .
 
 
 dpv:Alignment a rdfs:Class ;
-    dct:description ""@en .
+    dct:description "to adjust the data to be in relation to another data"@en ;
+    rdfs:subClassOf dpv:TransformData .
 
 
 dpv:Alteration a rdfs:Class ;
-    dct:description ""@en .
+    dct:description "to change the data withouth changing it into something else"@en ;
+    rdfs:subClassOf dpv:TransformData .
 
 
 dpv:Analysis a rdfs:Class ;
-    dct:description ""@en .
+    dct:description "To study or examine the data in detail"@en ;
+    rdfs:subClassOf dpv:UseData .
 
 
 dpv:Anonymisation a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:TransformData .
 
 
 dpv:AutomatedProcessing a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:Automation .
 
 
 dpv:Automation a rdfs:Class ;
     dct:description ""@en .
 
 
-dpv:Categories a rdfs:Class ;
-    dct:description ""@en .
-
-
 dpv:Collection a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:ObtainData .
 
 
 dpv:Combination a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:TransformData .
 
 
 dpv:Consultation a rdfs:Class ;
-    dct:description ""@en .
-
-
-dpv:CrossBorderProcessing a rdfs:Class ;
-    dct:description ""@en .
-
-
-dpv:DataProcessing a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:UseData .
 
 
 dpv:Destruction a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:RemoveData .
 
 
 dpv:DiscloseData a rdfs:Class ;
@@ -426,27 +528,33 @@ dpv:DiscloseData a rdfs:Class ;
 
 
 dpv:DisclosureByTransmission a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:DiscloseData .
 
 
 dpv:Dissemination a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:DiscloseData .
 
 
 dpv:Erasure a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:RemoveData .
 
 
 dpv:Exchange a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:DiscloseData .
 
 
 dpv:MakingAvailable a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:DiscloseData .
 
 
 dpv:NonAutomatedProcessing a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:Automation .
 
 
 dpv:ObtainData a rdfs:Class ;
@@ -454,7 +562,8 @@ dpv:ObtainData a rdfs:Class ;
 
 
 dpv:Organisation a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:OrganiseData .
 
 
 dpv:OrganiseData a rdfs:Class ;
@@ -462,15 +571,18 @@ dpv:OrganiseData a rdfs:Class ;
 
 
 dpv:Profiling a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:AutomatedProcessing,dpv:UseData .
 
 
 dpv:PseudoAnonymisation a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:Anonymisation .
 
 
 dpv:Recording a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:ObtainData .
 
 
 dpv:RemoveData a rdfs:Class ;
@@ -478,31 +590,38 @@ dpv:RemoveData a rdfs:Class ;
 
 
 dpv:Restriction a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:TransformData .
 
 
 dpv:Retrieval a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:ObtainData .
 
 
 dpv:Sharing a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:DiscloseData .
 
 
 dpv:Storage a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:TransformData .
 
 
 dpv:StoreData a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:StoreData .
 
 
 dpv:Structuring a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:OrganiseData .
 
 
 dpv:Transfer a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:TransferData .
 
 
 dpv:TransferData a rdfs:Class ;
@@ -514,11 +633,13 @@ dpv:TransformData a rdfs:Class ;
 
 
 dpv:Transmission a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:DiscloseData .
 
 
 dpv:Use a rdfs:Class ;
-    dct:description ""@en .
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:UseData .
 
 
 dpv:UseData a rdfs:Class ;
