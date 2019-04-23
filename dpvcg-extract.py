@@ -127,7 +127,7 @@ def document_classes(classes, properties):
             print('<li> <b>Superclasses</b>: ')
             scs = cl.super.split(',')
             for sc in scs:
-                print(f'<a id="{sc}">{sc}<a>')
+                print(f'<a href="#{sc}">{sc}<a>')
             print('</li>')
             print('<br/>')
         # TODO: add sub-classes
@@ -171,10 +171,10 @@ def document_properties(classes, properties):
         if props:
             print('(' + '; '.join(props) + ')</li>')
         if prop.super:
-            print('<li> <b>Superclasses</b>: ')
+            print('<li> <b>SuperProperties</b>: ')
             sprops = prop.super.split(',')
             for sp in sprops:
-                print(f'<a id="{sp}">{sp}<a>')
+                print(f'<a id="#{sp}">{sp}<a>')
             print('</li>')
             print('<br/>')
         # TODO: add sub-properties

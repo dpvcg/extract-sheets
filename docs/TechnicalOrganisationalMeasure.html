@@ -4,6 +4,9 @@
 <tr><td><a href="#dpv:StorageRestriction">dpv:StorageRestriction</a></td></tr>
 <tr><td><a href="#dpv:StorageLocation">dpv:StorageLocation</a></td></tr>
 <tr><td><a href="#dpv:StorageDuration">dpv:StorageDuration</a></td></tr>
+<tr><td><a href="#dpv:TechnicalMeasure">dpv:TechnicalMeasure</a></td></tr>
+<tr><td><a href="#dpv:PseudonymisationEncryption">dpv:PseudonymisationEncryption</a></td></tr>
+<tr><td><a href="#dpv:OrganisationalMeasure">dpv:OrganisationalMeasure</a></td></tr>
 </table>
 <h4>Properties</h4>
 <table border="1"><tr><th>Properties:</th></tr>
@@ -23,37 +26,82 @@
 <div>a restriction required/followed regarding storage of the data</div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>In Domain Of</b>: 
+<a href="#dpv:location">dpv:location</a>, <a href="#dpv:duration">dpv:duration</a>
+</li>
+<li> <b>In Range Of</b>: 
+<a href="#dpv:storage">dpv:storage</a>
+</li>
 </ul>
 <h4>Class: <a id="dpv:StorageLocation">dpv:StorageLocation<a></h4>
 <div>A geographic loaction where the data is allowed to be stored, either by specifying the actual geographic location, or places where a certain legislation applies, such as "EU-like" country.</div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>In Range Of</b>: 
+<a href="#dpv:location">dpv:location</a>
+</li>
 </ul>
 <h4>Class: <a id="dpv:StorageDuration">dpv:StorageDuration<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>In Range Of</b>: 
+<a href="#dpv:duration">dpv:duration</a>
+</li>
+</ul>
+<h4>Class: <a id="dpv:TechnicalMeasure">dpv:TechnicalMeasure<a></h4>
+<div></div>
+<ul>
+<li><b>Status</b>: 
+proposed 
+(created: 2019-04-04; proposed by: Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar)</li>
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure<a>
+</li>
+<br/>
+</ul>
+<h4>Class: <a id="dpv:PseudonymisationEncryption">dpv:PseudonymisationEncryption<a></h4>
+<div></div>
+<ul>
+<li><b>Status</b>: 
+proposed 
+(created: 2019-04-04; proposed by: Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar)</li>
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TechnicalMeasure">dpv:TechnicalMeasure<a>
+</li>
+<br/>
+</ul>
+<h4>Class: <a id="dpv:OrganisationalMeasure">dpv:OrganisationalMeasure<a></h4>
+<div></div>
+<ul>
+<li><b>Status</b>: 
+proposed 
+(created: 2019-04-04; proposed by: Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar)</li>
+<li> <b>Superclasses</b>: 
+<a href="#dpv:TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure<a>
+</li>
+<br/>
 </ul>
 <h4>Property: <a id="dpv:storage">dpv:storage<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
 <li> <b>Domain</b>: dpv:TechnicalOrganisationalMeasure</li>
-<li> <b>Range</b>: priv:StorageRestriction</li>
+<li> <b>Range</b>: dpv:StorageRestriction</li>
 </ul>
 <h4>Property: <a id="dpv:location">dpv:location<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
-<li> <b>Domain</b>: priv:StorageRestriction</li>
-<li> <b>Range</b>: priv:StorageLocation</li>
+<li> <b>Domain</b>: dpv:StorageRestriction</li>
+<li> <b>Range</b>: dpv:StorageLocation</li>
 </ul>
 <h4>Property: <a id="dpv:duration">dpv:duration<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
-<li> <b>Domain</b>: priv:StorageRestriction</li>
-<li> <b>Range</b>: priv:StorageDuration</li>
+<li> <b>Domain</b>: dpv:StorageRestriction</li>
+<li> <b>Range</b>: dpv:StorageDuration</li>
 </ul>
 <h2>RDF</h2>
 <code><pre>
@@ -79,22 +127,43 @@ dpv:StorageDuration a rdfs:Class ;
     dct:description ""@en .
 
 
+dpv:TechnicalMeasure a rdfs:Class ;
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" .
+
+
+dpv:PseudonymisationEncryption a rdfs:Class ;
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:TechnicalMeasure ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" .
+
+
+dpv:OrganisationalMeasure a rdfs:Class ;
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" .
+
+
 dpv:storage a rdfs:Property ;
     dct:description ""@en ;
     rdfs:domain dpv:TechnicalOrganisationalMeasure ;
-    rdfs:range priv:StorageRestriction .
+    rdfs:range dpv:StorageRestriction .
 
 
 dpv:location a rdfs:Property ;
     dct:description ""@en ;
-    rdfs:domain priv:StorageRestriction ;
-    rdfs:range priv:StorageLocation .
+    rdfs:domain dpv:StorageRestriction ;
+    rdfs:range dpv:StorageLocation .
 
 
 dpv:duration a rdfs:Property ;
     dct:description ""@en ;
-    rdfs:domain priv:StorageRestriction ;
-    rdfs:range priv:StorageDuration .
+    rdfs:domain dpv:StorageRestriction ;
+    rdfs:range dpv:StorageDuration .
 
 
 </pre></code>

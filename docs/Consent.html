@@ -1,17 +1,234 @@
 <h4>Classes</h4>
 <table border="1"><tr><th>Classes:</th></tr>
-<tr><td><a href="#Consent">Consent</a></td></tr>
-<tr><td><a href="#ConsentBundle or ConsentGroup">ConsentBundle or ConsentGroup</a></td></tr>
+<tr><td><a href="#dpv:Consent">dpv:Consent</a></td></tr>
+<tr><td><a href="#dpv:LegalEntity">dpv:LegalEntity</a></td></tr>
 </table>
-<h4>Class: <a id="Consent">Consent<a></h4>
-<div></div>
+<h4>Properties</h4>
+<table border="1"><tr><th>Properties:</th></tr>
+<tr><td><a href="#dpv:hasDataSubject">dpv:hasDataSubject</a></td></tr>
+<tr><td><a href="#dpv:hasDataController">dpv:hasDataController</a></td></tr>
+<tr><td><a href="#dpv:hasPurpose">dpv:hasPurpose</a></td></tr>
+<tr><td><a href="#dpv:hasRecipient">dpv:hasRecipient</a></td></tr>
+<tr><td><a href="#dpv:hasTechnicalOrganisationalMeasure">dpv:hasTechnicalOrganisationalMeasure</a></td></tr>
+<tr><td><a href="#dpv:hasProcessing">dpv:hasProcessing</a></td></tr>
+<tr><td><a href="#dpv:hasPersonalDataCategory">dpv:hasPersonalDataCategory</a></td></tr>
+<tr><td><a href="#dpv:expiry">dpv:expiry</a></td></tr>
+<tr><td><a href="#dpv:expiryTime">dpv:expiryTime</a></td></tr>
+<tr><td><a href="#dpv:expiryCondition">dpv:expiryCondition</a></td></tr>
+<tr><td><a href="#dpv:provisionMethod">dpv:provisionMethod</a></td></tr>
+<tr><td><a href="#dpv:provisionTime">dpv:provisionTime</a></td></tr>
+<tr><td><a href="#dpv:withdrawalMethod">dpv:withdrawalMethod</a></td></tr>
+<tr><td><a href="#dpv:withdrawalTime">dpv:withdrawalTime</a></td></tr>
+<tr><td><a href="#dpv:withdrawalBy">dpv:withdrawalBy</a></td></tr>
+<tr><td><a href="#dpv:provisionBy">dpv:provisionBy</a></td></tr>
+<tr><td><a href="#dpv:provisionByJustification">dpv:provisionByJustification</a></td></tr>
+<tr><td><a href="#dpv:withdrawalByJustification">dpv:withdrawalByJustification</a></td></tr>
+<tr><td><a href="#dpv:consentNotice">dpv:consentNotice</a></td></tr>
+<tr><td><a href="#dpv:isExplicit">dpv:isExplicit</a></td></tr>
+</table>
+<h4>Class: <a id="dpv:Consent">dpv:Consent<a></h4>
+<div>Consent as defined by Article 4(11) of the GDPR</div>
 <ul>
 <li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>In Domain Of</b>: 
+<a href="#dpv:hasDataSubject">dpv:hasDataSubject</a>, <a href="#dpv:hasDataController">dpv:hasDataController</a>, <a href="#dpv:hasPurpose">dpv:hasPurpose</a>, <a href="#dpv:hasRecipient">dpv:hasRecipient</a>, <a href="#dpv:hasTechnicalOrganisationalMeasure">dpv:hasTechnicalOrganisationalMeasure</a>, <a href="#dpv:hasProcessing">dpv:hasProcessing</a>, <a href="#dpv:hasPersonalDataCategory">dpv:hasPersonalDataCategory</a>, <a href="#dpv:expiry">dpv:expiry</a>, <a href="#dpv:expiryTime">dpv:expiryTime</a>, <a href="#dpv:expiryCondition">dpv:expiryCondition</a>, <a href="#dpv:provisionMethod">dpv:provisionMethod</a>, <a href="#dpv:provisionTime">dpv:provisionTime</a>, <a href="#dpv:withdrawalMethod">dpv:withdrawalMethod</a>, <a href="#dpv:withdrawalTime">dpv:withdrawalTime</a>, <a href="#dpv:withdrawalBy">dpv:withdrawalBy</a>, <a href="#dpv:provisionBy">dpv:provisionBy</a>, <a href="#dpv:provisionByJustification">dpv:provisionByJustification</a>, <a href="#dpv:withdrawalByJustification">dpv:withdrawalByJustification</a>, <a href="#dpv:consentNotice">dpv:consentNotice</a>, <a href="#dpv:isExplicit">dpv:isExplicit</a>
+</li>
 </ul>
-<h4>Class: <a id="ConsentBundle or ConsentGroup">ConsentBundle or ConsentGroup<a></h4>
-<div></div>
+<h4>Class: <a id="dpv:LegalEntity">dpv:LegalEntity<a></h4>
+<div>A Person or Organisation, including Data Subjects, that constitute as a legal entity.</div>
 <ul>
 <li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>In Range Of</b>: 
+<a href="#dpv:withdrawalBy">dpv:withdrawalBy</a>, <a href="#dpv:provisionBy">dpv:provisionBy</a>
+</li>
+</ul>
+<h4>Property: <a id="dpv:hasDataSubject">dpv:hasDataSubject<a></h4>
+<div>Links consent to the data subject it is concerned with</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent union dpv:PersonalDataHandling</li>
+<li> <b>Range</b>: dpv:DataSubject</li>
+</ul>
+<h4>Property: <a id="dpv:hasDataController">dpv:hasDataController<a></h4>
+<div>Links consent to the data controller it is concerned with</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent union dpv:PersonalDataHandling</li>
+<li> <b>Range</b>: dpv:DataController</li>
+</ul>
+<h4>Property: <a id="dpv:hasPurpose">dpv:hasPurpose<a></h4>
+<div>Links consent with the purpose associated with it</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent union dpv:PersonalDataHandling</li>
+<li> <b>Range</b>: dpv:Purpose</li>
+</ul>
+<h4>Property: <a id="dpv:hasRecipient">dpv:hasRecipient<a></h4>
+<div>Links consent to recipients of data associated with it</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent union dpv:PersonalDataHandling</li>
+<li> <b>Range</b>: dpv:Recipient</li>
+</ul>
+<h4>Property: <a id="dpv:hasTechnicalOrganisationalMeasure">dpv:hasTechnicalOrganisationalMeasure<a></h4>
+<div>Links consent to technical and organisational measures associated with processing</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent union dpv:PersonalDataHandling</li>
+</ul>
+<h4>Property: <a id="dpv:hasProcessing">dpv:hasProcessing<a></h4>
+<div>Links consent to processing it is concerned with</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent union dpv:PersonalDataHandling</li>
+<li> <b>Range</b>: dpv:Processing</li>
+</ul>
+<h4>Property: <a id="dpv:hasPersonalDataCategory">dpv:hasPersonalDataCategory<a></h4>
+<div>Links consent to personal data it is concerned with</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent union dpv:PersonalDataHandling</li>
+<li> <b>Range</b>: dpv:PersonalDataCategory</li>
+</ul>
+<h4>Property: <a id="dpv:expiry">dpv:expiry<a></h4>
+<div>Generic property specifying when or under which condition(s) the consent will expire</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+</ul>
+<h4>Property: <a id="dpv:expiryTime">dpv:expiryTime<a></h4>
+<div>Specifies the expiry time or duration for consent</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>SuperProperties</b>: 
+<a id="#dpv:hasExpiry">dpv:hasExpiry<a>
+</li>
+<br/>
+<li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Range</b>: time:TemporalEntity</li>
+</ul>
+<h4>Property: <a id="dpv:expiryCondition">dpv:expiryCondition<a></h4>
+<div>Specifies the condition or event that determines the expiry of consent</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>SuperProperties</b>: 
+<a id="#dpv:hasExpiry">dpv:hasExpiry<a>
+</li>
+<br/>
+<li> <b>Domain</b>: dpv:Consent</li>
+</ul>
+<h4>Property: <a id="dpv:provisionMethod">dpv:provisionMethod<a></h4>
+<div>Specifies the method by which consent was provisioned or provided</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+</ul>
+<h4>Property: <a id="dpv:provisionTime">dpv:provisionTime<a></h4>
+<div>Specifies the instant in time when consent was given</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Range</b>: time:Instant</li>
+</ul>
+<h4>Property: <a id="dpv:withdrawalMethod">dpv:withdrawalMethod<a></h4>
+<div>Specifries the method by which consent can be/has been withdrawn</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+</ul>
+<h4>Property: <a id="dpv:withdrawalTime">dpv:withdrawalTime<a></h4>
+<div>Specifies the instant in time when consent was withdrawn</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Range</b>: time:Instant</li>
+</ul>
+<h4>Property: <a id="dpv:withdrawalBy">dpv:withdrawalBy<a></h4>
+<div>Specifies the entity that withdrew consent</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Range</b>: dpv:LegalEntity</li>
+</ul>
+<h4>Property: <a id="dpv:provisionBy">dpv:provisionBy<a></h4>
+<div>Specifies the entity that provisioned or provided consent</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Range</b>: dpv:LegalEntity</li>
+</ul>
+<h4>Property: <a id="dpv:provisionByJustification">dpv:provisionByJustification<a></h4>
+<div>Specifies the justification for entity providing consent</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+</ul>
+<h4>Property: <a id="dpv:withdrawalByJustification">dpv:withdrawalByJustification<a></h4>
+<div>Specifies the justification for entity withdrawing consent</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+</ul>
+<h4>Property: <a id="dpv:consentNotice">dpv:consentNotice<a></h4>
+<div>Links consent to the notice displayed for requesting consent</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>Domain</b>: dpv:Consent</li>
+</ul>
+<h4>Property: <a id="dpv:isExplicit">dpv:isExplicit<a></h4>
+<div>Indicates consent is explicit as explained in GDPR Article 9.2a and Article 22.2c</div>
+<ul>
+<li><b>Status</b>: 
+accepted 
+(created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
+<li> <b>SuperProperties</b>: 
+<a id="#dpv:Consent">dpv:Consent<a>
+</li>
+<br/>
+<li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Range</b>: xsd:boolean</li>
 </ul>
 <h2>RDF</h2>
 <code><pre>
@@ -21,12 +238,198 @@
 @prefix rdfs: http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-Consent a rdfs:Class ;
-    dct:description ""@en .
+dpv:Consent a rdfs:Class ;
+    dct:description "Consent as defined by Article 4(11) of the GDPR"@en ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
 
 
-ConsentBundle or ConsentGroup a rdfs:Class ;
-    dct:description ""@en .
+dpv:LegalEntity a rdfs:Class ;
+    dct:description "A Person or Organisation, including Data Subjects, that constitute as a legal entity."@en ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:hasDataSubject a rdfs:Property ;
+    dct:description "Links consent to the data subject it is concerned with"@en ;
+    rdfs:domain dpv:Consent union dpv:PersonalDataHandling ;
+    rdfs:range dpv:DataSubject ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:hasDataController a rdfs:Property ;
+    dct:description "Links consent to the data controller it is concerned with"@en ;
+    rdfs:domain dpv:Consent union dpv:PersonalDataHandling ;
+    rdfs:range dpv:DataController ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:hasPurpose a rdfs:Property ;
+    dct:description "Links consent with the purpose associated with it"@en ;
+    rdfs:domain dpv:Consent union dpv:PersonalDataHandling ;
+    rdfs:range dpv:Purpose ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:hasRecipient a rdfs:Property ;
+    dct:description "Links consent to recipients of data associated with it"@en ;
+    rdfs:domain dpv:Consent union dpv:PersonalDataHandling ;
+    rdfs:range dpv:Recipient ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:hasTechnicalOrganisationalMeasure a rdfs:Property ;
+    dct:description "Links consent to technical and organisational measures associated with processing"@en ;
+    rdfs:domain dpv:Consent union dpv:PersonalDataHandling ;
+    rdfs:range  ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:hasProcessing a rdfs:Property ;
+    dct:description "Links consent to processing it is concerned with"@en ;
+    rdfs:domain dpv:Consent union dpv:PersonalDataHandling ;
+    rdfs:range dpv:Processing ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:hasPersonalDataCategory a rdfs:Property ;
+    dct:description "Links consent to personal data it is concerned with"@en ;
+    rdfs:domain dpv:Consent union dpv:PersonalDataHandling ;
+    rdfs:range dpv:PersonalDataCategory ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:expiry a rdfs:Property ;
+    dct:description "Generic property specifying when or under which condition(s) the consent will expire"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range  ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:expiryTime a rdfs:Property ;
+    dct:description "Specifies the expiry time or duration for consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range time:TemporalEntity ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:expiryCondition a rdfs:Property ;
+    dct:description "Specifies the condition or event that determines the expiry of consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range  ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:provisionMethod a rdfs:Property ;
+    dct:description "Specifies the method by which consent was provisioned or provided"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range  ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:provisionTime a rdfs:Property ;
+    dct:description "Specifies the instant in time when consent was given"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range time:Instant ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:withdrawalMethod a rdfs:Property ;
+    dct:description "Specifries the method by which consent can be/has been withdrawn"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range  ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:withdrawalTime a rdfs:Property ;
+    dct:description "Specifies the instant in time when consent was withdrawn"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range time:Instant ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:withdrawalBy a rdfs:Property ;
+    dct:description "Specifies the entity that withdrew consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range dpv:LegalEntity ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:provisionBy a rdfs:Property ;
+    dct:description "Specifies the entity that provisioned or provided consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range dpv:LegalEntity ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:provisionByJustification a rdfs:Property ;
+    dct:description "Specifies the justification for entity providing consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range  ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:withdrawalByJustification a rdfs:Property ;
+    dct:description "Specifies the justification for entity withdrawing consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range  ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:consentNotice a rdfs:Property ;
+    dct:description "Links consent to the notice displayed for requesting consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range  ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:isExplicit a rdfs:Property ;
+    dct:description "Indicates consent is explicit as explained in GDPR Article 9.2a and Article 22.2c"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range xsd:boolean ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
 
 
 </pre></code>
