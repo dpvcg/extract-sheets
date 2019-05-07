@@ -1,7 +1,8 @@
 <h4>Classes</h4>
 <table border="1"><tr><th>Classes:</th></tr>
+<tr><td><a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td></tr>
 <tr><td><a href="#dpv:PersonalData">dpv:PersonalData</a></td></tr>
-<tr><td><a href="#dpv:AccountNumber">dpv:AccountNumber</a></td></tr>
+<tr><td><a href="#dpv:FinancialAccountNumber">dpv:FinancialAccountNumber</a></td></tr>
 <tr><td><a href="#dpv:CreditCardNumber">dpv:CreditCardNumber</a></td></tr>
 <tr><td><a href="#dpv:PINCode">dpv:PINCode</a></td></tr>
 <tr><td><a href="#dpv:Password">dpv:Password</a></td></tr>
@@ -166,6 +167,15 @@
 <tr><td><a href="#isDerived">isDerived</a></td></tr>
 <tr><td><a href="#isApproximate">isApproximate</a></td></tr>
 </table>
+<h4>Class: <a id="dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData<a></h4>
+<div></div>
+<ul>
+<li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:PersonalData">dpv:PersonalData<a>
+</li>
+<br/>
+</ul>
 <h4>Class: <a id="dpv:PersonalData">dpv:PersonalData<a></h4>
 <div></div>
 <ul>
@@ -174,8 +184,11 @@
 <a href="#owl:Thing">owl:Thing<a>
 </li>
 <br/>
+<li> <b>In Domain Of</b>: 
+<a href="#isDerived">isDerived</a>, <a href="#isApproximate">isApproximate</a>
+</li>
 </ul>
-<h4>Class: <a id="dpv:AccountNumber">dpv:AccountNumber<a></h4>
+<h4>Class: <a id="dpv:FinancialAccountNumber">dpv:FinancialAccountNumber<a></h4>
 <div></div>
 <ul>
 <li><b>Status</b>: 
@@ -487,6 +500,7 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:Ethnicity">dpv:Ethnicity<a>
+<a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData<a>
 </li>
 <br/>
 </ul>
@@ -505,6 +519,7 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:Ethnicity">dpv:Ethnicity<a>
+<a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData<a>
 </li>
 <br/>
 </ul>
@@ -532,6 +547,7 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:External">dpv:External<a>
+<a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData<a>
 </li>
 <br/>
 </ul>
@@ -559,6 +575,7 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:External">dpv:External<a>
+<a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData<a>
 </li>
 <br/>
 </ul>
@@ -775,6 +792,7 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:Identifying">dpv:Identifying<a>
+<a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData<a>
 </li>
 <br/>
 </ul>
@@ -874,6 +892,7 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:KnowledgeBelief">dpv:KnowledgeBelief<a>
+<a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData<a>
 </li>
 <br/>
 </ul>
@@ -883,6 +902,7 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:KnowledgeBelief">dpv:KnowledgeBelief<a>
+<a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData<a>
 </li>
 <br/>
 </ul>
@@ -1351,6 +1371,7 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:PublicLife">dpv:PublicLife<a>
+<a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData<a>
 </li>
 <br/>
 </ul>
@@ -1360,6 +1381,7 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:PublicLife">dpv:PublicLife<a>
+<a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData<a>
 </li>
 <br/>
 </ul>
@@ -1610,12 +1632,14 @@
 <div>true of false, true meaning that the data has not been directly provided by the DataSubject, but has been derived from other, collected or externally obtained data.</div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Domain</b>: dpv:PersonalData</li>
 <li> <b>Range</b>: xsd:boolean</li>
 </ul>
 <h4>Property: <a id="isApproximate">isApproximate<a></h4>
 <div>true of false. ISSUE-15 maybe better not to consider. Also one could specify the interval or range</div>
 <ul>
 <li><b>Status</b>: 
+<li> <b>Domain</b>: dpv:PersonalData</li>
 <li> <b>Range</b>: xsd:boolean</li>
 </ul>
 <h2>RDF</h2>
@@ -1626,12 +1650,17 @@
 @prefix rdfs: http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
+dpv:SpecialCategoryPersonalData a rdfs:Class ;
+    dct:description ""@en ;
+    rdfs:subClassOf dpv:PersonalData .
+
+
 dpv:PersonalData a rdfs:Class ;
     dct:description ""@en ;
     rdfs:subClassOf owl:Thing .
 
 
-dpv:AccountNumber a rdfs:Class ;
+dpv:FinancialAccountNumber a rdfs:Class ;
     dct:description ""@en ;
     rdfs:subClassOf dpv:AccountIdentifier .
 
@@ -1803,7 +1832,7 @@ dpv:MACAddress a rdfs:Class ;
 
 dpv:EthnicOrigin a rdfs:Class ;
     dct:description ""@en ;
-    rdfs:subClassOf dpv:Ethnicity .
+    rdfs:subClassOf dpv:Ethnicity, dpv:SpecialCategoryPersonalData .
 
 
 dpv:Language a rdfs:Class ;
@@ -1813,7 +1842,7 @@ dpv:Language a rdfs:Class ;
 
 dpv:Race a rdfs:Class ;
     dct:description ""@en ;
-    rdfs:subClassOf dpv:Ethnicity .
+    rdfs:subClassOf dpv:Ethnicity, dpv:SpecialCategoryPersonalData .
 
 
 dpv:Behavioral a rdfs:Class ;
@@ -1828,7 +1857,7 @@ dpv:Demographic a rdfs:Class ;
 
 dpv:MedicalHealth a rdfs:Class ;
     dct:description "Information that describes an individual’s health, medical conditions or health care"@en ;
-    rdfs:subClassOf dpv:External .
+    rdfs:subClassOf dpv:External, dpv:SpecialCategoryPersonalData .
 
 
 dpv:Ethnicity a rdfs:Class ;
@@ -1843,7 +1872,7 @@ dpv:PhysicalCharacteristic a rdfs:Class ;
 
 dpv:Sexual a rdfs:Class ;
     dct:description "Information that describes an individual’s sexual life"@en ;
-    rdfs:subClassOf dpv:External .
+    rdfs:subClassOf dpv:External, dpv:SpecialCategoryPersonalData .
 
 
 dpv:Identifying a rdfs:Class ;
@@ -1963,7 +1992,7 @@ dpv:ApartmentOwned a rdfs:Class ;
 
 dpv:Biometric a rdfs:Class ;
     dct:description ""@en ;
-    rdfs:subClassOf dpv:Identifying .
+    rdfs:subClassOf dpv:Identifying, dpv:SpecialCategoryPersonalData .
 
 
 dpv:Name a rdfs:Class ;
@@ -2018,12 +2047,12 @@ dpv:Authenticating a rdfs:Class ;
 
 dpv:PhilosophicalBelief a rdfs:Class ;
     dct:description ""@en ;
-    rdfs:subClassOf dpv:KnowledgeBelief .
+    rdfs:subClassOf dpv:KnowledgeBelief, dpv:SpecialCategoryPersonalData .
 
 
 dpv:ReligiousBelief a rdfs:Class ;
     dct:description ""@en ;
-    rdfs:subClassOf dpv:KnowledgeBelief .
+    rdfs:subClassOf dpv:KnowledgeBelief, dpv:SpecialCategoryPersonalData .
 
 
 dpv:Thought a rdfs:Class ;
@@ -2283,12 +2312,12 @@ dpv:MaritalStatus a rdfs:Class ;
 
 dpv:PoliticalAffiliation a rdfs:Class ;
     dct:description ""@en ;
-    rdfs:subClassOf dpv:PublicLife .
+    rdfs:subClassOf dpv:PublicLife, dpv:SpecialCategoryPersonalData .
 
 
 dpv:Religion a rdfs:Class ;
     dct:description ""@en ;
-    rdfs:subClassOf dpv:PublicLife .
+    rdfs:subClassOf dpv:PublicLife, dpv:SpecialCategoryPersonalData .
 
 
 dpv:SocialStatus a rdfs:Class ;
@@ -2428,13 +2457,13 @@ dpv:Transaction a rdfs:Class ;
 
 isDerived a rdfs:Property ;
     dct:description "true of false, true meaning that the data has not been directly provided by the DataSubject, but has been derived from other, collected or externally obtained data."@en ;
-    rdfs:domain  ;
+    rdfs:domain dpv:PersonalData ;
     rdfs:range xsd:boolean .
 
 
 isApproximate a rdfs:Property ;
     dct:description "true of false. ISSUE-15 maybe better not to consider. Also one could specify the interval or range"@en ;
-    rdfs:domain  ;
+    rdfs:domain dpv:PersonalData ;
     rdfs:range xsd:boolean .
 
 

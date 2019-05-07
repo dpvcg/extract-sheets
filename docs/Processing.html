@@ -9,6 +9,8 @@
 <tr><td><a href="#dpv:Collect">dpv:Collect</a></td></tr>
 <tr><td><a href="#dpv:Combine">dpv:Combine</a></td></tr>
 <tr><td><a href="#dpv:Consult">dpv:Consult</a></td></tr>
+<tr><td><a href="#dpv:Copy">dpv:Copy</a></td></tr>
+<tr><td><a href="#dpv:Derive">dpv:Derive</a></td></tr>
 <tr><td><a href="#dpv:Destruct">dpv:Destruct</a></td></tr>
 <tr><td><a href="#dpv:Disclose">dpv:Disclose</a></td></tr>
 <tr><td><a href="#dpv:DiscloseByTransmission">dpv:DiscloseByTransmission</a></td></tr>
@@ -16,6 +18,7 @@
 <tr><td><a href="#dpv:Erase">dpv:Erase</a></td></tr>
 <tr><td><a href="#dpv:Exchange">dpv:Exchange</a></td></tr>
 <tr><td><a href="#dpv:MakeAvailable">dpv:MakeAvailable</a></td></tr>
+<tr><td><a href="#dpv:Move">dpv:Move</a></td></tr>
 <tr><td><a href="#dpv:Obtain">dpv:Obtain</a></td></tr>
 <tr><td><a href="#dpv:Organise">dpv:Organise</a></td></tr>
 <tr><td><a href="#dpv:Profiling">dpv:Profiling</a></td></tr>
@@ -122,6 +125,20 @@
 </li>
 <br/>
 </ul>
+<h4>Class: <a id="dpv:Copy">dpv:Copy<a></h4>
+<div>to produce an exact reprodution of the data</div>
+<ul>
+<li><b>Status</b>: 
+</ul>
+<h4>Class: <a id="dpv:Derive">dpv:Derive<a></h4>
+<div>to create new derivative data from the original data</div>
+<ul>
+<li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:Transform">dpv:Transform<a>
+</li>
+<br/>
+</ul>
 <h4>Class: <a id="dpv:Destruct">dpv:Destruct<a></h4>
 <div>to process data in a way it no longer exists or cannot be repaired</div>
 <ul>
@@ -178,6 +195,15 @@
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
 <a href="#dpv:Disclose">dpv:Disclose<a>
+</li>
+<br/>
+</ul>
+<h4>Class: <a id="dpv:Move">dpv:Move<a></h4>
+<div>to move data from one location to another including deleting the original copy</div>
+<ul>
+<li><b>Status</b>: 
+<li> <b>Superclasses</b>: 
+<a href="#dpv:Transfer">dpv:Transfer<a>
 </li>
 <br/>
 </ul>
@@ -387,6 +413,15 @@ dpv:Consult a rdfs:Class ;
     rdfs:subClassOf dpv:Use .
 
 
+dpv:Copy a rdfs:Class ;
+    dct:description "to produce an exact reprodution of the data"@en .
+
+
+dpv:Derive a rdfs:Class ;
+    dct:description "to create new derivative data from the original data"@en ;
+    rdfs:subClassOf dpv:Transform .
+
+
 dpv:Destruct a rdfs:Class ;
     dct:description "to process data in a way it no longer exists or cannot be repaired"@en ;
     rdfs:subClassOf dpv:Remove .
@@ -419,6 +454,11 @@ dpv:Exchange a rdfs:Class ;
 dpv:MakeAvailable a rdfs:Class ;
     dct:description "to transform or publish data to be used"@en ;
     rdfs:subClassOf dpv:Disclose .
+
+
+dpv:Move a rdfs:Class ;
+    dct:description "to move data from one location to another including deleting the original copy"@en ;
+    rdfs:subClassOf dpv:Transfer .
 
 
 dpv:Obtain a rdfs:Class ;
