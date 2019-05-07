@@ -5,7 +5,8 @@ Original script by Axel Polleres - [https://lists.w3.org/Archives/Public/public-
 
 Modified script by Harshvardhan J. Pandit
 
-Requires python 3.6+
+Requires python 3.6+; 
+Requires html-tidy
 
 ## Running the script
 

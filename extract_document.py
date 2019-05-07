@@ -5,6 +5,7 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from bs4 import BeautifulSoup
+import re
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = [
@@ -46,9 +47,43 @@ def download_data(DOC):
         fd.write(file_export)
 
 
+def bs_preprocess(html):
+    """remove distracting whitespaces and newline characters"""
+    pat = re.compile('(^[\s]+)|([\s]+$)', re.MULTILINE)
+    html = re.sub(pat, '', html)       # remove leading and trailing whitespaces
+    html = re.sub('\n', ' ', html)     # convert newlines to spaces
+    # this preserves newline delimiters
+    html = re.sub('[\s]+<', '<', html) # remove whitespaces before opening tags
+    html = re.sub('>[\s]+', '>', html) # remove whitespaces after closing tags
+    return html 
+
+
 def pretty_print():
     with open("/tmp/dpvcg.html", "r") as fd:
-        soup = BeautifulSoup(fd.read(), 'html.parser')
+        data = bs_preprocess(fd.read())
+        soup = BeautifulSoup(data, 'lxml')
+    # remove all inline CSS
+    for tag in soup():
+        for attribute in ("class", "style"):
+            del tag[attribute]
+    # remove all scripts and styles defined in head (or elsewhere)
+    for script in soup(["script", "style"]):
+        script.extract()
+    # remove pesky spans separating words and paragraphs
+    for span in soup.find_all('span'):
+        try:
+            if span.previous_sibling.name == "span":
+                span.previous_sibling.append(span.string)
+                span.decompose()
+        except Exception as E:
+            pass
+    # add W3C stylesheet
+    # w3c_css = "w3c.css"
+    # w3c_soup = BeautifulSoup(
+    #     f'<link rel="stylesheet" href={w3c_css} type="text/css">',
+    #     'html.parser')
+    # soup.head.insert(0, w3c_soup)
+
     with open("/tmp/dpvcg.html", "w") as fd:
         fd.write(soup.prettify())
 

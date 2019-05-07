@@ -16,7 +16,6 @@
 <tr><td><a href="#dpv:DiscloseByTransmission">dpv:DiscloseByTransmission</a></td></tr>
 <tr><td><a href="#dpv:Disseminate">dpv:Disseminate</a></td></tr>
 <tr><td><a href="#dpv:Erase">dpv:Erase</a></td></tr>
-<tr><td><a href="#dpv:Exchange">dpv:Exchange</a></td></tr>
 <tr><td><a href="#dpv:MakeAvailable">dpv:MakeAvailable</a></td></tr>
 <tr><td><a href="#dpv:Move">dpv:Move</a></td></tr>
 <tr><td><a href="#dpv:Obtain">dpv:Obtain</a></td></tr>
@@ -180,15 +179,6 @@
 </li>
 <br/>
 </ul>
-<h4>Class: <a id="dpv:Exchange">dpv:Exchange<a></h4>
-<div>to give and receive data in return</div>
-<ul>
-<li><b>Status</b>: 
-<li> <b>Superclasses</b>: 
-<a href="#dpv:Disclose">dpv:Disclose<a>
-</li>
-<br/>
-</ul>
 <h4>Class: <a id="dpv:MakeAvailable">dpv:MakeAvailable<a></h4>
 <div>to transform or publish data to be used</div>
 <ul>
@@ -254,7 +244,7 @@
 <li><b>Status</b>: 
 </ul>
 <h4>Class: <a id="dpv:Restrict">dpv:Restrict<a></h4>
-<div>to apply a restriction on the data</div>
+<div>to apply a restriction on the processsing of specific records</div>
 <ul>
 <li><b>Status</b>: 
 <li> <b>Superclasses</b>: 
@@ -446,11 +436,6 @@ dpv:Erase a rdfs:Class ;
     rdfs:subClassOf dpv:Remove .
 
 
-dpv:Exchange a rdfs:Class ;
-    dct:description "to give and receive data in return"@en ;
-    rdfs:subClassOf dpv:Disclose .
-
-
 dpv:MakeAvailable a rdfs:Class ;
     dct:description "to transform or publish data to be used"@en ;
     rdfs:subClassOf dpv:Disclose .
@@ -490,7 +475,7 @@ dpv:Remove a rdfs:Class ;
 
 
 dpv:Restrict a rdfs:Class ;
-    dct:description "to apply a restriction on the data"@en ;
+    dct:description "to apply a restriction on the processsing of specific records"@en ;
     rdfs:subClassOf dpv:Transform .
 
 
