@@ -78,11 +78,14 @@ def pretty_print():
         except Exception as E:
             pass
     # add W3C stylesheet
-    # w3c_css = "w3c.css"
-    # w3c_soup = BeautifulSoup(
-    #     f'<link rel="stylesheet" href={w3c_css} type="text/css">',
-    #     'html.parser')
-    # soup.head.insert(0, w3c_soup)
+    w3c_css = (
+        "w3c.css",
+        "https://www.w3.org/StyleSheets/TR/2016/W3C-WD"
+        )
+    link = '<link rel="stylesheet" href="{css}" type="text/css">'
+    s = "".join((link.format(css=css) for css in w3c_css))
+    w3c_soup = BeautifulSoup(s, 'lxml')
+    soup.head.insert(0, w3c_soup)
 
     with open("/tmp/dpvcg.html", "w") as fd:
         fd.write(soup.prettify())
