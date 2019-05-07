@@ -32,7 +32,6 @@ do
     mv /tmp/dpvcg3.html /tmp/dpvcg2.html
 done
 rm /tmp/dpvcg.html
-mv /tmp/dpvcg2.html docs/dpvcg.html
-tidy docs/dpvcg.html > docs/dpvcg.html
+tidy /tmp/dpvcg2.html > docs/dpvcg.html
 # generate a nice index.html
 tree docs -H '.' -L 1 --noreport --charset utf-8 -o docs/index.html
