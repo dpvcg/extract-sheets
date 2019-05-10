@@ -22,16 +22,18 @@ do
 done
 # download the documentation (Google Docs file)
 python3 extract_document.py
+python3 clean_document.py
 # results are in a temporary file /tmp/dpvcg.html
 # insert tab files into documentation at line
 # format for import is #import tab_name.html
-cp /tmp/dpvcg.html /tmp/dpvcg2.html
 for tab in "${Tabs[@]}"
 do
-    sed -e "/#import ${tab}/{r docs/${tab}.html" -e "d}" /tmp/dpvcg2.html > /tmp/dpvcg3.html
-    mv /tmp/dpvcg3.html /tmp/dpvcg2.html
+    sed -e "/#import ${tab}/{r docs/${tab}.html" -e "d}" /tmp/dpvcg.html > /tmp/dpvcg2.html
+    mv /tmp/dpvcg2.html /tmp/dpvcg.html
 done
+# clean the HTML
+tidy -config tidy.config /tmp/dpvcg.html > docs/dpvcg.html
+# remove temporary files
 rm /tmp/dpvcg.html
-tidy -config tidy.config /tmp/dpvcg2.html > docs/dpvcg.html
 # generate a nice index.html
 tree docs -H '.' -L 1 --noreport --charset utf-8 -o docs/index.html
