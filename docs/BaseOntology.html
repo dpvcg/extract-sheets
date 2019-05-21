@@ -106,7 +106,7 @@ accepted
 (created: 2019-04-04; approved: 2019-04-05; proposed by: Axel Polleres, Javier Ferenandez)</li>
 </ul>
 <h4>Property: <a id="dpv:hasPersonalDataCategory">dpv:hasPersonalDataCategory<a></h4>
-<div>This property associates an instance of legal data handling with its affected personal data categories</div>
+<div>This property associates a personal data category with an instance of legal data handling or consent</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
@@ -115,7 +115,7 @@ accepted
 <li> <b>Range</b>: dpv:PersonalDataCategory</li>
 </ul>
 <h4>Property: <a id="dpv:hasProcessing">dpv:hasProcessing<a></h4>
-<div>This property associates an instance of legal data handling with its involved data processing categories.</div>
+<div>This property associates a data processing category with an instance of legal data handling or consent</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
@@ -124,7 +124,7 @@ accepted
 <li> <b>Range</b>: dpv:Processing</li>
 </ul>
 <h4>Property: <a id="dpv:hasPurpose">dpv:hasPurpose<a></h4>
-<div>This property associates an instance of legal data handling with its purpose</div>
+<div>This property associates a purpose with an instance of legal data handling or consent</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
@@ -133,7 +133,7 @@ accepted
 <li> <b>Range</b>: dpv:Purpose</li>
 </ul>
 <h4>Property: <a id="dpv:hasRecipient">dpv:hasRecipient<a></h4>
-<div>This property associates an instance of legal data handling with potential recipients</div>
+<div>This property associates a recipient with an instance of legal data handling or consent</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
@@ -142,7 +142,7 @@ accepted
 <li> <b>Range</b>: dpv:Recipient</li>
 </ul>
 <h4>Property: <a id="dpv:hasTechnicalOrganisationalMeasure">dpv:hasTechnicalOrganisationalMeasure<a></h4>
-<div>This property associates an instance of legal data handling with required/followed technical and organisational measures</div>
+<div>This property associates a technical/organisational measure with an instance of legal data handling or consent</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
@@ -160,7 +160,7 @@ accepted
 <li> <b>Range</b>: dpv:LegalBasis</li>
 </ul>
 <h4>Property: <a id="dpv:hasDataSubject">dpv:hasDataSubject<a></h4>
-<div>This property associates an instance of legal data handling with its affected data subject(s)</div>
+<div>This property associates a data subject with an instance of legal data handling or consent</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
@@ -169,7 +169,7 @@ accepted
 <li> <b>Range</b>: dpv:DataSubject</li>
 </ul>
 <h4>Property: <a id="dpv:hasDataController">dpv:hasDataController<a></h4>
-<div>This property associates an instance of legal data handling with its involved data controller(s)</div>
+<div>This property associates a data controller with an instance of legal data handling or consent</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
@@ -182,7 +182,7 @@ accepted
 @prefix dct: &lt;http://purl.org/dc/terms/&gt; .
 @prefix dpv: &lt;http://w3.org/ns/dpv#&gt; .
 @prefix dpv-gdpr: &lt;http://w3.org/ns/dpv-gdpr#&gt; .
-@prefix rdfs: http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 dpv:PersonalDataHandling a rdfs:Class ;
@@ -248,7 +248,7 @@ dpv:DataController a rdfs:Class ;
 
 
 dpv:hasPersonalDataCategory a rdfs:Property ;
-    dct:description "This property associates an instance of legal data handling with its affected personal data categories"@en ;
+    dct:description "This property associates a personal data category with an instance of legal data handling or consent"@en ;
     rdfs:domain dpv:PersonalDataHandling union dpv:Consent ;
     rdfs:range dpv:PersonalDataCategory ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -257,7 +257,7 @@ dpv:hasPersonalDataCategory a rdfs:Property ;
 
 
 dpv:hasProcessing a rdfs:Property ;
-    dct:description "This property associates an instance of legal data handling with its involved data processing categories."@en ;
+    dct:description "This property associates a data processing category with an instance of legal data handling or consent"@en ;
     rdfs:domain dpv:PersonalDataHandling union dpv:Consent ;
     rdfs:range dpv:Processing ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -266,7 +266,7 @@ dpv:hasProcessing a rdfs:Property ;
 
 
 dpv:hasPurpose a rdfs:Property ;
-    dct:description "This property associates an instance of legal data handling with its purpose"@en ;
+    dct:description "This property associates a purpose with an instance of legal data handling or consent"@en ;
     rdfs:domain dpv:PersonalDataHandling union dpv:Consent ;
     rdfs:range dpv:Purpose ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -275,7 +275,7 @@ dpv:hasPurpose a rdfs:Property ;
 
 
 dpv:hasRecipient a rdfs:Property ;
-    dct:description "This property associates an instance of legal data handling with potential recipients"@en ;
+    dct:description "This property associates a recipient with an instance of legal data handling or consent"@en ;
     rdfs:domain dpv:PersonalDataHandling union dpv:Consent ;
     rdfs:range dpv:Recipient ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -284,7 +284,7 @@ dpv:hasRecipient a rdfs:Property ;
 
 
 dpv:hasTechnicalOrganisationalMeasure a rdfs:Property ;
-    dct:description "This property associates an instance of legal data handling with required/followed technical and organisational measures"@en ;
+    dct:description "This property associates a technical/organisational measure with an instance of legal data handling or consent"@en ;
     rdfs:domain dpv:PersonalDataHandling union dpv:Consent ;
     rdfs:range dpv:SecurityMeasure ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -302,7 +302,7 @@ dpv:hasLegalBasis a rdfs:Property ;
 
 
 dpv:hasDataSubject a rdfs:Property ;
-    dct:description "This property associates an instance of legal data handling with its affected data subject(s)"@en ;
+    dct:description "This property associates a data subject with an instance of legal data handling or consent"@en ;
     rdfs:domain dpv:PersonalDataHandling union dpv:Consent ;
     rdfs:range dpv:DataSubject ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -311,7 +311,7 @@ dpv:hasDataSubject a rdfs:Property ;
 
 
 dpv:hasDataController a rdfs:Property ;
-    dct:description "This property associates an instance of legal data handling with its involved data controller(s)"@en ;
+    dct:description "This property associates a data controller with an instance of legal data handling or consent"@en ;
     rdfs:domain dpv:PersonalDataHandling union dpv:Consent ;
     rdfs:range dpv:Datacontroller ;
     dct:created "2019-04-04"^^xsd:date ;
