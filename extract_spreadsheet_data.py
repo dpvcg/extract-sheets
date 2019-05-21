@@ -222,9 +222,10 @@ def generate_rdf(classes, properties):
     print(html.escape('@prefix dct: <http://purl.org/dc/terms/> .'))
     print(html.escape('@prefix dpv: <http://w3.org/ns/dpv#> .'))
     print(html.escape('@prefix dpv-gdpr: <http://w3.org/ns/dpv-gdpr#> .'))
-    print(html.escape('@prefix rdfs: http://www.w3.org/2000/01/rdf-schema#> .'))
+    print(html.escape('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .'))
     print(html.escape('@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .'))
     print('')
+    # FIXME: invalid turtle due to missing dpv prefix
     for item in code:
         print(' ;\n'.join(item) + ' .\n\n')
     print('</pre></code>')
