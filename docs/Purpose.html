@@ -1,9 +1,8 @@
 <h4>Classes</h4>
 <table border="1"><tr><th>Classes:</th></tr>
-<tr><td><a href="#Context">Context</a></td></tr>
-<tr><td><a href="#Sector">Sector</a></td></tr>
-<tr><td><a href="#NaceSector">NaceSector</a></td></tr>
-<tr><td><a href="#Beneficiary">Beneficiary</a></td></tr>
+<tr><td><a href="#dpv:Context">dpv:Context</a></td></tr>
+<tr><td><a href="#dpv:Sector">dpv:Sector</a></td></tr>
+<tr><td><a href="#dpv:Beneficiary">dpv:Beneficiary</a></td></tr>
 <tr><td><a href="#dpv-nace/A02.30">dpv-nace/A02.30</a></td></tr>
 <tr><td><a href="#dpv-nace/A02">dpv-nace/A02</a></td></tr>
 <tr><td><a href="#dpv-nace/A">dpv-nace/A</a></td></tr>
@@ -18,7 +17,7 @@
 <tr><td><a href="#dpv:IdentityVerification">dpv:IdentityVerification</a></td></tr>
 <tr><td><a href="#dpv:ImproveExistingProductsAndServices">dpv:ImproveExistingProductsAndServices</a></td></tr>
 <tr><td><a href="#dpv:ImproveInternalCRMProcesses">dpv:ImproveInternalCRMProcesses</a></td></tr>
-<tr><td><a href="#dpv:InceaseServiceRobustness">dpv:InceaseServiceRobustness</a></td></tr>
+<tr><td><a href="#dpv:IncreaseServiceRobustness">dpv:IncreaseServiceRobustness</a></td></tr>
 <tr><td><a href="#dpv:InternalResourceOptimisation">dpv:InternalResourceOptimisation</a></td></tr>
 <tr><td><a href="#dpv:NonCommercialResearch">dpv:NonCommercialResearch</a></td></tr>
 <tr><td><a href="#dpv:OptimisationForConsumer">dpv:OptimisationForConsumer</a></td></tr>
@@ -38,70 +37,75 @@
 </table>
 <h4>Properties</h4>
 <table border="1"><tr><th>Properties:</th></tr>
-<tr><td><a href="#hasContext">hasContext</a></td></tr>
-<tr><td><a href="#hasSector">hasSector</a></td></tr>
-<tr><td><a href="#hasBeneficiary">hasBeneficiary</a></td></tr>
+<tr><td><a href="#dpv:hasContext">dpv:hasContext</a></td></tr>
+<tr><td><a href="#dpv:hasSector">dpv:hasSector</a></td></tr>
+<tr><td><a href="#dpv:hasBeneficiary">dpv:hasBeneficiary</a></td></tr>
 </table>
-<h4>Class: <a id="Context">Context<a></h4>
+<h4>Class: <a id="dpv:Context">dpv:Context<a></h4>
 <div>Used to scope the purpose, e.g. restriction to a certain business sector</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
 (created: 2019-04-04; approved: 2019-04-05)</li>
 <li> <b>In Domain Of</b>: 
-<a href="#hasSector">hasSector</a>, <a href="#hasBeneficiary">hasBeneficiary</a>
+<a href="#dpv:hasSector">dpv:hasSector</a>, <a href="#dpv:hasBeneficiary">dpv:hasBeneficiary</a>
 </li>
 <li> <b>In Range Of</b>: 
-<a href="#hasContext">hasContext</a>
+<a href="#dpv:hasContext">dpv:hasContext</a>
 </li>
 </ul>
-<h4>Class: <a id="Sector">Sector<a></h4>
-<div>Used to indicate the sector of a purpose e.g. Agriculture, Advertising</div>
+<h4>Class: <a id="dpv:Sector">dpv:Sector<a></h4>
+<div>Used to indicate the sector of a purpose e.g. Agriculture, Advertising (specified e.g. in the form of NACE codes)</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
 (created: 2019-04-04; approved: 2019-04-05)</li>
 <li> <b>In Range Of</b>: 
-<a href="#hasSector">hasSector</a>
+<a href="#dpv:hasSector">dpv:hasSector</a>
 </li>
 </ul>
-<h4>Class: <a id="NaceSector">NaceSector<a></h4>
-<div>URIs for NACE codes e.g., http://ec.europa.eu/competition/mergers/cases_old/index/by_nace_o_.html#o_92_33</div>
+<h4>Class: <a id="dpv:Beneficiary">dpv:Beneficiary<a></h4>
+<div>self.DataSubject, self.DataController, society ? ( --- under consideration ---)</div>
 <ul>
 <li><b>Status</b>: 
-(created: 2019-04-04)</li>
-<li> <b>Superclasses</b>: 
-<a href="#Sector">Sector<a>
+proposed 
+(created: 2019-05-23)</li>
+<li> <b>In Range Of</b>: 
+<a href="#dpv:hasBeneficiary">dpv:hasBeneficiary</a>
 </li>
-<br/>
-</ul>
-<h4>Class: <a id="Beneficiary">Beneficiary<a></h4>
-<div>self.DataSubject, self.DataController, society ?</div>
-<ul>
-<li><b>Status</b>: 
 </ul>
 <h4>Class: <a id="dpv-nace/A02.30">dpv-nace/A02.30<a></h4>
-<div>Gathering of wild growing  non-wood products</div>
+<div>Gathering of wild growing  non-wood products (example for representing NACE categories on the third hierachy level)</div>
 <ul>
 <li><b>Status</b>: 
+proposed 
+(created: 2019-05-23)</li>
 <li> <b>Superclasses</b>: 
 <a href="#dpv-nace/A02">dpv-nace/A02<a>
 </li>
 <br/>
 </ul>
 <h4>Class: <a id="dpv-nace/A02">dpv-nace/A02<a></h4>
-<div>Forestry and logging</div>
+<div>Forestry and logging (example for representing NACE categories on the seconf hierachy level)</div>
 <ul>
 <li><b>Status</b>: 
+proposed 
+(created: 2019-05-23)</li>
 <li> <b>Superclasses</b>: 
 <a href="#dpv-nace/A">dpv-nace/A<a>
 </li>
 <br/>
 </ul>
 <h4>Class: <a id="dpv-nace/A">dpv-nace/A<a></h4>
-<div>Agriculture, forestry and fishing</div>
+<div>Agriculture, forestry and fishing (example for representing NACE categories on the top hierachy level)</div>
 <ul>
 <li><b>Status</b>: 
+proposed 
+(created: 2019-05-23)</li>
+<li> <b>Superclasses</b>: 
+<a href="#dpv:Sector">dpv:Sector<a>
+</li>
+<br/>
 </ul>
 <h4>Class: <a id="dpv:AcademicResearch">dpv:AcademicResearch<a></h4>
 <div>Research conducted in an academic context e.g. within universities</div>
@@ -224,7 +228,7 @@ accepted
 </li>
 <br/>
 </ul>
-<h4>Class: <a id="dpv:InceaseServiceRobustness">dpv:InceaseServiceRobustness<a></h4>
+<h4>Class: <a id="dpv:IncreaseServiceRobustness">dpv:IncreaseServiceRobustness<a></h4>
 <div>To improve the robustness and resilience of services</div>
 <ul>
 <li><b>Status</b>: 
@@ -411,29 +415,32 @@ accepted
 </li>
 <br/>
 </ul>
-<h4>Property: <a id="hasContext">hasContext<a></h4>
+<h4>Property: <a id="dpv:hasContext">dpv:hasContext<a></h4>
 <div>Restricts a purpose to the specified context(s)</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
 (created: 2019-04-04; approved: 2019-04-05)</li>
-<li> <b>Domain</b>: Purpose</li>
-<li> <b>Range</b>: Context</li>
+<li> <b>Domain</b>: dpv:Purpose</li>
+<li> <b>Range</b>: dpv:Context</li>
 </ul>
-<h4>Property: <a id="hasSector">hasSector<a></h4>
-<div>Indicates the purpose is associated the indicated Sector(s)</div>
+<h4>Property: <a id="dpv:hasSector">dpv:hasSector<a></h4>
+<div>Indicates the purpose is associated with activities in the indicated (Economic) Sector(s)</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
 (created: 2019-04-04; approved: 2019-04-05)</li>
-<li> <b>Domain</b>: Context</li>
-<li> <b>Range</b>: Sector</li>
+<li> <b>Domain</b>: dpv:Context</li>
+<li> <b>Range</b>: dpv:Sector</li>
 </ul>
-<h4>Property: <a id="hasBeneficiary">hasBeneficiary<a></h4>
-<div>Cui bono? Who is the ultimate beneficiary of this purpose, here a stakeholder can be declared, e.g. the DataSubjects themselves or the Data Controller.</div>
+<h4>Property: <a id="dpv:hasBeneficiary">dpv:hasBeneficiary<a></h4>
+<div>Cui bono? Who is the ultimate beneficiary of this purpose, here a stakeholder can be declared, e.g. the DataSubjects themselves or the Data Controller. ( --- under consideration --- )</div>
 <ul>
 <li><b>Status</b>: 
-<li> <b>Domain</b>: Context</li>
+proposed 
+(created: 2019-05-23)</li>
+<li> <b>Domain</b>: dpv:Context</li>
+<li> <b>Range</b>: dpv:Beneficiary</li>
 </ul>
 <h2>RDF</h2>
 <code><pre>
@@ -443,40 +450,39 @@ accepted
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-Context a rdfs:Class ;
+dpv:Context a rdfs:Class ;
     dct:description "Used to scope the purpose, e.g. restriction to a certain business sector"@en ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date .
 
 
-Sector a rdfs:Class ;
-    dct:description "Used to indicate the sector of a purpose e.g. Agriculture, Advertising"@en ;
+dpv:Sector a rdfs:Class ;
+    dct:description "Used to indicate the sector of a purpose e.g. Agriculture, Advertising (specified e.g. in the form of NACE codes)"@en ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date .
 
 
-NaceSector a rdfs:Class ;
-    dct:description "URIs for NACE codes e.g., http://ec.europa.eu/competition/mergers/cases_old/index/by_nace_o_.html#o_92_33"@en ;
-    rdfs:subClassOf Sector ;
-    dct:created "2019-04-04"^^xsd:date .
-
-
-Beneficiary a rdfs:Class ;
-    dct:description "self.DataSubject, self.DataController, society ?"@en .
+dpv:Beneficiary a rdfs:Class ;
+    dct:description "self.DataSubject, self.DataController, society ? ( --- under consideration ---)"@en ;
+    dct:created "2019-05-23"^^xsd:date .
 
 
 dpv-nace/A02.30 a rdfs:Class ;
-    dct:description "Gathering of wild growing  non-wood products"@en ;
-    rdfs:subClassOf dpv-nace/A02 .
+    dct:description "Gathering of wild growing  non-wood products (example for representing NACE categories on the third hierachy level)"@en ;
+    rdfs:subClassOf dpv-nace/A02 ;
+    dct:created "2019-05-23"^^xsd:date .
 
 
 dpv-nace/A02 a rdfs:Class ;
-    dct:description "Forestry and logging"@en ;
-    rdfs:subClassOf dpv-nace/A .
+    dct:description "Forestry and logging (example for representing NACE categories on the seconf hierachy level)"@en ;
+    rdfs:subClassOf dpv-nace/A ;
+    dct:created "2019-05-23"^^xsd:date .
 
 
 dpv-nace/A a rdfs:Class ;
-    dct:description "Agriculture, forestry and fishing"@en .
+    dct:description "Agriculture, forestry and fishing (example for representing NACE categories on the top hierachy level)"@en ;
+    rdfs:subClassOf dpv:Sector ;
+    dct:created "2019-05-23"^^xsd:date .
 
 
 dpv:AcademicResearch a rdfs:Class ;
@@ -567,7 +573,7 @@ dpv:ImproveInternalCRMProcesses a rdfs:Class ;
     dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" .
 
 
-dpv:InceaseServiceRobustness a rdfs:Class ;
+dpv:IncreaseServiceRobustness a rdfs:Class ;
     dct:description "To improve the robustness and resilience of services"@en ;
     rdfs:subClassOf dpv:OptimisationForController ;
     dct:created "2018-12-10"^^xsd:date ;
@@ -703,26 +709,27 @@ dpv:UserInterfacePersonalisation a rdfs:Class ;
     dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" .
 
 
-hasContext a rdfs:Property ;
+dpv:hasContext a rdfs:Property ;
     dct:description "Restricts a purpose to the specified context(s)"@en ;
-    rdfs:domain Purpose ;
-    rdfs:range Context ;
+    rdfs:domain dpv:Purpose ;
+    rdfs:range dpv:Context ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date .
 
 
-hasSector a rdfs:Property ;
-    dct:description "Indicates the purpose is associated the indicated Sector(s)"@en ;
-    rdfs:domain Context ;
-    rdfs:range Sector ;
+dpv:hasSector a rdfs:Property ;
+    dct:description "Indicates the purpose is associated with activities in the indicated (Economic) Sector(s)"@en ;
+    rdfs:domain dpv:Context ;
+    rdfs:range dpv:Sector ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date .
 
 
-hasBeneficiary a rdfs:Property ;
-    dct:description "Cui bono? Who is the ultimate beneficiary of this purpose, here a stakeholder can be declared, e.g. the DataSubjects themselves or the Data Controller."@en ;
-    rdfs:domain Context ;
-    rdfs:range  .
+dpv:hasBeneficiary a rdfs:Property ;
+    dct:description "Cui bono? Who is the ultimate beneficiary of this purpose, here a stakeholder can be declared, e.g. the DataSubjects themselves or the Data Controller. ( --- under consideration --- )"@en ;
+    rdfs:domain dpv:Context ;
+    rdfs:range dpv:Beneficiary ;
+    dct:created "2019-05-23"^^xsd:date .
 
 
 </pre></code>
