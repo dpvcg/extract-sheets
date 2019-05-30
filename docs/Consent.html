@@ -71,6 +71,7 @@ accepted
 </li>
 <br/>
 <li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Comment/Issue</b>: Can be TextOrDocumentOrURI</li>
 </ul>
 <h4>Property: <a id="dpv:provisionMethod">dpv:provisionMethod<a></h4>
 <div>Specifies the method by which consent was provisioned or provided</div>
@@ -79,6 +80,7 @@ accepted
 accepted 
 (created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
 <li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Comment/Issue</b>: Can be used to record information of how consent was provided e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc.</li>
 </ul>
 <h4>Property: <a id="dpv:provisionTime">dpv:provisionTime<a></h4>
 <div>Specifies the instant in time when consent was given</div>
@@ -96,6 +98,7 @@ accepted
 accepted 
 (created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
 <li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Comment/Issue</b>: Can be used to record information of how to withdraw consent, e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc.</li>
 </ul>
 <h4>Property: <a id="dpv:withdrawalTime">dpv:withdrawalTime<a></h4>
 <div>Specifies the instant in time when consent was withdrawn</div>
@@ -114,6 +117,7 @@ accepted
 (created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
 <li> <b>Domain</b>: dpv:Consent</li>
 <li> <b>Range</b>: dpv:LegalEntity</li>
+<li> <b>Comment/Issue</b>: Normally this would be the dataSubject, but in some exceptional cases, the consent might be withdraawn on behalf by someone else, e.g. parents of minors.</li>
 </ul>
 <h4>Property: <a id="dpv:provisionBy">dpv:provisionBy<a></h4>
 <div>Specifies the entity that provisioned or provided consent</div>
@@ -123,6 +127,7 @@ accepted
 (created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
 <li> <b>Domain</b>: dpv:Consent</li>
 <li> <b>Range</b>: dpv:LegalEntity</li>
+<li> <b>Comment/Issue</b>: Normally this would be the dataSubject, but in some exceptional cases, the consent might be given on behalf by someone else, e.g. parents of minors.</li>
 </ul>
 <h4>Property: <a id="dpv:provisionByJustification">dpv:provisionByJustification<a></h4>
 <div>Specifies the justification for entity providing consent</div>
@@ -131,6 +136,7 @@ accepted
 accepted 
 (created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
 <li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Comment/Issue</b>: This field can be used to proivde a justification why the provision was provided by another DataSubject or legal entity,  e.g. declariing the relationship (parent, guardian), in combination with the field provisionBy</li>
 </ul>
 <h4>Property: <a id="dpv:withdrawalByJustification">dpv:withdrawalByJustification<a></h4>
 <div>Specifies the justification for entity withdrawing consent</div>
@@ -139,6 +145,7 @@ accepted
 accepted 
 (created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
 <li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Comment/Issue</b>: This field can be used to proivde a justification why the weithdrawal was done by another DataSubject or legal entity, e.g. declariing the relationship (parent, guardian), in combination with the field withdrawalBy</li>
 </ul>
 <h4>Property: <a id="dpv:consentNotice">dpv:consentNotice<a></h4>
 <div>Links consent to the notice displayed for requesting consent</div>
@@ -147,6 +154,7 @@ accepted
 accepted 
 (created: 2019-04-04; approved: 2019-04-05; proposed by: Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger)</li>
 <li> <b>Domain</b>: dpv:Consent</li>
+<li> <b>Comment/Issue</b>: The actual notice that the Data Subject received to consent to, either a text or link to a document, which should be usable to decide whether the form or consent was compliant to legislation, e.g. documenting how the user has been informed about rights and implications (such as, right to data portability,right to recitffy, right to erasure, right to restrict processing, right to object, rights regarding automated decision making or profiling, processors, third parties, sub-processors, outside-EEA transfers, automated decision-making, or other necessary details of the privacy-policy). Can be TextOrDocumentOrURI.</li>
 </ul>
 <h4>Property: <a id="dpv:isExplicit">dpv:isExplicit<a></h4>
 <div>Indicates consent is explicit as explained in GDPR Article 9.2a and Article 22.2c</div>

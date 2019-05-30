@@ -148,6 +148,8 @@ def document_classes(classes, properties):
                 print('<li> <b>In Range Of</b>: ')     
                 print(', '.join(ranges))       
                 print('</li>')
+        if cl.comments:
+            print(f'<li><b>Comment/Issue</b>; {cl.comments}')
         print('</ul>')
 
 
@@ -182,6 +184,8 @@ def document_properties(classes, properties):
             print(f'<li> <b>Domain</b>: {prop.domain}</li>')
         if prop.range: 
             print(f'<li> <b>Range</b>: {prop.range}</li>')
+        if prop.comments:
+            print(f'<li> <b>Comment/Issue</b>: {prop.comments}</li>')
         print('</ul>')
 
 
@@ -200,6 +204,8 @@ def generate_rdf(classes, properties):
             serialization.append(f'    dct:date-accepted "{cl.approved}"^^xsd:date')
         if cl.contributor:
             serialization.append(f'    dct:creator "{cl.contributor}"')
+        if cl.rdfs_comments:
+            serialization.append(f'    rdfs:comment "{cl.rdfs_comments}"')
         code.append(serialization)
         
     for prop in properties:
@@ -215,6 +221,8 @@ def generate_rdf(classes, properties):
             serialization.append(f'    dct:date-accepted "{prop.approved}"^^xsd:date')
         if prop.contributor:
             serialization.append(f'    dct:creator "{prop.contributor}"')
+        if prop.rdfs_comments:
+            serialization.append(f'    rdfs:comment "{prop.rdfs_comments}"')
         code.append(serialization)
 
     print('<h2>RDF</h2>')

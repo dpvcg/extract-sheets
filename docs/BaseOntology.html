@@ -97,6 +97,7 @@ accepted
 <li> <b>In Range Of</b>: 
 <a href="#dpv:hasDataSubject">dpv:hasDataSubject</a>
 </li>
+<li><b>Comment/Issue</b>; The alternative to bind a user or role of users to a policy could be to have a special property "hasPersonalDataHandling"
 </ul>
 <h4>Class: <a id="dpv:DataController">dpv:DataController<a></h4>
 <div>The class of Data Controllers that control this particular data handling, any legal entity that is defined by article 4.7 of GDPR.</div>
@@ -196,7 +197,8 @@ dpv:PersonalDataCategory a rdfs:Class ;
     dct:description "A category of personal data (as defined by GDPR article 4.1) from the personal data categories taxonomy, i.e. for instance denoting the category of an object/field or data item that is used for processing"@en ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:creator "Harshvardhan Pandit, Axel Polleres" .
+    dct:creator "Harshvardhan Pandit, Axel Polleres" ;
+    rdfs:comment "Harsh: Change name to PersonalDataCategory since DataCategory can be non-personal data. Axel: Ageed" .
 
 
 dpv:Processing a rdfs:Class ;
@@ -224,7 +226,8 @@ dpv:TechnicalOrganisationalMeasure a rdfs:Class ;
     dct:description "Technical and organisational measures, for instance security measure, storage restrictions etc. required/followed when processing data of the declared category"@en ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:creator "Bud Bruegger" .
+    dct:creator "Bud Bruegger" ;
+    rdfs:comment "Bud: rename according to GDPR: Technical/Organisational measures" .
 
 
 dpv:LegalBasis a rdfs:Class ;
@@ -253,7 +256,8 @@ dpv:hasPersonalDataCategory a rdfs:Property ;
     rdfs:range dpv:PersonalDataCategory ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" .
 
 
 dpv:hasProcessing a rdfs:Property ;
@@ -262,7 +266,8 @@ dpv:hasProcessing a rdfs:Property ;
     rdfs:range dpv:Processing ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" .
 
 
 dpv:hasPurpose a rdfs:Property ;
@@ -271,7 +276,8 @@ dpv:hasPurpose a rdfs:Property ;
     rdfs:range dpv:Purpose ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" .
 
 
 dpv:hasRecipient a rdfs:Property ;
@@ -280,7 +286,8 @@ dpv:hasRecipient a rdfs:Property ;
     rdfs:range dpv:Recipient ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" .
 
 
 dpv:hasTechnicalOrganisationalMeasure a rdfs:Property ;
@@ -289,7 +296,8 @@ dpv:hasTechnicalOrganisationalMeasure a rdfs:Property ;
     rdfs:range dpv:SecurityMeasure ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" .
 
 
 dpv:hasLegalBasis a rdfs:Property ;
@@ -307,7 +315,8 @@ dpv:hasDataSubject a rdfs:Property ;
     rdfs:range dpv:DataSubject ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" .
 
 
 dpv:hasDataController a rdfs:Property ;
@@ -316,7 +325,8 @@ dpv:hasDataController a rdfs:Property ;
     rdfs:range dpv:Datacontroller ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" .
 
 
 </pre></code>
