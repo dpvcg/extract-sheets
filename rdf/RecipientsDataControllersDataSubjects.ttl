@@ -1,0 +1,24 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv: <http://w3.org/ns/dpv#> .
+@prefix dpv-gdpr: <http://w3.org/ns/dpv-gdpr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dpv:DataProcessor a rdfs:Class ;
+    dct:created "2019-06-04"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit" ;
+    dct:date-accepted "2019-06-04"^^xsd:date ;
+    dct:description "‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller;"@en ;
+    rdfs:subClassOf dpv:Recipient .
+
+dpv:ThirdParty a rdfs:Class ;
+    dct:created "2019-06-04"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit" ;
+    dct:date-accepted "2019-06-04"^^xsd:date ;
+    dct:description "‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and persons who, under the direct authority of the controller or processor, are authorised to process personal data;"@en ;
+    rdfs:subClassOf dpv:Recipient .
+

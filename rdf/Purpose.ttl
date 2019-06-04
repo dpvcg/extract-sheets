@@ -1,0 +1,240 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv: <http://w3.org/ns/dpv#> .
+@prefix dpv-gdpr: <http://w3.org/ns/dpv-gdpr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dpv:AcademicResearch a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Research conducted in an academic context e.g. within universities"@en ;
+    rdfs:subClassOf dpv:ResearchAndDevelopment .
+
+dpv:AccessControl a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To conduct or enforce access control"@en ;
+    rdfs:subClassOf dpv:Security .
+
+dpv:Beneficiary a rdfs:Class ;
+    dct:created "2019-05-23"^^xsd:date ;
+    dct:description "self.DataSubject, self.DataController, society ? ( --- under consideration ---)"@en .
+
+dpv:CommercialInterest a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "For purposes of commercial activities i.e. of profit or benefit to the Controller"@en ;
+    rdfs:subClassOf dpv:Purpose .
+
+dpv:CommercialResearch a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Research conducted in a commercial setting e.g. in a company"@en ;
+    rdfs:subClassOf dpv:ResearchAndDevelopment .
+
+dpv:Context a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Used to scope the purpose, e.g. restriction to a certain business sector"@en .
+
+dpv:CreateProductRecommendations a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To create product recommendations e.g. suggest similar products"@en ;
+    rdfs:subClassOf dpv:ServicePersonalization .
+
+dpv:CustomerCare a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Processes related to providing assistance for customer satisfaction"@en ;
+    rdfs:subClassOf dpv:ServiceProvision .
+
+dpv:DeliveryOfGoods a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To deliver goods and services"@en ;
+    rdfs:subClassOf dpv:ServiceProvision .
+
+dpv:FraudPreventionAndDetection a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To detect and prevent fraud"@en ;
+    rdfs:subClassOf dpv:Security .
+
+dpv:IdentityVerification a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To verify and authorise identity"@en ;
+    rdfs:subClassOf dpv:Security .
+
+dpv:ImproveExistingProductsAndServices a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To improve existing products and services"@en ;
+    rdfs:subClassOf dpv:OptimisationForController .
+
+dpv:ImproveInternalCRMProcesses a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To improve customer-relationship management (CRM) processes"@en ;
+    rdfs:subClassOf dpv:OptimisationForController .
+
+dpv:IncreaseServiceRobustness a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To improve the robustness and resilience of services"@en ;
+    rdfs:subClassOf dpv:OptimisationForController .
+
+dpv:InternalResourceOptimisation a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Optimisation of internal resources used by the organisation e.g. resource usage"@en ;
+    rdfs:subClassOf dpv:OptimisationForController .
+
+dpv:NonCommercialResearch a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Research conducted in a non-commercial setting e.g. for a non-profit-organisation (NGO)"@en ;
+    rdfs:subClassOf dpv:ResearchAndDevelopment .
+
+dpv:OptimisationForConsumer a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Optimisation of activities and services for the consumer or user"@en ;
+    rdfs:subClassOf dpv:ServiceOptimization .
+
+dpv:OptimisationForController a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Optimisation of activities and services for the Controller"@en ;
+    rdfs:subClassOf dpv:ServiceOptimization .
+
+dpv:OptimiseUserInterface a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Optimisation of interfaces presented to the user"@en ;
+    rdfs:subClassOf dpv:OptimisationForConsumer .
+
+dpv:PersonalisedBenefits a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Personalisation of benefits received by the user"@en ;
+    rdfs:subClassOf dpv:ServicePersonalization .
+
+dpv:ResearchAndDevelopment a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Performing research and developing new methods,products, or services"@en ;
+    rdfs:subClassOf dpv:Purpose .
+
+dpv:Sector a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Used to indicate the sector of a purpose e.g. Agriculture, Advertising (specified e.g. in the form of NACE codes)"@en .
+
+dpv:Security a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Security of data"@en ;
+    rdfs:subClassOf dpv:Purpose .
+
+dpv:SellDataToThirdParties a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To sell data or information to third parties"@en ;
+    rdfs:subClassOf dpv:CommercialInterest .
+
+dpv:SellInsightsFromData a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To sell or commercially provide insights obtained from analysis of data"@en ;
+    rdfs:subClassOf dpv:CommercialInterest .
+
+dpv:SellProductsToDataSubject a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To sell products or services to the data subject or user"@en ;
+    rdfs:subClassOf dpv:CommercialInterest .
+
+dpv:SellTargettedAdvertisements a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "To sell or provide targetted advertisements about the user to Third Parties"@en ;
+    rdfs:subClassOf dpv:CommercialInterest .
+
+dpv:ServiceOptimisation a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Optimisation of service or activity"@en ;
+    rdfs:subClassOf dpv:Purpose .
+
+dpv:ServicePersonalisation a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Personalisation of service or activity for the user"@en ;
+    rdfs:subClassOf dpv:Purpose .
+
+dpv:ServiceProvision a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Provision of service or activity"@en ;
+    rdfs:subClassOf dpv:Purpose .
+
+dpv:UserInterfacePersonalisation a rdfs:Class ;
+    dct:created "2018-12-10"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Personalisation of interfaces presented to the user"@en ;
+    rdfs:subClassOf dpv:ServicePersonalization .
+
+dpv:hasBeneficiary a rdfs:Property ;
+    dct:created "2019-05-23"^^xsd:date ;
+    dct:description "Cui bono? Who is the ultimate beneficiary of this purpose, here a stakeholder can be declared, e.g. the DataSubjects themselves or the Data Controller. ( --- under consideration --- )"@en ;
+    rdfs:domain dpv:Context ;
+    rdfs:range dpv:Beneficiary .
+
+dpv:hasContext a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Restricts a purpose to the specified context(s)"@en ;
+    rdfs:domain dpv:Purpose ;
+    rdfs:range dpv:Context .
+
+dpv:hasSector a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Indicates the purpose is associated with activities in the indicated (Economic) Sector(s)"@en ;
+    rdfs:domain dpv:Context ;
+    rdfs:range dpv:Sector .
+

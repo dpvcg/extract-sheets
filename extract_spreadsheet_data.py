@@ -267,7 +267,7 @@ def generate_rdf(classes, properties):
         '@prefix owl: <http://www.w3.org/2002/07/owl#> .',
         '@prefix time: <http://www.w3.org/2006/time#> .',
         ]
-    with open(f'/tmp/{SHEET}.ttl', 'w') as fd:
+    with open(f'./rdf/{SHEET}.ttl', 'w') as fd:
         for prefix in prefixes:
             fd.write(prefix)
             fd.write('\n')
@@ -286,7 +286,7 @@ def main():
     document_toc(classes, properties)
     document_classes(classes, properties)
     document_properties(classes, properties)
-
+    generate_rdf(classes, properties)
             
 if __name__ == '__main__':
     if(len(sys.argv) < 1):

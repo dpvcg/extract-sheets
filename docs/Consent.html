@@ -157,3 +157,145 @@ accepted
 <li> <b>Domain</b>: dpv:Consent</li>
 <li> <b>Range</b>: xsd:boolean</li>
 </ul>
+<h2>RDF</h2>
+<code><pre>
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+@prefix dpv: &lt;http://w3.org/ns/dpv#&gt; .
+@prefix dpv-gdpr: &lt;http://w3.org/ns/dpv-gdpr#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+
+dpv:Consent a rdfs:Class ;
+    dct:description "Consent as defined by Article 4(11) of the GDPR"@en ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:LegalEntity a rdfs:Class ;
+    dct:description "A Person or Organisation, including Data Subjects, that constitute as a legal entity."@en ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:expiry a rdfs:Property ;
+    dct:description "Generic property specifying when or under which condition(s) the consent will expire"@en ;
+    rdfs:domain dpv:Consent ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:expiryTime a rdfs:Property ;
+    dct:description "Specifies the expiry time or duration for consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range time:TemporalEntity ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:expiryCondition a rdfs:Property ;
+    dct:description "Specifies the condition or event that determines the expiry of consent"@en ;
+    rdfs:domain dpv:Consent ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "Can be TextOrDocumentOrURI" .
+
+
+dpv:provisionMethod a rdfs:Property ;
+    dct:description "Specifies the method by which consent was provisioned or provided"@en ;
+    rdfs:domain dpv:Consent ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "Can be used to record information of how consent was provided e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc." .
+
+
+dpv:provisionTime a rdfs:Property ;
+    dct:description "Specifies the instant in time when consent was given"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range time:Instant ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:withdrawalMethod a rdfs:Property ;
+    dct:description "Specifries the method by which consent can be/has been withdrawn"@en ;
+    rdfs:domain dpv:Consent ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "Can be used to record information of how to withdraw consent, e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc." .
+
+
+dpv:withdrawalTime a rdfs:Property ;
+    dct:description "Specifies the instant in time when consent was withdrawn"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range time:Instant ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+dpv:withdrawalBy a rdfs:Property ;
+    dct:description "Specifies the entity that withdrew consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range dpv:LegalEntity ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "Normally this would be the dataSubject, but in some exceptional cases, the consent might be withdraawn on behalf by someone else, e.g. parents of minors." .
+
+
+dpv:provisionBy a rdfs:Property ;
+    dct:description "Specifies the entity that provisioned or provided consent"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range dpv:LegalEntity ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "Normally this would be the dataSubject, but in some exceptional cases, the consent might be given on behalf by someone else, e.g. parents of minors." .
+
+
+dpv:provisionByJustification a rdfs:Property ;
+    dct:description "Specifies the justification for entity providing consent"@en ;
+    rdfs:domain dpv:Consent ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "This field can be used to proivde a justification why the provision was provided by another DataSubject or legal entity,  e.g. declariing the relationship (parent, guardian), in combination with the field provisionBy" .
+
+
+dpv:withdrawalByJustification a rdfs:Property ;
+    dct:description "Specifies the justification for entity withdrawing consent"@en ;
+    rdfs:domain dpv:Consent ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "This field can be used to proivde a justification why the weithdrawal was done by another DataSubject or legal entity, e.g. declariing the relationship (parent, guardian), in combination with the field withdrawalBy" .
+
+
+dpv:consentNotice a rdfs:Property ;
+    dct:description "Links consent to the notice displayed for requesting consent"@en ;
+    rdfs:domain dpv:Consent ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    rdfs:comment "The actual notice that the Data Subject received to consent to, either a text or link to a document, which should be usable to decide whether the form or consent was compliant to legislation, e.g. documenting how the user has been informed about rights and implications (such as, right to data portability,right to recitffy, right to erasure, right to restrict processing, right to object, rights regarding automated decision making or profiling, processors, third parties, sub-processors, outside-EEA transfers, automated decision-making, or other necessary details of the privacy-policy). Can be TextOrDocumentOrURI." .
+
+
+dpv:isExplicit a rdfs:Property ;
+    dct:description "Indicates consent is explicit as explained in GDPR Article 9.2a and Article 22.2c"@en ;
+    rdfs:domain dpv:Consent ;
+    rdfs:range xsd:boolean ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" .
+
+
+</pre></code>

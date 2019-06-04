@@ -30,7 +30,7 @@ namespace_manager = NamespaceManager(Graph())
 # namespace_manager.bind('dpv-gdpr', DPVGDPR, override=True)
 # namespace_manager.bind('dct', DCT, override=True)
 
-VOCABS = (
+VOCABS = [
     "BaseOntology",
     "TechnicalOrganisationalMeasure",
     "PersonalDataCategory",
@@ -39,22 +39,23 @@ VOCABS = (
     "RecipientsDataControllersDataSubjects",
     "LegalBasis",
     "Consent",
-)
+]
 
 
 def validate_rdf(vocab):
     """Validate file. will throw errors."""
     g = Graph()
     # g.namespace_manager = namespace_manager
-    g.parse(f'/tmp/{vocab}.ttl', format='ttl')
-    g.serialize(f'/tmp/{vocab}.ttl', format='ttl')
+    g.parse(f'./rdf/{vocab}.ttl', format='ttl')
+    g.serialize(f'./rdf/{vocab}.ttl', format='ttl')
 
 
 def combine_graphs(vocabs):
     g = Graph()
+    vocabs.remove('LegalBasis')
     for vocab in vocabs:
-        g.parse(f'/tmp/{vocab}.ttl', format='ttl')
-    g.serialize(f'/tmp/combined.ttl', format='ttl')
+        g.parse(f'./rdf/{vocab}.ttl', format='ttl')
+    g.serialize(f'./rdf/combined.ttl', format='ttl')
 
 
 

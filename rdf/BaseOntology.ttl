@@ -1,0 +1,136 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv: <http://w3.org/ns/dpv#> .
+@prefix dpv-gdpr: <http://w3.org/ns/dpv-gdpr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dpv:DataController a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "The class of Data Controllers that control this particular data handling, any legal entity that is defined by article 4.7 of GDPR."@en .
+
+dpv:DataSubject a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "The class of Data Subject that this particular data handling applies to, any legal entity that is defined by article 4.1 of GDPR."@en .
+
+dpv:LegalBasis a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "A particular legal Basis, which permits personal Data handling (e.g. Consent, etc.)"@en .
+
+dpv:PersonalDataCategory a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Harshvardhan Pandit, Axel Polleres" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "A category of personal data (as defined by GDPR article 4.1) from the personal data categories taxonomy, i.e. for instance denoting the category of an object/field or data item that is used for processing"@en ;
+    rdfs:comment "Harsh: Change name to PersonalDataCategory since DataCategory can be non-personal data. Axel: Ageed" .
+
+dpv:PersonalDataHandling a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Top Class to describe a concrete instance of legal personal Data Handling of a defined class of Data Subjects, meaning that a personal Data Category is undergoing specified processing by a specific data controller and/or transferred to some recipient for a particular purpose, based on a specific legal ground, with specified security measures and restrictions (e.g. storage locations and storage durations)."@en .
+
+dpv:Processing a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "A type of processing from one of the processing categories in the processing Taxonomy"@en .
+
+dpv:Purpose a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "The purpose of Data Handling, from the purposes Taxonomy"@en .
+
+dpv:Recipient a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "The entities that can access the result of a data handling action/processing, any legal entity that is defined by article 4.9 of GDPR, which states - 'recipient' means a natural or legal person, public authority, agency or another body, to which the personal data are disclosed, whether a third party or not."@en .
+
+dpv:TechnicalOrganisationalMeasure a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Bud Bruegger" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "Technical and organisational measures, for instance security measure, storage restrictions etc. required/followed when processing data of the declared category"@en ;
+    rdfs:comment "Bud: rename according to GDPR: Technical/Organisational measures" .
+
+dpv:hasDataController a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "This property associates a data controller with an instance of legal data handling or consent"@en ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" ;
+    rdfs:domain [ owl:unionOf ( dpv:PersonalDataHandling dpv:Consent ) ] ;
+    rdfs:range dpv:Datacontroller .
+
+dpv:hasDataSubject a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "This property associates a data subject with an instance of legal data handling or consent"@en ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" ;
+    rdfs:domain [ owl:unionOf ( dpv:PersonalDataHandling dpv:Consent ) ] ;
+    rdfs:range dpv:DataSubject .
+
+dpv:hasLegalBasis a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "This property associates an instance of legal data handling with its underlying legal basis"@en ;
+    rdfs:domain dpv:PersonalDataHandling ;
+    rdfs:range dpv:LegalBasis .
+
+dpv:hasPersonalDataCategory a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "This property associates a personal data category with an instance of legal data handling or consent"@en ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" ;
+    rdfs:domain [ owl:unionOf ( dpv:PersonalDataHandling dpv:Consent ) ] ;
+    rdfs:range dpv:PersonalDataCategory .
+
+dpv:hasProcessing a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "This property associates a data processing category with an instance of legal data handling or consent"@en ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" ;
+    rdfs:domain [ owl:unionOf ( dpv:PersonalDataHandling dpv:Consent ) ] ;
+    rdfs:range dpv:Processing .
+
+dpv:hasPurpose a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "This property associates a purpose with an instance of legal data handling or consent"@en ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" ;
+    rdfs:domain [ owl:unionOf ( dpv:PersonalDataHandling dpv:Consent ) ] ;
+    rdfs:range dpv:Purpose .
+
+dpv:hasRecipient a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "This property associates a recipient with an instance of legal data handling or consent"@en ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" ;
+    rdfs:domain [ owl:unionOf ( dpv:PersonalDataHandling dpv:Consent ) ] ;
+    rdfs:range dpv:Recipient .
+
+dpv:hasTechnicalOrganisationalMeasure a rdfs:Property ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Axel Polleres, Javier Ferenandez, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    dct:date-accepted "2019-04-05"^^xsd:date ;
+    dct:description "This property associates a technical/organisational measure with an instance of legal data handling or consent"@en ;
+    rdfs:comment "We replicate all the properties except Legalbasis of personal data handling for consent, to declare what kinds of personal data handling are consented to" ;
+    rdfs:domain [ owl:unionOf ( dpv:PersonalDataHandling dpv:Consent ) ] ;
+    rdfs:range dpv:SecurityMeasure .
+

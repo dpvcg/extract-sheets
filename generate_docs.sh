@@ -20,6 +20,8 @@ for tab in "${Tabs[@]}"
 do
     python3 ./extract_spreadsheet_data.py "$tab" > ./docs/${tab}.html
 done
+# generate rdf
+python rdf_serializer.py
 # download the documentation (Google Docs file)
 python3 extract_document.py
 python3 clean_document.py
