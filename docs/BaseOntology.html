@@ -40,6 +40,7 @@ accepted
 <li> <b>In Range Of</b>: 
 <a href="#dpv:hasPersonalDataCategory">dpv:hasPersonalDataCategory</a>
 </li>
+<li><b>Comment/Issue</b>; Decide whether we define relation as a super or subclass of SPL, proposal: owl:equivalentClass
 </ul>
 <h4>Class: <a id="dpv:Processing">dpv:Processing<a></h4>
 <div>A type of processing from one of the processing categories in the processing Taxonomy</div>
@@ -62,7 +63,7 @@ accepted
 </li>
 </ul>
 <h4>Class: <a id="dpv:Recipient">dpv:Recipient<a></h4>
-<div>The entities that can access the result of a data handling action/processing, any legal entity that is defined by article 4.9 of GDPR.</div>
+<div>The entities that can access the result of a data handling action/processing, any legal entity that is defined by article 4.9 of GDPR, which states "‘recipient’ means a natural or legal person, public authority, agency or  another body, to which the personal data are disclosed, whether a third party or not."</div>
 <ul>
 <li><b>Status</b>: 
 accepted 
@@ -216,7 +217,7 @@ dpv:Purpose a rdfs:Class ;
 
 
 dpv:Recipient a rdfs:Class ;
-    dct:description "The entities that can access the result of a data handling action/processing, any legal entity that is defined by article 4.9 of GDPR."@en ;
+    dct:description "The entities that can access the result of a data handling action/processing, any legal entity that is defined by article 4.9 of GDPR, which states "‘recipient’ means a natural or legal person, public authority, agency or  another body, to which the personal data are disclosed, whether a third party or not.""@en ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
     dct:creator "Axel Polleres, Javier Ferenandez" .
