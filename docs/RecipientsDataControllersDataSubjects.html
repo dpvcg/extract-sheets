@@ -1,28 +1,16 @@
 <h4>Classes</h4>
 <table border="1"><tr><th>Classes:</th></tr>
 <tr><td><a href="#dpv:DataProcessor">dpv:DataProcessor</a></td></tr>
-<tr><td><a href="#dpv:DataSubProcessor">dpv:DataSubProcessor</a></td></tr>
 <tr><td><a href="#dpv:ThirdParty">dpv:ThirdParty</a></td></tr>
 </table>
 <h4>Class: <a id="dpv:DataProcessor">dpv:DataProcessor<a></h4>
 <div>‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller;</div>
 <ul>
 <li><b>Status</b>: 
-proposed 
-(created: 2019-06-04; proposed by: Harshvardhan J. Pandit)</li>
+approved 
+(created: 2019-06-04; approved: 2019-06-04; proposed by: Harshvardhan J. Pandit)</li>
 <li> <b>Superclasses</b>: 
 <a href="#dpv:Recipient">dpv:Recipient<a>
-</li>
-<br/>
-</ul>
-<h4>Class: <a id="dpv:DataSubProcessor">dpv:DataSubProcessor<a></h4>
-<div>A processor engaged by another processor</div>
-<ul>
-<li><b>Status</b>: 
-proposed 
-(created: 2019-06-04; proposed by: Harshvardhan J. Pandit)</li>
-<li> <b>Superclasses</b>: 
-<a href="#dpv:DataProcessor">dpv:DataProcessor<a>
 </li>
 <br/>
 </ul>
@@ -30,8 +18,8 @@ proposed
 <div>‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and persons who, under the direct authority of the controller or processor, are authorised to process personal data;</div>
 <ul>
 <li><b>Status</b>: 
-proposed 
-(created: 2019-06-04; proposed by: Harshvardhan J. Pandit)</li>
+approved 
+(created: 2019-06-04; approved: 2019-06-04; proposed by: Harshvardhan J. Pandit)</li>
 <li> <b>Superclasses</b>: 
 <a href="#dpv:Recipient">dpv:Recipient<a>
 </li>
@@ -49,13 +37,7 @@ dpv:DataProcessor a rdfs:Class ;
     dct:description "‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller;"@en ;
     rdfs:subClassOf dpv:Recipient ;
     dct:created "2019-06-04"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit" .
-
-
-dpv:DataSubProcessor a rdfs:Class ;
-    dct:description "A processor engaged by another processor"@en ;
-    rdfs:subClassOf dpv:DataProcessor ;
-    dct:created "2019-06-04"^^xsd:date ;
+    dct:date-accepted "2019-06-04"^^xsd:date ;
     dct:creator "Harshvardhan J. Pandit" .
 
 
@@ -63,6 +45,7 @@ dpv:ThirdParty a rdfs:Class ;
     dct:description "‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and persons who, under the direct authority of the controller or processor, are authorised to process personal data;"@en ;
     rdfs:subClassOf dpv:Recipient ;
     dct:created "2019-06-04"^^xsd:date ;
+    dct:date-accepted "2019-06-04"^^xsd:date ;
     dct:creator "Harshvardhan J. Pandit" .
 
 
