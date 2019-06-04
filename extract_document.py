@@ -39,7 +39,7 @@ def download_data(DOC):
             pickle.dump(creds, token)
 
     service = build('drive', 'v3', credentials=creds)
-    file_export = service.files().export(fileId=DOC, mimeType="text/html")
+    file_export = service.files().export_media(fileId=DOC, mimeType="text/html")
     file_export = file_export.execute()
     with open("/tmp/dpvcg.html", "wb") as fd:
         fd.write(file_export)

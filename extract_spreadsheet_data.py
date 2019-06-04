@@ -205,15 +205,34 @@ def generate_rdf(classes, properties):
         if cl.contributor:
             serialization.append(f'    dct:creator "{cl.contributor}"')
         if cl.rdfs_comments:
-            serialization.append(f'    rdfs:comment "{cl.rdfs_comments}"')
+            rdfs_comments = cl.rdfs_comments.replace('"', '\\"')
+            serialization.append(f'    rdfs:comment "{rdfs_comments}"')
         code.append(serialization)
         
     for prop in properties:
         serialization = []
         serialization.append(f'{prop.term} a rdfs:Property')
         serialization.append(f'    dct:description "{prop.description}"@en')
-        serialization.append(f'    rdfs:domain {prop.domain}')
-        serialization.append(f'    rdfs:range {prop.range}')
+        if prop.domain:
+            if 'union' in prop.domain:
+                domains = prop.domain.split(' union ')
+                s = f'    rdfs:domain [ owl:unionOf (\n'
+                for item in domains:
+                    s += f'        {item}\n'
+                s += f'        ) ]'
+                serialization.append(s)
+            else:
+                serialization.append(f'    rdfs:domain {prop.domain}')
+        if prop.range:
+            if 'union' in prop.range:
+                ranges = prop.range.split(' union ')
+                s = f'    rdfs:range [ owl:unionOf (\n'
+                for item in ranges:
+                    s += f'        {item}\n'
+                s += f'        ) ]'
+                serialization.append(s)
+            else:
+                serialization.append(f'    rdfs:range {prop.range}')
         # TODO: add superproperty
         if prop.created:
             serialization.append(f'    dct:created "{prop.created}"^^xsd:date')
@@ -222,7 +241,8 @@ def generate_rdf(classes, properties):
         if prop.contributor:
             serialization.append(f'    dct:creator "{prop.contributor}"')
         if prop.rdfs_comments:
-            serialization.append(f'    rdfs:comment "{prop.rdfs_comments}"')
+            rdfs_comments = prop.rdfs_comments.replace('"', '\\"')
+            serialization.append(f'    rdfs:comment "{rdfs_comments}"')
         code.append(serialization)
 
     print('<h2>RDF</h2>')
@@ -232,11 +252,28 @@ def generate_rdf(classes, properties):
     print(html.escape('@prefix dpv-gdpr: <http://w3.org/ns/dpv-gdpr#> .'))
     print(html.escape('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .'))
     print(html.escape('@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .'))
+    print(html.escape('@prefix owl: <http://www.w3.org/2002/07/owl#> .'))
     print('')
     # FIXME: invalid turtle due to missing dpv prefix
     for item in code:
         print(' ;\n'.join(item) + ' .\n\n')
     print('</pre></code>')
+    prefixes = [
+        '@prefix dct: <http://purl.org/dc/terms/> .',
+        '@prefix dpv: <http://w3.org/ns/dpv#> .',
+        '@prefix dpv-gdpr: <http://w3.org/ns/dpv-gdpr#> .',
+        '@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .',
+        '@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .',
+        '@prefix owl: <http://www.w3.org/2002/07/owl#> .',
+        '@prefix time: <http://www.w3.org/2006/time#> .',
+        ]
+    with open(f'/tmp/{SHEET}.ttl', 'w') as fd:
+        for prefix in prefixes:
+            fd.write(prefix)
+            fd.write('\n')
+        for item in code:
+            fd.write(' ;\n'.join(item) + ' .\n\n')
+    return prefixes, code
 
 
 def main():
@@ -249,7 +286,6 @@ def main():
     document_toc(classes, properties)
     document_classes(classes, properties)
     document_properties(classes, properties)
-    generate_rdf(classes, properties)
 
             
 if __name__ == '__main__':

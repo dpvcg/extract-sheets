@@ -25,28 +25,3 @@ approved
 </li>
 <br/>
 </ul>
-<h2>RDF</h2>
-<code><pre>
-@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
-@prefix dpv: &lt;http://w3.org/ns/dpv#&gt; .
-@prefix dpv-gdpr: &lt;http://w3.org/ns/dpv-gdpr#&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-
-dpv:DataProcessor a rdfs:Class ;
-    dct:description "‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller;"@en ;
-    rdfs:subClassOf dpv:Recipient ;
-    dct:created "2019-06-04"^^xsd:date ;
-    dct:date-accepted "2019-06-04"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit" .
-
-
-dpv:ThirdParty a rdfs:Class ;
-    dct:description "‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and persons who, under the direct authority of the controller or processor, are authorised to process personal data;"@en ;
-    rdfs:subClassOf dpv:Recipient ;
-    dct:created "2019-06-04"^^xsd:date ;
-    dct:date-accepted "2019-06-04"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit" .
-
-
-</pre></code>
