@@ -85,7 +85,7 @@ def combine_graphs(vocabs=VOCABS):
     vocabs.remove('LegalBasis')
     for vocab in vocabs:
         g.parse(f'./docs/rdf/{vocab}.ttl', format='ttl')
-    g.serialize(f'./docs/rdf/combined.ttl', format='ttl')
+    g.serialize(f'./docs/rdf/dpv.ttl', format='ttl')
 
 
 if __name__ == '__main__':

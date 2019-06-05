@@ -413,24 +413,23 @@ def generate_rdf(classes, properties):
 def main():
     """First argument should be the name of the Tab in the spreadsheet you want to parse (in quotes), e.g. 'Base Ontology'
     """
-    # data = download_data(SHEET)
-    # classes, properties = extract_classes_properties(data)
-    # pickle.dump(
-    #     (classes, properties),
-    #     open(f'pickled/{SHEET}.pickle', 'wb'))
+    data = download_data(SHEET)
+    classes, properties = extract_classes_properties(data)
+    # pickles for offline working (in case SHEETS API is not working)
+    # or when there's no internet connectivity - e.g. flights
+    pickle.dump(
+        (classes, properties),
+        open(f'pickled/{SHEET}.pickle', 'wb'))
     classes, properties = pickle.load(open(f'pickled/{SHEET}.pickle', 'rb'))
-    # print(SHEET, len(classes), len(properties))
 
     # generate HTML
     document_toc(classes, properties)
     document_classes(classes, properties)
     document_properties(classes, properties)
-    # rdf = generate_rdf(classes, properties)
-    # FIXME: re-enable serialization
-    # commented because: changing the layout of HTML to match reSpec
-    # serialize_rdf(SHEET, rdf)
+    rdf = generate_rdf(classes, properties)
+    serialize_rdf(SHEET, rdf)
 
-    with open(f'docs2/{SHEET}.html', 'w') as fd:
+    with open(f'docs/{SHEET}.html', 'w') as fd:
         for line in filecontent:
             print(line, file=fd)
 
