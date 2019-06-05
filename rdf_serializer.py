@@ -35,17 +35,17 @@ PREFIXES = {
     'owl': 'http://www.w3.org/2002/07/owl#',
     'dct': 'http://purl.org/dc/terms/',
     'dc': 'http://purl.org/dc/elements/1.1/',
-    'dpv': 'http://w3.org/ns/dpv#',
-    'dpv-gdpr': 'http://w3.org/ns/dpv-gdpr#',
     'time': 'http://www.w3.org/2006/time#',
     'odrl': 'http://w3.org/ns/odrl/2/',
     'spl': 'http://www.specialprivacy.eu/langs/usage-policy#',
-    'svd': 'http://www.specialprivacy.eu/vocabs/data#'',
+    'svd': 'http://www.specialprivacy.eu/vocabs/data#',
     'svpu': 'http://www.specialprivacy.eu/vocabs/purposes#',
     'svpr': 'http://www.specialprivacy.eu/vocabs/processing#',
     'svr': 'http://www.specialprivacy.eu/vocabs/recipients#',
     'svl': 'http://www.specialprivacy.eu/vocabs/locations#',
     'svdu': 'http://www.specialprivacy.eu/vocabs/duration#',
+    'dpv': 'http://w3.org/ns/dpv#',
+    'dpv-gdpr': 'http://w3.org/ns/dpv-gdpr#',
 }
 
 
@@ -53,30 +53,40 @@ def validate_rdf(vocab):
     """Validate file. will throw errors."""
     g = Graph()
     # g.namespace_manager = namespace_manager
-    g.parse(f'./rdf/{vocab}.ttl', format='ttl')
-    g.serialize(f'./rdf/{vocab}.ttl', format='ttl')
+    g.parse(f'./docs/rdf/{vocab}.ttl', format='ttl')
+    g.serialize(f'./docs/rdf/{vocab}.ttl', format='ttl')
+
+
+def detect_prefixes(code):
+    prefixes = set()
+    keys = [(p, p + ':') for p in PREFIXES.keys()]
+    for item in code:
+        for line in item:
+            for prefix, notation in keys:
+                if notation in line:
+                    prefixes.add(prefix)
+    return prefixes
 
 
 def serialize_rdf(name, code):
-
-    with open(f'./rdf/{SHEET}.ttl', 'w') as fd:
+    prefixes = detect_prefixes(code)
+    with open(f'./docs/rdf/{name}.ttl', 'w') as fd:
         for prefix in prefixes:
-            fd.write(prefix)
+            fd.write(f"@prefix {prefix}: <{PREFIXES[prefix]}> .")
             fd.write('\n')
+        fd.write('\n')
         for item in code:
             fd.write(' ;\n'.join(item) + ' .\n\n')
+    validate_rdf(name)
 
 
-def combine_graphs(vocabs):
+def combine_graphs(vocabs=VOCABS):
     g = Graph()
     vocabs.remove('LegalBasis')
     for vocab in vocabs:
-        g.parse(f'./rdf/{vocab}.ttl', format='ttl')
-    g.serialize(f'./rdf/combined.ttl', format='ttl')
-
+        g.parse(f'./docs/rdf/{vocab}.ttl', format='ttl')
+    g.serialize(f'./docs/rdf/combined.ttl', format='ttl')
 
 
 if __name__ == '__main__':
-    for vocab in VOCABS:
-        validate_rdf(vocab)
-    combine_graphs(VOCABS)
+    combine_graphs()

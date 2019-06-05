@@ -91,6 +91,7 @@ def extract_classes_properties(data):
 
 
 def document_toc(classes, properties):
+    print(f'<dt><a href="rdf/{SHEET}.ttl">rdf/turtle serialization</a></dt>')
     if classes:
         print('<h4>Classes</h4>')
         print('<table border="1"><tr><th>Classes:</th></tr>')
@@ -247,19 +248,6 @@ def generate_rdf(classes, properties):
             serialization.append(f'    rdfs:comment "{rdfs_comments}"')
         code.append(serialization)
 
-    print('<h2>RDF</h2>')
-    print('<code><pre>')
-    print(html.escape('@prefix dct: <http://purl.org/dc/terms/> .'))
-    print(html.escape('@prefix dpv: <http://w3.org/ns/dpv#> .'))
-    print(html.escape('@prefix dpv-gdpr: <http://w3.org/ns/dpv-gdpr#> .'))
-    print(html.escape('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .'))
-    print(html.escape('@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .'))
-    print(html.escape('@prefix owl: <http://www.w3.org/2002/07/owl#> .'))
-    print('')
-    # FIXME: invalid turtle due to missing dpv prefix
-    for item in code:
-        print(' ;\n'.join(item) + ' .\n\n')
-    print('</pre></code>')
     return code
 
 
@@ -274,6 +262,7 @@ def main():
     document_classes(classes, properties)
     document_properties(classes, properties)
     rdf = generate_rdf(classes, properties)
+    serialize_rdf(SHEET, rdf)
 
             
 if __name__ == '__main__':
