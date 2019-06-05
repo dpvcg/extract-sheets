@@ -11,6 +11,8 @@ from collections import namedtuple
 from dataclasses import dataclass
 from typing import List
 
+from rdf_serializer import serialize_rdf
+
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
@@ -258,22 +260,7 @@ def generate_rdf(classes, properties):
     for item in code:
         print(' ;\n'.join(item) + ' .\n\n')
     print('</pre></code>')
-    prefixes = [
-        '@prefix dct: <http://purl.org/dc/terms/> .',
-        '@prefix dpv: <http://w3.org/ns/dpv#> .',
-        '@prefix dpv-gdpr: <http://w3.org/ns/dpv-gdpr#> .',
-        '@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .',
-        '@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .',
-        '@prefix owl: <http://www.w3.org/2002/07/owl#> .',
-        '@prefix time: <http://www.w3.org/2006/time#> .',
-        ]
-    with open(f'./rdf/{SHEET}.ttl', 'w') as fd:
-        for prefix in prefixes:
-            fd.write(prefix)
-            fd.write('\n')
-        for item in code:
-            fd.write(' ;\n'.join(item) + ' .\n\n')
-    return prefixes, code
+    return code
 
 
 def main():
@@ -286,7 +273,8 @@ def main():
     document_toc(classes, properties)
     document_classes(classes, properties)
     document_properties(classes, properties)
-    generate_rdf(classes, properties)
+    rdf = generate_rdf(classes, properties)
+
             
 if __name__ == '__main__':
     if(len(sys.argv) < 1):

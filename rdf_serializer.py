@@ -17,19 +17,6 @@ SVDU = Namespace('http://www.specialprivacy.eu/vocabs/duration#')
 DPVGDPR = Namespace('http://www.w3.org/ns/dpv-gdpr#')
 DCT = DCTERMS
 
-namespace_manager = NamespaceManager(Graph())
-# namespace_manager.bind('dpv', DPV, override=True)
-# namespace_manager.bind('odrl', ODRL, override=True)
-# namespace_manager.bind('spl', SPL, override=True)
-# namespace_manager.bind('svd', SVD, override=True)
-# namespace_manager.bind('svpu', SVPU, override=True)
-# namespace_manager.bind('svpr', SVPR, override=True)
-# namespace_manager.bind('svr', SVR, override=True)
-# namespace_manager.bind('svl', SVL, override=True)
-# namespace_manager.bind('svdu', SVDU, override=True)
-# namespace_manager.bind('dpv-gdpr', DPVGDPR, override=True)
-# namespace_manager.bind('dct', DCT, override=True)
-
 VOCABS = [
     "BaseOntology",
     "TechnicalOrganisationalMeasure",
@@ -41,6 +28,26 @@ VOCABS = [
     "Consent",
 ]
 
+PREFIXES = {
+    'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+    'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',
+    'xsd': 'http://www.w3.org/2001/XMLSchema#',
+    'owl': 'http://www.w3.org/2002/07/owl#',
+    'dct': 'http://purl.org/dc/terms/',
+    'dc': 'http://purl.org/dc/elements/1.1/',
+    'dpv': 'http://w3.org/ns/dpv#',
+    'dpv-gdpr': 'http://w3.org/ns/dpv-gdpr#',
+    'time': 'http://www.w3.org/2006/time#',
+    'odrl': 'http://w3.org/ns/odrl/2/',
+    'spl': 'http://www.specialprivacy.eu/langs/usage-policy#',
+    'svd': 'http://www.specialprivacy.eu/vocabs/data#'',
+    'svpu': 'http://www.specialprivacy.eu/vocabs/purposes#',
+    'svpr': 'http://www.specialprivacy.eu/vocabs/processing#',
+    'svr': 'http://www.specialprivacy.eu/vocabs/recipients#',
+    'svl': 'http://www.specialprivacy.eu/vocabs/locations#',
+    'svdu': 'http://www.specialprivacy.eu/vocabs/duration#',
+}
+
 
 def validate_rdf(vocab):
     """Validate file. will throw errors."""
@@ -48,6 +55,16 @@ def validate_rdf(vocab):
     # g.namespace_manager = namespace_manager
     g.parse(f'./rdf/{vocab}.ttl', format='ttl')
     g.serialize(f'./rdf/{vocab}.ttl', format='ttl')
+
+
+def serialize_rdf(name, code):
+
+    with open(f'./rdf/{SHEET}.ttl', 'w') as fd:
+        for prefix in prefixes:
+            fd.write(prefix)
+            fd.write('\n')
+        for item in code:
+            fd.write(' ;\n'.join(item) + ' .\n\n')
 
 
 def combine_graphs(vocabs):
