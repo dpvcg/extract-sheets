@@ -1,21 +1,5 @@
 """serialize metadata from sheets into RDF files."""
-import pickle
-
 from rdflib import Graph
-from rdflib.namespace import Namespace, NamespaceManager
-from rdflib.namespace import DCTERMS
-
-DPV = Namespace('http://w3.org/ns/dpv#')
-ODRL = Namespace('http://w3.org/ns/odrl/2/')
-SPL = Namespace('http://www.specialprivacy.eu/langs/usage-policy#')
-SVD = Namespace('http://www.specialprivacy.eu/vocabs/data#')
-SVPU = Namespace('http://www.specialprivacy.eu/vocabs/purposes#')
-SVPR = Namespace('http://www.specialprivacy.eu/vocabs/processing#')
-SVR = Namespace('http://www.specialprivacy.eu/vocabs/recipients#')
-SVL = Namespace('http://www.specialprivacy.eu/vocabs/locations#')
-SVDU = Namespace('http://www.specialprivacy.eu/vocabs/duration#')
-DPVGDPR = Namespace('http://www.w3.org/ns/dpv-gdpr#')
-DCT = DCTERMS
 
 VOCABS = [
     "BaseOntology",
@@ -52,12 +36,13 @@ PREFIXES = {
 def validate_rdf(vocab):
     """Validate file. will throw errors."""
     g = Graph()
-    # g.namespace_manager = namespace_manager
     g.parse(f'./docs/rdf/{vocab}.ttl', format='ttl')
     g.serialize(f'./docs/rdf/{vocab}.ttl', format='ttl')
+    # TODO: add more formats
 
 
 def detect_prefixes(code):
+    '''detect which prefixes are used in the code'''
     prefixes = set()
     keys = [(p, p + ':') for p in PREFIXES.keys()]
     for item in code:
@@ -86,6 +71,7 @@ def combine_graphs(vocabs=VOCABS):
     for vocab in vocabs:
         g.parse(f'./docs/rdf/{vocab}.ttl', format='ttl')
     g.serialize(f'./docs/rdf/dpv.ttl', format='ttl')
+    # TODO: add more formats
 
 
 if __name__ == '__main__':

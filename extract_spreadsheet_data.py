@@ -12,6 +12,12 @@ from typing import List
 
 from rdf_serializer import serialize_rdf
 
+# NOTE: there is a main() function, start reading from there
+# There are times when it seems like a very bad imitation of PHP
+# Ideally, I would have used templates (Jinja2) to write the data
+# But given time constraints, I saved the lines to a list
+# and then write them at the end to a file (persist)
+
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
@@ -411,27 +417,30 @@ def generate_rdf(classes, properties):
 
 
 def main():
-    """First argument should be the name of the Tab in the spreadsheet you want to parse (in quotes), e.g. 'Base Ontology'
-    """
+    """First argument should be the name of the Tab in the spreadsheet
+    you want to parse (in quotes), e.g. 'Base Ontology'"""
+    # download data from Google Sheets using the API
     data = download_data(SHEET)
+    # extract classes and properties from downloaded data
     classes, properties = extract_classes_properties(data)
     # pickles for offline working (in case SHEETS API is not working)
     # or when there's no internet connectivity - e.g. flights
     pickle.dump(
         (classes, properties),
         open(f'pickled/{SHEET}.pickle', 'wb'))
-    classes, properties = pickle.load(open(f'pickled/{SHEET}.pickle', 'rb'))
+    # uncomment this line (and comment the download_data line)
+    # to load the pickled data (cache) rather than from internet
+    # classes, properties = pickle.load(open(f'pickled/{SHEET}.pickle', 'rb'))
 
-    # generate HTML
-    document_toc(classes, properties)
+    # the contents are generated, stored in a list, and saved to a file
     document_classes(classes, properties)
     document_properties(classes, properties)
-    rdf = generate_rdf(classes, properties)
-    serialize_rdf(SHEET, rdf)
-
     with open(f'docs/{SHEET}.html', 'w') as fd:
         for line in filecontent:
             print(line, file=fd)
+    # serialize the classes and properties in a RDF file
+    rdf = generate_rdf(classes, properties)
+    serialize_rdf(SHEET, rdf)
 
             
 if __name__ == '__main__':
