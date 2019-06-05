@@ -1,4 +1,3 @@
-from __future__ import print_function
 import pickle
 import os.path
 import sys, getopt
@@ -26,6 +25,8 @@ FIELDS = (
     "related_terms", "related_how", "comments",
     "source", "created", "status", "rdfs_comments", "contributor", "approved", "resolution")
 Template = namedtuple('Template', FIELDS)
+
+filecontent = []
 
 
 def download_data(SHEET_NAME):
@@ -91,49 +92,67 @@ def extract_classes_properties(data):
 
 
 def document_toc(classes, properties):
-    print(f'<dt><a href="rdf/{SHEET}.ttl">rdf/turtle serialization</a></dt>')
-    if classes:
-        print('<h4>Classes</h4>')
-        print('<table border="1"><tr><th>Classes:</th></tr>')
-        for item in classes:
-            print(f'<tr><td><a href="#{item.term}">{item.term}</a></td></tr>')
-        print("</table>")
-
-    if properties:
-        print('<h4>Properties</h4>')
-        print('<table border="1"><tr><th>Properties:</th></tr>')
-        for item in properties:
-            print(f'<tr><td><a href="#{item.term}">{item.term}</a></td></tr>')
-        print("</table>")
+    # print(f'<dt><a href="rdf/{SHEET}.ttl">rdf/turtle serialization</a></dt>')
+    pass
 
 
 def document_classes(classes, properties):
     """Generate documentation for classes"""
+    filecontent.append(f'<section id="{SHEET.lower()}-classes">')
+    filecontent.append('<h3>Classes</h3>')
+    if not classes:
+        return
+    classes.sort(key=lambda c: c.term)
+    string = "<p>\n"
+    string += ' | \n'.join((
+        f'<code><a href="{item.term}">:{item.term.split(":")[1]}</a></code>'
+        for item in classes))
+    string += "\n</p>\n"
+    filecontent.append(string)
     for cl in classes:
-        print(f'<h4>Class: <a id="{cl.term}">{cl.term}<a></h4>')
-        print(f'<div>{cl.description}</div>')
-        print('<ul>')
-        print('<li><b>Status</b>: ')
-        if cl.status:
-            print(f'{cl.status} ')
-        props = []
-        if cl.created:
-            props.append(f'created: {cl.created}')
-        if cl.approved:
-            props.append(f'approved: {cl.approved}')
-        if cl.contributor:
-            props.append(f'proposed by: {cl.contributor}')
-        if props:
-            print('(' + '; '.join(props) + ')</li>')
-        if cl.super:
-            print('<li> <b>Superclasses</b>: ')
-            scs = cl.super.split(',')
-            for sc in scs:
-                print(f'<a href="#{sc}">{sc}<a>')
-            print('</li>')
-            print('<br/>')
-        # TODO: add sub-classes
+        term = cl.term.split(':')[1]
+        termbank = []
+        label = term[0]
+        for i in range(1, len(term)):
+            if term[i].isupper() and term[i-1].islower():
+                termbank.append(label)
+                label = ''
+            label += term[i]
+        termbank.append(label)
+        label = ' '.join(termbank)
 
+        filecontent.append('<section>')
+        filecontent.append(f'<h4 id={cl.term}>{label}</h4>')
+        filecontent.append('<table class="definition">')
+        filecontent.append('<tbody>')
+        filecontent.append('<tr>')
+        filecontent.append('<th>Class:</th>')
+        filecontent.append(f'<th><code><a href="#{cl.term}">{cl.term}</a></code></th>')
+        filecontent.append('</tr>')
+        filecontent.append('<tr>')
+        filecontent.append('<td>Description:</td>')
+        filecontent.append(f'<td>{cl.description}</td>')
+        filecontent.append('</tr>')
+        if cl.rdfs_comments:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Comments:</td>')
+            filecontent.append(f'<td>{cl.rdfs_comments}</td>')
+            filecontent.append('</tr>')
+        filecontent.append('<tr>')
+        if cl.super:
+            filecontent.append('<tr>')
+            filecontent.append('<td>is SubClass of:</td>')
+            scs = [f'<a href="#{sc}">{sc}</a>' for sc in cl.super.split(',')]
+            scs = ' &cap; '.join(scs)
+            filecontent.append(f'<td>{scs}</td>')
+            filecontent.append('</tr>')
+        if cl.sub:
+            filecontent.append('<tr>')
+            filecontent.append('<td>is Parent Class of:</td>')
+            scs = [f'<a href="#{sc}">{sc}<a>' for sc in cl.sub.split(',')]
+            scs = ', '.join(scs)
+            filecontent.append(f'<td>{scs}</td>')
+            filecontent.append('</tr>')
         domains = []
         for prop in properties:
            if (cl.term in prop.domain):
@@ -144,52 +163,192 @@ def document_classes(classes, properties):
                ranges.append(f'<a href="#{prop.term}">{prop.term}</a>')
         if domains or ranges:
             if domains:
-                print('<li> <b>In Domain Of</b>: ')     
-                print(', '.join(domains))
-                print('</li>')
+                domains.sort()
+                filecontent.append('<tr>')
+                filecontent.append('<td>in Domain of:</td>')
+                filecontent.append(f'<td>{", ".join(domains)}</td>')
+                filecontent.append('</tr>')
             if ranges:
-                print('<li> <b>In Range Of</b>: ')     
-                print(', '.join(ranges))       
-                print('</li>')
+                ranges.sort()
+                filecontent.append('<tr>')
+                filecontent.append('<td>in Range of:</td>')
+                filecontent.append(f'<td>{", ".join(ranges)}</td>')
+                filecontent.append('</tr>')
+        if cl.source:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Source:</td>')
+            s = ', '.join((
+                f'<a href="{s}">{s}</a>'
+                for s in cl.source.split(',')))
+            filecontent.append(f'<td>{s}</td>')
+            filecontent.append('</tr>')
+        if cl.status:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Status:</td>')
+            st = "\n".join(cl.status.split(";"))
+            filecontent.append(f'<td>{st}</td>')
+            filecontent.append('</tr>')
+        if cl.created:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Date Created:</td>')
+            filecontent.append(f'<td>{cl.created}</td>')
+            filecontent.append('</tr>')
+        if cl.approved:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Date Approved:</td>')
+            filecontent.append(f'<td>{cl.approved}</td>')
+            filecontent.append('</tr>')
+        if cl.resolution:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Approval Resolution:</td>')
+            filecontent.append(f'<td><a href="{cl.resolution}">{cl.resolution}</a></td>')
+            filecontent.append('</tr>')
+        if cl.contributor:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Contributor:</td>')
+            filecontent.append(f'<td>{cl.contributor}</td>')
+            filecontent.append('</tr>')
         if cl.comments:
-            print(f'<li><b>Comment/Issue</b>; {cl.comments}')
-        print('</ul>')
-
+            filecontent.append('<tr>')
+            filecontent.append('<td>Notes:</td>')
+            filecontent.append(f'<td>{cl.comments}</td>')
+            filecontent.append('</tr>')
+        if cl.related_terms:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Related Terms:</td>')
+            filecontent.append('<td>')
+            for t in cl.related_terms.split(','):
+                filecontent.append(f'{cl.related_how} {t}\n')
+            filecontent.append('</td></tr>')
+        filecontent.append('</tbody>')
+        filecontent.append('</thead>')
+        filecontent.append('</table>')
+        filecontent.append('</section>')
+    filecontent.append('</section>')
 
 def document_properties(classes, properties):
     """Generate documentation for properties"""
-    for prop in properties:
-        print(f'<h4>Property: <a id="{prop.term}">{prop.term}<a></h4>')
-        print(f'<div>{prop.description}</div>')
-        print('<ul>')
-        print('<li><b>Status</b>: ')
-        if prop.status:
-            print(f'{prop.status} ')
-        props = []
-        if prop.created:
-            props.append(f'created: {prop.created}')
-        if prop.approved:
-            props.append(f'approved: {prop.approved}')
-        if prop.contributor:
-            props.append(f'proposed by: {prop.contributor}')
-        if props:
-            print('(' + '; '.join(props) + ')</li>')
-        if prop.super:
-            print('<li> <b>SuperProperties</b>: ')
-            sprops = prop.super.split(',')
-            for sp in sprops:
-                print(f'<a id="#{sp}">{sp}<a>')
-            print('</li>')
-            print('<br/>')
-        # TODO: add sub-properties
+    if not properties:
+        return
+    filecontent.append(f'<section id="{SHEET.lower()}-properties">')
+    filecontent.append('<h3>Properties</h3>')
+    properties.sort(key=lambda c: c.term)
+    string = "<p>\n"
+    string += ' | \n'.join((
+        f'<code><a href="{item.term}">:{item.term.split(":")[1]}</a></code>'
+        for item in properties))
+    string += "\n</p>\n"
+    filecontent.append(string)
+    for cl in properties:
+        term = cl.term.split(':')[1]
+        termbank = []
+        label = term[0]
+        for i in range(1, len(term)):
+            if term[i].isupper() and term[i-1].islower():
+                termbank.append(label)
+                label = ''
+            label += term[i]
+        termbank.append(label)
+        label = ' '.join(termbank)
 
-        if prop.domain:
-            print(f'<li> <b>Domain</b>: {prop.domain}</li>')
-        if prop.range: 
-            print(f'<li> <b>Range</b>: {prop.range}</li>')
-        if prop.comments:
-            print(f'<li> <b>Comment/Issue</b>: {prop.comments}</li>')
-        print('</ul>')
+        filecontent.append('<section>')
+        filecontent.append(f'<h4 id={cl.term}>{label}</h4>')
+        filecontent.append('<table class="definition">')
+        filecontent.append('<tbody>')
+        filecontent.append('<tr>')
+        filecontent.append('<th>Property:</th>')
+        filecontent.append(f'<th><code><a href="#{cl.term}">{cl.term}</a></code></th>')
+        filecontent.append('</tr>')
+        filecontent.append('<tr>')
+        filecontent.append('<td>Description:</td>')
+        filecontent.append(f'<td>{cl.description}</td>')
+        filecontent.append('</tr>')
+        if cl.rdfs_comments:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Comments:</td>')
+            filecontent.append(f'<td>{cl.rdfs_comments}</td>')
+            filecontent.append('</tr>')
+        filecontent.append('<tr>')
+        if cl.super:
+            filecontent.append('<tr>')
+            filecontent.append('<td>is Sub-Property of:</td>')
+            scs = (f'<a href="#{sc}">{sc}<a>' for sc in cl.super.split(','))
+            filecontent.append(f'<td>{scs}</td>')
+            filecontent.append('</tr>')
+        if cl.sub:
+            filecontent.append('<tr>')
+            filecontent.append('<td>is Parent Property of:</td>')
+            scs = (f'<a href="#{sc}">{sc}<a>' for sc in cl.sub.split(','))
+            filecontent.append(f'<td>{scs}</td>')
+            filecontent.append('</tr>')
+        if cl.domain:
+            if 'union' in cl.domain:
+                domains = [
+                    f'<a href="{c.strip()}">{c.strip()}</a>'
+                    for c in cl.domain.split('union')]
+                domains = ' &cup; '.join(domains)
+            else:
+                domains = f'<a href="{cl.domain}">{cl.domain}</a>'
+            filecontent.append('<tr>')
+            filecontent.append('<td>Domain:</td>')
+            filecontent.append(f'<td>{domains}</td>')
+            filecontent.append('</tr>')
+        if cl.range:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Range:</td>')
+            filecontent.append(f'<td><a href="{cl.range}">{cl.range}</a></td>')
+            filecontent.append('</tr>')
+        if cl.source:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Source:</td>')
+            s = ', '.join((
+                f'<a href="{s}">{s}</a>'
+                for s in cl.source.split(',')))
+            filecontent.append(f'<td>{s}</td>')
+            filecontent.append('</tr>')
+        if cl.status:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Status:</td>')
+            st = "\n".join(cl.status.split(";"))
+            filecontent.append(f'<td>{st}</td>')
+            filecontent.append('</tr>')
+        if cl.created:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Date Created:</td>')
+            filecontent.append(f'<td>{cl.created}</td>')
+            filecontent.append('</tr>')
+        if cl.approved:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Date Approved:</td>')
+            filecontent.append(f'<td>{cl.approved}</td>')
+            filecontent.append('</tr>')
+        if cl.resolution:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Approval Resolution:</td>')
+            filecontent.append(f'<td><a href="{cl.resolution}">{cl.resolution}</a></td>')
+            filecontent.append('</tr>')
+        if cl.contributor:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Contributor:</td>')
+            filecontent.append(f'<td>{cl.contributor}</td>')
+            filecontent.append('</tr>')
+        if cl.comments:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Notes:</td>')
+            filecontent.append(f'<td>{cl.comments}</td>')
+            filecontent.append('</tr>')
+        if cl.related_terms:
+            filecontent.append('<tr>')
+            filecontent.append('<td>Related Terms:</td>')
+            filecontent.append('<td>')
+            for t in cl.related_terms.split(','):
+                filecontent.append(f'{cl.related_how} {t}\n')
+            filecontent.append('</td></tr>')
+        filecontent.append('</tbody>')
+        filecontent.append('</thead>')
+        filecontent.append('</table>')
+        filecontent.append('</section>')
+    filecontent.append('</section>')
 
 
 def generate_rdf(classes, properties):
@@ -254,15 +413,26 @@ def generate_rdf(classes, properties):
 def main():
     """First argument should be the name of the Tab in the spreadsheet you want to parse (in quotes), e.g. 'Base Ontology'
     """
-    data = download_data(SHEET)
-    classes, properties = extract_classes_properties(data)
+    # data = download_data(SHEET)
+    # classes, properties = extract_classes_properties(data)
+    # pickle.dump(
+    #     (classes, properties),
+    #     open(f'pickled/{SHEET}.pickle', 'wb'))
+    classes, properties = pickle.load(open(f'pickled/{SHEET}.pickle', 'rb'))
+    # print(SHEET, len(classes), len(properties))
 
     # generate HTML
     document_toc(classes, properties)
     document_classes(classes, properties)
     document_properties(classes, properties)
-    rdf = generate_rdf(classes, properties)
-    serialize_rdf(SHEET, rdf)
+    # rdf = generate_rdf(classes, properties)
+    # FIXME: re-enable serialization
+    # commented because: changing the layout of HTML to match reSpec
+    # serialize_rdf(SHEET, rdf)
+
+    with open(f'docs2/{SHEET}.html', 'w') as fd:
+        for line in filecontent:
+            print(line, file=fd)
 
             
 if __name__ == '__main__':
