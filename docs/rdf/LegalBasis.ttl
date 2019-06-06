@@ -1,8 +1,12 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <http://w3.org/ns/dpv#> .
 @prefix dpv-gdpr: <http://w3.org/ns/dpv-gdpr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix status: <http://purl.org/ontology/bibo/status/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -126,4 +130,28 @@ dpv-gdpr:A9-2-j a rdfs:Class ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
     dct:description "public interest, scientific or historical research purposes or statistical purposes based on Union or Member State law"@en ;
     rdfs:subClassOf dpv:LegalBasis .
+
+<https://w3.org/ns/dpv-gdpr> a owl:Ontology ;
+    dct:abstract "Extension of DPV vocabulary providing Legal Bases defined by GDPR Article 6 and Article 9."@en ;
+    dct:contributor "Bert Bos",
+        "Bud Bruegger",
+        "Elmar Kiesling",
+        "Eva Schlehan",
+        "Fajar J. Ekaputra",
+        "Javier D. Fernández",
+        "Mark Lizar",
+        "Ramisa Gachpaz Hamed",
+        "Rigo Wenning",
+        "Rob Brennan",
+        "Simon Steyskal" ;
+    dct:created "2019-06-18"^^xsd:dateTime ;
+    dct:creator "Axel Polleres",
+        "Harshvardhan J. Pandit" ;
+    dct:description "Extension of DPV vocabulary providing Legal Bases defined by GDPR Article 6 and Article 9."@en ;
+    dct:source <https://www.w3.org/community/dpvcg/> ;
+    dct:title "Data Privacy GDPR Legal Bases Vocabulary"@en ;
+    bibo:status status:draft ;
+    vann:preferredNamespacePrefix "dpv-gdpr" ;
+    vann:preferredNamespaceUri "https://w3.org/ns/dpv-gdpr"^^xsd:string ;
+    owl:versionInfo "0.1"^^xsd:string .
 

@@ -1,0 +1,28 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix status: <http://purl.org/ontology/bibo/status/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+<https://w3.org/ns/dpv-gdpr> a owl:Ontology ;
+    vann:preferredNamespaceUri "https://w3.org/ns/dpv-gdpr"^^xsd:string ;
+    vann:preferredNamespacePrefix "dpv-gdpr" ;
+    dct:title "Data Privacy GDPR Legal Bases Vocabulary"@en ;
+    dct:description "Extension of DPV vocabulary providing Legal Bases defined by GDPR Article 6 and Article 9."@en ;
+    dct:abstract "Extension of DPV vocabulary providing Legal Bases defined by GDPR Article 6 and Article 9."@en ;
+    bibo:status status:draft ;
+    owl:versionInfo "0.1"^^xsd:string ;
+    dct:created "2019-06-18"^^xsd:dateTime ;
+    dct:source <https://www.w3.org/community/dpvcg/> ;
+    dct:creator "Harshvardhan J. Pandit" ;
+    dct:creator "Axel Polleres" ;
+	dct:contributor "Bert Bos" ;
+	dct:contributor "Rob Brennan" ;
+	dct:contributor "Bud Bruegger" ;
+	dct:contributor "Fajar J. Ekaputra" ;
+	dct:contributor "Javier D. Fernández" ;
+	dct:contributor "Ramisa Gachpaz Hamed" ;
+	dct:contributor "Elmar Kiesling" ;
+	dct:contributor "Mark Lizar" ;
+	dct:contributor "Eva Schlehan" ;
+	dct:contributor "Simon Steyskal" ;
+	dct:contributor "Rigo Wenning" .

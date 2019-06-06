@@ -32,6 +32,11 @@ PREFIXES = {
     'dpv-gdpr': 'http://w3.org/ns/dpv-gdpr#',
 }
 
+with open('./docs/rdf/ontology_metadata.ttl', 'r') as fd:
+    ontology_metadata = fd.read()
+with open('./docs/rdf/ontology_legal_basis_metadata.ttl', 'r') as fd:
+    ontology_legal_basis_metadata = fd.read()
+
 
 def validate_rdf(vocab):
     """Validate file. will throw errors."""
@@ -59,6 +64,10 @@ def serialize_rdf(name, code):
         for prefix in prefixes:
             fd.write(f"@prefix {prefix}: <{PREFIXES[prefix]}> .")
             fd.write('\n')
+        if name == "LegalBasis":
+            fd.write(ontology_legal_basis_metadata)
+        else:
+            fd.write(ontology_metadata)
         fd.write('\n')
         for item in code:
             fd.write(' ;\n'.join(item) + ' .\n\n')
