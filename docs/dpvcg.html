@@ -75,7 +75,29 @@
           name: "Rigo Wenning",
           company: "W3C/ERCIM"
         }
-      ]
+      ],
+      localBiblio: {
+        "NACE": {
+          href: "https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2",
+          title: "Statistical Classification of Economic Activities in the European Community (NACE)"
+        },
+        "NAICS": {
+          href: "https://www.census.gov/eos/www/naics/",
+          title: "North American Industry Classification System (NAICS)"
+        },
+        "ISIC": {
+          href: "https://unstats.un.org/unsd/classifications",
+          title: "International Standard Industrial Classification of All Economic Activities (ISIC)"
+        },
+        "GICS": {
+          href: "https://www.msci.com/gics",
+          title: "Global Industry Classification Standard (GICS)"
+        },
+        "NACE-NAICS": {
+          href: "https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2",
+          title: "NACE to NAICS mapping"
+        }
+      }
     };
   </script>
   <style type="text/css">
@@ -135,16 +157,10 @@
     <p style="text-align: center;">The namespace for DPV terms is <code>http://www.w3.org/ns/dpv#</code></p>
     <p style="text-align: center;">The suggested prefix for the DPV namespace is <code>dpv</code></p>
     <p style="text-align: center;">The DPV ontology is available <a href="rdf/dpv.ttl">here</a>.</p>
-    <p style="text-align: center;">The namespace for terms for Legal Bases under GDPR is <code>http://www.w3.org/ns/dpv-gdpr#</code></p>
-    <p style="text-align: center;">The suggested prefix for the GDPR Legal Bases namespace is <code>dpv-gdpr</code></p>
-    <p style="text-align: center;">An ontology of Legal Bases under GDPR is available <a href="rdf/LegalBasis.ttl">here</a>.</p>
-    <p style="text-align: center;">The namespace for NACE terms is <code>http://www.w3.org/ns/dpv-nace#</code></p>
-    <p style="text-align: center;">The suggested prefix for the NACE namespace is <code>dpv-nace</code></p>
-    <p style="text-align: center;">An ontology of NACE taxonomy is available <a href="rdf/NACE.ttl">here</a>.</p>
   </section>
   <section id="sotd">
     <!-- sotd: Status of this document -->
-    <p>This document was published by the Data Privacy Vocabularies and Controls Community Group (DPVCG) as a first public working draft. If you wish to make comments regarding this document, please send them to <a href="mailto:public-dpvcg@w3.org">public-dpvcg@w3.org</a> ( archived ). All comments are welcome.</p>
+    <p>This document was published by the Data Privacy Vocabularies and Controls Community Group (DPVCG) as a first public working draft.</p>
     <p class="ednote">The DPVCG also requests participation regarding open issues and welcomes suggestions on their resolution or mitigation. The list of open issues and their discussions to date can be found at <a href="https://www.w3.org/community/dpvcg/track/issues/open">https://www.w3.org/community/dpvcg/track/issues/open</a>. Specifically, the DPVCG kindly requests proposals to extend its initial taxonomies by additional terms, where these are missing or need refinements in order to describe specific use cases of personal data handling.</p>
     <p>In order to propose/approve new terms, please include the following in your email:</p>
       <ul>
@@ -171,6 +187,7 @@
       <li>Recipients, Data Controllers, Data Subjects</li>
     </ul>
     <p>These terms are intended to annotate Legal Personal Data Handling in a machine-readable fashion, by specifying which personal data categories are undergoing a specific kind of processing, by a specific data controller and/or shared with some recipient for a particular purpose , based on a specific legal ground (e.g. consent or legitimate interest), with specific technical and organisational measures and restrictions (e.g. storage location and storage duration) in place.</p>
+    <p class="note">As the Legal Bases are dependant on legal jurisdictions, we provide the GDPR legal bases (based on Article 6 and Article 9) under a separate aligned vocabulary <a href="https://w3.org/ns/dpv-gdpr">here</a>.</p>
     <p>Descriptions and respective annotations of Legal Personal Data Handling could be used for example to:</p>
     <ol start="1">
       <li>declare personal data handling policies ,</li>
@@ -338,7 +355,8 @@
       rdfs:comment "Inteded delivery of goods with fraud prevention” .
       dpv:Purpose rdfs:subClassOf [ onProperty rdfs:comment owl: someValuesFrom … ]</pre>
     </aside>
-    <p>Purposes can be further restricted to specific contexts using the class <code><a href="dpv:Context">dpv:Context</a></code> and the property <code><a href="dpv:hasContext">dpv:hasContext</a></code>. DPVCG provides a way to restrict purposes to a specific business sector using the class <code><a href="dpv:Sector">dpv:Sector</a></code> and the property <code><a href="dpv:hasSector">dpv:hasSector</a></code>. Hierarchies for defining business sectors include NACE (EU) ( https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2 ), NAICS (US) ( https://www.census.gov/eos/www/naics/ ), ISIC (UN) ( https://unstats.un.org/unsd/classifications ), and GICS ( https://www.msci.com/gics ). Multiple classifications can be used through mappings between sector codes such as NACE - NAICS ( https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2 ). At the moment, we recommend to specify this sector in terms of the EU NACE codes, where the codes can be specified using the URI scheme <code>dpv-nace: NACE-CODE</code>.</p>
+    <p>Purposes can be further restricted to specific contexts using the class <code><a href="dpv:Context">dpv:Context</a></code> and the property <code><a href="dpv:hasContext">dpv:hasContext</a></code>. DPVCG provides a way to restrict purposes to a specific business sector using the class <code><a href="dpv:Sector">dpv:Sector</a></code> and the property <code><a href="dpv:hasSector">dpv:hasSector</a></code>. Hierarchies for defining business sectors include [[NACE]] (EU), [[NAICS]] (US), [[ISIC]] (UN), and [[GICS]]. Multiple classifications can be used through mappings between sector codes such as [[NACE-NAICS]]. At the moment, we recommend to specify this sector in terms of the EU NACE codes, where the codes can be specified using the URI scheme <code>dpv-nace: NACE-CODE</code>.</p>
+    <p class="note">We provide an interpretation of the NACE revision 2 codes which uses <code>rdfs:subClassOf</code> to specify the hierarchy, available <a href="">here</a>.</p>
     <aside class="example" title="Using NACE codes to restrict Purposes">
       <p>For example, a purpose can be restricted to the domain of scientific research using its corresponding NACE code M72, which can be represented as:</p>
       <pre>:SomePurpose a dpv:Purpose ;
@@ -390,6 +408,7 @@
   </section>
   <section id="vocab-recipients-controllers-data-subjects">
     <h2>Recipients, Data Controllers, and Data Subjects</h2>
+    <p>Defining recipients is important in the context of data privacy as it allows tracking the entities personal data is shared/transfered with. Similarly, a categorisation of Data Controllers and Data Subjects has bearing on the privacy of personal data handling, especially when considering situations such as where Data Subjects are children. The vocabulary currently provides a few top-level classes to describe such recipients and Data Subjects, with an invitation to suggest/provide more terms for future releases.</p>
 
     <p style="text-align: center;">The DPV Recipients, Data Controllers, and Data Subjects ontology is available as an individual module <a href="rdf/RecipientsDataControllersDataSubjects.ttl">here</a>.</p>
 

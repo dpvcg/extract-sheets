@@ -306,6 +306,14 @@ dpv:Character a rdfs:Class ;
     rdfs:subClassOf dpv:PublicLife ;
     sw:term_status "accepted" .
 
+dpv:Child a rdfs:Class ;
+    dct:created "2019-06-06"^^xsd:date ;
+    dct:creator "Harshvardhan J. Pandit" ;
+    dct:description "A 'child' is a natural legal person who is below a certain legal age depending on the legal jurisdiction."@en ;
+    rdfs:comment "A 'child' is distinct from a 'minor'. For example, the legal age for a 'minor' in most countries is 18, whereas a 'child' can be a minor below the age of 14." ;
+    rdfs:subClassOf dpv:DataSubject ;
+    sw:term_status "proposed" .
+
 dpv:CodeOfConduct a rdfs:Class ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:creator "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
