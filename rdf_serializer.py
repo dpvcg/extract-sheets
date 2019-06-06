@@ -21,6 +21,7 @@ PREFIXES = {
     'dc': 'http://purl.org/dc/elements/1.1/',
     'time': 'http://www.w3.org/2006/time#',
     'odrl': 'http://w3.org/ns/odrl/2/',
+    'prov': 'http://www.w3.org/ns/prov#',
     'spl': 'http://www.specialprivacy.eu/langs/usage-policy#',
     'svd': 'http://www.specialprivacy.eu/vocabs/data#',
     'svpu': 'http://www.specialprivacy.eu/vocabs/purposes#',
@@ -28,6 +29,7 @@ PREFIXES = {
     'svr': 'http://www.specialprivacy.eu/vocabs/recipients#',
     'svl': 'http://www.specialprivacy.eu/vocabs/locations#',
     'svdu': 'http://www.specialprivacy.eu/vocabs/duration#',
+    'sw': 'http://www.w3.org/2003/06/sw-vocab-status/ns#',
     'dpv': 'http://w3.org/ns/dpv#',
     'dpv-gdpr': 'http://w3.org/ns/dpv-gdpr#',
 }

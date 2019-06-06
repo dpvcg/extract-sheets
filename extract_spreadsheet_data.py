@@ -377,6 +377,21 @@ def generate_rdf(classes, properties):
         if cl.rdfs_comments:
             rdfs_comments = cl.rdfs_comments.replace('"', '\\"')
             serialization.append(f'    rdfs:comment "{rdfs_comments}"')
+        if cl.source:
+            for s in cl.source.split(','):
+                if s.startswith('http'):
+                    serialization.append(f'    rdfs:isDefinedBy <{s}>')
+                else:
+                    serialization.append(f'    rdfs:isDefinedBy "s"')
+        if cl.related_terms:
+            if not cl.related_how:
+                related_how = 'rdfs:seeAlso'
+            else:
+                related_how = cl.related_how
+            for t in cl.related_terms.split(','):
+                serialization.append(f'    {related_how} {t}')
+        if cl.status:
+            serialization.append(f'    sw:term_status "{cl.status}"')
         code.append(serialization)
         
     for prop in properties:
@@ -413,6 +428,21 @@ def generate_rdf(classes, properties):
         if prop.rdfs_comments:
             rdfs_comments = prop.rdfs_comments.replace('"', '\\"')
             serialization.append(f'    rdfs:comment "{rdfs_comments}"')
+        if prop.source:
+            for s in prop.source.split(','):
+                if s.startswith('http'):
+                    serialization.append(f'    rdfs:isDefinedBy <{s}>')
+                else:
+                    serialization.append(f'    rdfs:isDefinedBy "s"')
+        if prop.related_terms:
+            if not prop.related_how:
+                related_how = 'rdfs:seeAlso'
+            else:
+                related_how = prop.related_how
+            for t in prop.related_terms.split(','):
+                serialization.append(f'    {related_how} {t}')
+        if prop.status:
+            serialization.append(f'    sw:term_status "{prop.status}"')
         code.append(serialization)
 
     return code
