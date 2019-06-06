@@ -16,18 +16,18 @@
       edDraftURI: "https://w3.org/ns/dpvcg",
       editors: [
         {
-          name: "Axel Polleres",
-          url: "https://www.polleres.net/",
-          company: "Vienna University of Economics and Business",
-          companyURL: "https://wu.ac.at/",
-          mailto: "axel.polleres@wu.ac.at"
-        },
-        {
           name: "Harshvardhan J. Pandit",
           url: "https://harshp.com",
           company: "Trinity College Dublin",
           companyURL: "https://tcd.ie/",
           mailto: "pandith@tcd.ie"
+        },
+        {
+          name: "Axel Polleres",
+          url: "https://www.polleres.net/",
+          company: "Vienna University of Economics and Business",
+          companyURL: "https://wu.ac.at/",
+          mailto: "axel.polleres@wu.ac.at"
         }
       ],
       authors: [
@@ -137,7 +137,7 @@
     <p style="text-align: center;">The DPV ontology is available <a href="rdf/dpv.ttl">here</a>.</p>
     <p style="text-align: center;">The namespace for terms for Legal Bases under GDPR is <code>http://www.w3.org/ns/dpv-gdpr#</code></p>
     <p style="text-align: center;">The suggested prefix for the GDPR Legal Bases namespace is <code>dpv-gdpr</code></p>
-    <p style="text-align: center;">An ontology of Legal Bases under GDPR is available <a href="rdf/LegalBases.ttl">here</a>.</p>
+    <p style="text-align: center;">An ontology of Legal Bases under GDPR is available <a href="rdf/LegalBasis.ttl">here</a>.</p>
     <p style="text-align: center;">The namespace for NACE terms is <code>http://www.w3.org/ns/dpv-nace#</code></p>
     <p style="text-align: center;">The suggested prefix for the NACE namespace is <code>dpv-nace</code></p>
     <p style="text-align: center;">An ontology of NACE taxonomy is available <a href="rdf/NACE.ttl">here</a>.</p>
@@ -145,7 +145,8 @@
   <section id="sotd">
     <!-- sotd: Status of this document -->
     <p>This document was published by the Data Privacy Vocabularies and Controls Community Group (DPVCG) as a first public working draft. If you wish to make comments regarding this document, please send them to <a href="mailto:public-dpvcg@w3.org">public-dpvcg@w3.org</a> ( archived ). All comments are welcome.</p>
-    <p>Specifically, the DPVCG kindly requests proposals to extend its initial taxonomies by additional terms , where these are missing or need refinements in order to describe specific use cases of personal data handling. In order to propose/approve new terms, please include the following in your email:
+    <p class="ednote">The DPVCG also requests participation regarding open issues and welcomes suggestions on their resolution or mitigation. The list of open issues and their discussions to date can be found at <a href="https://www.w3.org/community/dpvcg/track/issues/open">https://www.w3.org/community/dpvcg/track/issues/open</a>. Specifically, the DPVCG kindly requests proposals to extend its initial taxonomies by additional terms, where these are missing or need refinements in order to describe specific use cases of personal data handling.</p>
+    <p>In order to propose/approve new terms, please include the following in your email:</p>
       <ul>
         <li>term - suggested URI/identifier</li>
         <li>class/property - is the suggested term a class or a property?</li>
@@ -156,12 +157,10 @@
         <li>related terms - include if applicable otherwise related terms from other vocabularies and explain how they are related (e.g. skos:broader/skos:narrower, rdfs:seeAlso).</li>
         <li>source - mention where the new term originates from (e.g. from a legal regulation or from an existing ontology, if possible with a link confirming the reference.</li>
       </ul>
-    </p>
-    <p>The DPVCG also requests participation regarding open issues and welcomes suggestions on their resolution or mitigation. The list of open issues and their discussions to date can be found at <a href="https://www.w3.org/community/dpvcg/track/issues/open">https://www.w3.org/community/dpvcg/track/issues/open</a>.</p>
   </section>
   <section id="motivation">
     <h2>Introduction</h2>
-    <p>The Data Privacy Vocabulary provides terms (classes and properties) to annotate and categorize instances of legally compliant personal data handling. In particular, t he vocabulary provides extensible taxonomies of terms to describe these components, namely:</p>
+    <p>The Data Privacy Vocabulary provides terms (classes and properties) to annotate and categorize instances of legally compliant personal data handling. In particular, the vocabulary provides extensible taxonomies of terms to describe the following components:</p>
     <ul>
       <li>Personal Data Categories</li>
       <li>Purposes</li>
@@ -314,7 +313,7 @@
     </figure>
     <p>An instance of PersonalDataHandling is associated with one or more instances of Personal Data Category, Purpose, Processing, Recipient, Technical and Organisation Measures, Legal Basis, and Data Controller. The vocabulary provides relevant properties for associating each top-level concept with the PersonalDataHandling class, such as hasPurpose and hasDataSubject to associate with Purpose and Data Subject respectively.</p>
     <p>Currently, the DPVCG vocabulary does not provide any constraints on the inclusion or exclusion of concepts used to define an instance of PersonalDataHandling. Possibilities for this include use of OWL2 semantics and SHACL to define concepts mandatory in an instance of PersonalDataHandling. For example, one could define that every instance of PersonalDataHandling *MUST* have at least one Personal Data Category, Controller, Purpose, and Legal Basis.</p>
-    <p style="text-align: center;">The DPV base ontology is available separately <a href="rdf/BaseOntology.ttl">here</a>.</p>
+    <p style="text-align: center;">The DPV base ontology is available as an individual module <a href="rdf/BaseOntology.ttl">here</a>.</p>
 
 <section id="baseontology-classes">
 <h3>Classes</h3>
@@ -1205,11 +1204,8 @@ rdfs:seeAlso spl:AnyRecipient
     <p>Regulations such as the GDPR allow information about personal data used in processing to be provided either as specific instances of persona data (e.g. “John Doe”) or as categories (e.g. name). Additionally, the class SpecialCategoryOfPersonalData represents categories that are ‘special’ or ‘sensitive’ and require additional conditions as per GDPR’s Article 9.</p>
     <p>The categories defined in the personal data taxonomy can be used directly or further extended to refer to the scope of personal data used in processing. The taxonomy can be extended by subclassing the respective classes to depict specialised concepts, such as “likes regarding movies” or combined with classes to indicate specific contexts. The class DerivedPersonalData one such context where information has been derived from existing information, e.g. inference of opinions from social media. Additional classes can be defined to specify contexts such as use of machine learning, accuracy, and source.</p>
     <p>While the taxonomy is by no means exhaustive, the aim is to provide a sufficient coverage of abstract categories of personal data which can be extended using the subclass mechanism to represent concepts used in the real-world.</p>
-    <p class="note">ISSUE: the property hasPersonalDataCategory has the range PersonalDataCategory, therefore, object of any triple using this property would be inferred as an instance of PersonalDataCategory. Now, how to refer to a personal data category (class) using this property, as it would infer that class to be an instance as well as a subClass of PersonalDataCategory - is this intended and okay as we suggest the following use of personal data taxonomy:
-    <pre>dpv:hasPersonalDataCategory dpv:EmailAddress .</pre>
-    <p>Other alternative is to scope it within a blank node as:</p>
-    <pre>dpv:hasPersonalDataCategory [ a dpv:EmailAddress] .</pre>
-    <p>But this would conflate it with instances of email address e.g. <code>< me@example.com > a dpv:EmailAddress</code>.</p>
+    <p class="note">The property <code><a href="#dpv:hasPersonalDataCategory">:hasPersonalDataCategory</a></code> has the range <code><a href="#dpv:PersonalDataCategory">:PersonalDataCategory</a></code>, therefore, the object of any triple using this property would be inferred as an instance of <code><a href="#dpv:PersonalDataCategory">:PersonalDataCategory</a></code>. It is an open question for how to refer to a personal data category (class) using this property, as it would infer that class to be an instance as well as a subclass of <code><a href="#dpv:PersonalDataCategory">:PersonalDataCategory</a></code>. The question is if this is intended and whether it would be semantically correct to specify <code>dpv:hasPersonalDataCategory dpv:EmailAddress .</code>? Other alternative is to scope it within a blank node as: <code>dpv:hasPersonalDataCategory [ a dpv:EmailAddress] .</code>, whichthis would conflate it with instances of email address e.g. <code>< me@example.com > a dpv:EmailAddress</code>.</p>
+    <p style="text-align: center;">The DPV Personal Data Categories ontology is available as an individual module <a href="rdf/PersonalDataCategory.ttl">here</a>.</p>
 
 <section id="personaldatacategory-classes">
 <h3>Classes</h3>
@@ -8739,20 +8735,26 @@ rdfs:seeAlso spl:AnyRecipient
 </table>
 </section>
 </section>
+
   </section>
   <section id="vocab-purposes">
     <h2>Purposes</h2>
     <p>DPVCG at the moment defines a hierarchically organized set of generic categories of data handling purposes. Regulations such as GDPR generally require a specific purpose to be declared in an understandable manner. We therefore suggest to declare the specific context as an instance of one or several dpv:Purpose categories and to always declare the specific purpose with a human readable description (e.g. by using <code>rdfs:label</code> and <code>rdfs:comment</code>). E.g.</p>
-    <pre>:NewPurpose rdfs:subClassOf dpv:DeliveryOfGoods, dpv:FraudPreventionAndDetection ;
-    rdfs:label “New Purpose” ;
-    rdfs:comment “Does some processing for delivery of goods and fraud prevention” .
-    dpv:Purpose rdfs:subClassOf [ onProperty rdfs:comment owl: someValuesFrom … ]</pre>
+    <aside class="example" title="Creating Purposes with human-readable descriptions">
+      <pre>:NewPurpose rdfs:subClassOf dpv:DeliveryOfGoods, dpv:FraudPreventionAndDetection ;
+      rdfs:label “New Purpose” ;
+      rdfs:comment "Inteded delivery of goods with fraud prevention” .
+      dpv:Purpose rdfs:subClassOf [ onProperty rdfs:comment owl: someValuesFrom … ]</pre>
+    </aside>
     <p>Purposes can be further restricted to specific contexts using the class <code><a href="dpv:Context">dpv:Context</a></code> and the property <code><a href="dpv:hasContext">dpv:hasContext</a></code>. DPVCG provides a way to restrict purposes to a specific business sector using the class <code><a href="dpv:Sector">dpv:Sector</a></code> and the property <code><a href="dpv:hasSector">dpv:hasSector</a></code>. Hierarchies for defining business sectors include NACE (EU) ( https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2 ), NAICS (US) ( https://www.census.gov/eos/www/naics/ ), ISIC (UN) ( https://unstats.un.org/unsd/classifications ), and GICS ( https://www.msci.com/gics ). Multiple classifications can be used through mappings between sector codes such as NACE - NAICS ( https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2 ). At the moment, we recommend to specify this sector in terms of the EU NACE codes, where the codes can be specified using the URI scheme <code>dpv-nace: NACE-CODE</code>.</p>
-    <p>For example, a purpose can be restricted to the domain of scientific research using its corresponding NACE code M72, which can be represented as:</p>
-    <pre>:SomePurpose a dpv:Purpose ;
-    rdfs:label “Some Purpose” ;
-    dpv:hasSector dpv-nace:M72 .</pre>
+    <aside class="example" title="Using NACE codes to restrict Purposes">
+      <p>For example, a purpose can be restricted to the domain of scientific research using its corresponding NACE code M72, which can be represented as:</p>
+      <pre>:SomePurpose a dpv:Purpose ;
+      rdfs:label “Some Purpose” ;
+      dpv:hasSector dpv-nace:M72 .</pre>
+    </aside>
     <p>We suggest selecting the most appropriate or applicable purpose over more abstract ones by selecting or extending the relevant classes in the purpose taxonomy. For example, the purpose Optimisation can be further clarified to be optimisation for the consumer, or the controller.</p>
+    <p style="text-align: center;">The DPV Purposes ontology is available as an individual module <a href="rdf/Purpose.ttl">here</a>.</p>
 
 <section id="purpose-classes">
 <h3>Classes</h3>
@@ -10338,12 +10340,14 @@ rdfs:seeAlso spl:AnyRecipient
 </table>
 </section>
 </section>
+
   </section>
   <section id="vocab-processing-categories">
     <h2>Processing Categories</h2>
     <p>DPVCG provides a hierarchy of classes to specify the operations associated with the processing of personal data. Declaring the processing or processing categories associated with personal data is required by regulations such as the GDPR. Common processing operations such as collect, share, and use have certain constraints or obligations in GDPR, which makes it necessary to accurately represent them for personal data handling. While the term ‘use’ is liberally used to refer to a broad range of processing categories in privacy notices, we suggest to select and use appropriate terms to accurately reflect the nature of processing where applicable.</p>
     <p>We define top-level classes to represent the following broad categories of processing - Disclose, Copy, Obtain, Remove, Store, Transfer, and Transform. Each of these are then further expanded using subclasses in the taxonomy, which includes terms defined in the definition of processing in GDPR (Article 4-2).</p>
     <p>The DPVCG taxonomy provides properties with a boolean range to indicate the nature of processing regarding Systematic Monitoring, Evaluation or Scoring, Automated Decision Making, Matching or Combining, Large Scale processing, and Innovative use of new solutions - which are relevant towards interpretation of legal requirements such as GDPR compliance.</p>
+    <p style="text-align: center;">The DPV Processing ontology is available as an individual module <a href="rdf/Processing.ttl">here</a>.</p>
 
 <section id="processing-classes">
 <h3>Classes</h3>
@@ -12089,19 +12093,20 @@ rdfs:seeAlso spl:AnyRecipient
 </table>
 </section>
 </section>
+
   </section>
   <section id="vocab-technical-organisational-measures">
     <h2>Technical and Organisational Measures</h2>
-    <p>Regulations require certain technical and organisational measures to be in place depending on the context of processing involving personal data. For example, GDPR (Article 32) states implementing appropriate measures by taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing, as well as risks, rights and freedoms. Examples of measures stated in the article states include:
+    <p>Regulations require certain technical and organisational measures to be in place depending on the context of processing involving personal data. For example, GDPR (Article 32) states implementing appropriate measures by taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing, as well as risks, rights and freedoms. Examples of measures stated in the article states include:</p>
       <ol type="a">
         <li>the pseudonymisation and encryption of personal data</li>
         <li>the ability to ensure the ongoing confidentiality, integrity, availability and resilience of processing systems and services</li>
         <li>the ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident</li>
         <li>a process for regularly testing, assessing and evaluating the effectiveness of technical and organisational measures for ensuring the security of the processing</li>
       </ol>
-    </p>
     <p>To address these requirements, the DPVCG defines a hierarchical vocabulary for declaring technical and organisational measures. For any of the declared measures defined below, we provide a generic ObjectProperty (dpv:measureImplementedBy), and for the values of this attribute, we either allow a blank node with a single rdfs:comment to describe the measure, or a URI to a standard or best practice followed, i.e. a well-known identifier for that standard or a URL where the respective document describes the standard. The class StorageRestriction represents the measures used for storage of data with two specific properties provided for storage location and duration restrictions.</p>
     <p>In the future, we plan to provide a collection of URIs for identifying recommended standards and best practices. Future versions of this document may extend the vocabulary by an approved taxonomy of identifiers for such standards and best practices.</p>
+    <p style="text-align: center;">The DPV Technical and Organisational Measures ontology is available as an individual module <a href="rdf/TechnicalOrganisationalMeasures.ttl">here</a>.</p>
 
 <section id="technicalorganisationalmeasure-classes">
 <h3>Classes</h3>
@@ -13719,6 +13724,7 @@ rdfs:seeAlso spl:AnyRecipient
 </table>
 </section>
 </section>
+
   </section>
   <section id="vocab-consent">
     <h2>Consent</h2>
@@ -13726,6 +13732,7 @@ rdfs:seeAlso spl:AnyRecipient
     <p>The DPVCG consent vocabulary uses the set of properties from the base vocabulary to associate instances of dpv:Consent with Personal Data Categories, Purposes, Processing, Data Controllers, Recipients, Technical and Organisational Measures, and Data Subject. Additionally, the vocabulary also specifies properties for provision (how consent was given) and withdrawal (how consent was withdrawn) to define the provenance of consent. The expiry of consent can be specified using the property dpv:expiry, with sub-properties provided to define expiry as a temporal entity using dpv:expiryTime or as a condition/event using dpv:expiryCondition.</p>
     <p>Certain requirements for valid consent require some information to be presented before the consent is obtained in order for it to be considered an ‘informed consent’. This information and the notice it was provided in can be specified using the property dpv:consentNotice. Additionally, the property dpv:isExplicit can be used to specify if the consent is to be interpreted as ‘explicit consent’ using a boolean value (true/false).</p>
     <p>To specify consent provided by delegation, such as in the case of a parent or guardian providing consent for a child, the properties dpv:provisionByJustification and dpv:withdrawalByJustification can be used to capture the nature of such ‘delegation’, with the fields dpv:provisionBy and dpv:withdrawalBy capturing the legal entity who provided the consent. By default, the consent is assumed to have been provided by the associated Data Subject.</p>
+    <p style="text-align: center;">The DPV Consent ontology is available as an individual module <a href="rdf/Consent.ttl">here</a>.</p>
 
 <section id="consent-classes">
 <h3>Classes</h3>
@@ -13954,7 +13961,7 @@ subclass prov:Agent
 <tr>
 <tr>
 <td>is Sub-Property of:</td>
-<td><generator object document_properties.<locals>.<genexpr> at 0x7f86f69cdf48></td>
+<td><a href="#dpv:hasExpiry">dpv:hasExpiry<a></td>
 </tr>
 <tr>
 <td>Domain:</td>
@@ -13999,7 +14006,7 @@ subclass prov:Agent
 <tr>
 <tr>
 <td>is Sub-Property of:</td>
-<td><generator object document_properties.<locals>.<genexpr> at 0x7f86f697f0c0></td>
+<td><a href="#dpv:hasExpiry">dpv:hasExpiry<a></td>
 </tr>
 <tr>
 <td>Domain:</td>
@@ -14447,9 +14454,12 @@ subclass prov:Agent
 </table>
 </section>
 </section>
+
   </section>
   <section id="vocab-recipients-controllers-data-subjects">
     <h2>Recipients, Data Controllers, and Data Subjects</h2>
+
+    <p style="text-align: center;">The DPV Recipients, Data Controllers, and Data Subjects ontology is available as an individual module <a href="rdf/RecipientsDataControllersDataSubjects.ttl">here</a>.</p>
 
 <section id="recipientsdatacontrollersdatasubjects-classes">
 <h3>Classes</h3>
@@ -14549,6 +14559,7 @@ subclass prov:Agent
 </table>
 </section>
 </section>
+
   </section>    
 </body>
 </html>

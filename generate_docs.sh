@@ -18,31 +18,27 @@ declare -a Tabs=(
 # this will saved as tab_name.html
 for tab in "${Tabs[@]}"
 do
+    echo "extracting spreadsheet data for ${tab}"
     python3 ./extract_spreadsheet_data.py "$tab"
 done
 # generate combined rdf
+echo "running RDF serializer"
 python rdf_serializer.py
-# WARNING: the script no longer extracts the document from Google Docs
-# WARNING: DO NOT RUN THIS SECTION
-# WARNING: DO NOT UNCOMMENT THIS SECTION
-# # download the documentation (Google Docs file)
-# python3 extract_document.py
-# python3 clean_document.py
-# END OF WARNING
 # # results are in a temporary file /tmp/dpvcg.html
 # # insert tab files into documentation at line
 # # format for import is #import tab_name.html
+echo "Generating HTML docs"
 cp ./docs/dpvcg.html ./docs/index.html
 for tab in "${Tabs[@]}"
 do
-    sed -e "/#import ${tab}/{r docs2/${tab}.html" -e "d}" ./docs/index.html > /tmp/dpvcg.html
+    echo "Generating HTML for ${tab}"
+    sed -e "/#import ${tab}/{r docs/${tab}.html" -e "d}" ./docs/index.html > /tmp/dpvcg.html
     mv /tmp/dpvcg.html ./docs/index.html
 done
-# WARNING: NO LONGER REQUIRED
-# # clean the HTML
-# tidy -config tidy.config /tmp/dpvcg.html > docs/dpvcg.html
-# WARNING: NO LONGER REQUIRED
-# # remove temporary files
-# rm /tmp/dpvcg.html
-# # generate a nice index.html
-# tree docs -H '.' -L 1 --noreport --charset utf-8 -o docs/index.html
+# HTML spec for Legal Basis
+cp ./docs/dpvcg-legal-basis.html ./docs/dpv-gdpr.html
+echo "Generating HTML for Legal Basis"
+sed -e "/#import LegalBasis/{r docs/LegalBasis.html" -e "d}" ./docs/dpv-gdpr.html > /tmp/dpvcg.html
+mv /tmp/dpvcg.html ./docs/dpv-gdpr.html
+# END
+echo "DONE"
