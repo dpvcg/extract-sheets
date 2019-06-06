@@ -14,16 +14,19 @@ declare -a Tabs=(
     "LegalBasis"
     "Consent"
     )
-# generate a html for each file in the tab
-# this will saved as tab_name.html
-for tab in "${Tabs[@]}"
-do
-    echo "extracting spreadsheet data for ${tab}"
-    python3 ./extract_spreadsheet_data.py "$tab"
-done
-# generate combined rdf
-echo "running RDF serializer"
-python rdf_serializer.py
+if [ "$1" = "--spreadsheet" ];
+then
+    # generate a html for each file in the tab
+    # this will saved as tab_name.html
+    for tab in "${Tabs[@]}"
+    do
+        echo "extracting spreadsheet data for ${tab}"
+        python3 ./extract_spreadsheet_data.py "$tab"
+    done
+    # generate combined rdf
+    echo "running RDF serializer"
+    python rdf_serializer.py
+fi
 # # results are in a temporary file /tmp/dpvcg.html
 # # insert tab files into documentation at line
 # # format for import is #import tab_name.html
