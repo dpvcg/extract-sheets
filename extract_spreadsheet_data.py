@@ -278,13 +278,15 @@ def document_properties(classes, properties):
         if cl.super:
             filecontent.append('<tr>')
             filecontent.append('<td>is Sub-Property of:</td>')
-            scs = (f'<a href="#{sc}">{sc}<a>' for sc in cl.super.split(','))
+            scs = [f'<a href="#{sc}">{sc}<a>' for sc in cl.super.split(',')]
+            scs = ', '.join(scs)
             filecontent.append(f'<td>{scs}</td>')
             filecontent.append('</tr>')
         if cl.sub:
             filecontent.append('<tr>')
             filecontent.append('<td>is Parent Property of:</td>')
-            scs = (f'<a href="#{sc}">{sc}<a>' for sc in cl.sub.split(','))
+            scs = [f'<a href="#{sc}">{sc}<a>' for sc in cl.sub.split(',')]
+            scs = ', '.join(scs)
             filecontent.append(f'<td>{scs}</td>')
             filecontent.append('</tr>')
         if cl.domain:
