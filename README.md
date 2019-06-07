@@ -60,4 +60,5 @@ Requires `python 3.6+`; packages: `requirements.txt`
 1. run `./generate_docs.sh --spreadsheet`
 
 ### Working offline
-1. The data is saved in `pickled` folder. Use that within the scripts. (the code to automatically do that hasn't been added yet).
+1. The data is saved in `pickled` folder.
+2. run `./generate_docs.sh --spreadsheet --cache`
