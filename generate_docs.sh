@@ -20,8 +20,14 @@ then
     # this will saved as tab_name.html
     for tab in "${Tabs[@]}"
     do
-        echo "extracting spreadsheet data for ${tab}"
-        python3 ./extract_spreadsheet_data.py "$tab"
+        if [ "$2" = "--cache" ];
+        then
+            echo "extracting spreadsheet data for ${tab} using cached data"
+            python3 ./extract_spreadsheet_data.py "$tab" --cache
+        else
+            echo "extracting spreadsheet data for ${tab} from Google Sheets"
+            python3 ./extract_spreadsheet_data.py "$tab"
+        fi
     done
     # generate combined rdf
     echo "running RDF serializer"

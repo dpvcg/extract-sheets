@@ -448,21 +448,22 @@ def generate_rdf(classes, properties):
     return code
 
 
-def main():
+def main(pickled=False):
     """First argument should be the name of the Tab in the spreadsheet
     you want to parse (in quotes), e.g. 'Base Ontology'"""
-    # download data from Google Sheets using the API
-    data = download_data(SHEET)
-    # extract classes and properties from downloaded data
-    classes, properties = extract_classes_properties(data)
-    # pickles for offline working (in case SHEETS API is not working)
-    # or when there's no internet connectivity - e.g. flights
-    pickle.dump(
-        (classes, properties),
-        open(f'pickled/{SHEET}.pickle', 'wb'))
-    # uncomment this line (and comment the download_data line)
-    # to load the pickled data (cache) rather than from internet
-    # classes, properties = pickle.load(open(f'pickled/{SHEET}.pickle', 'rb'))
+    if pickled:
+        print(f'loading data from file pickled/{SHEET}.')
+        classes, properties = pickle.load(open(f'pickled/{SHEET}.pickle', 'rb'))
+    else:
+        # download data from Google Sheets using the API
+        data = download_data(SHEET)
+        # extract classes and properties from downloaded data
+        classes, properties = extract_classes_properties(data)
+        # pickles for offline working (in case SHEETS API is not working)
+        # or when there's no internet connectivity - e.g. flights
+        pickle.dump(
+            (classes, properties),
+            open(f'pickled/{SHEET}.pickle', 'wb'))
 
     # the contents are generated, stored in a list, and saved to a file
     document_classes(classes, properties)
@@ -480,4 +481,11 @@ if __name__ == '__main__':
         exit('ERROR: no ontology to parse provided')
     else:
         SHEET = sys.argv[1]
-    main()
+    # parameter 2 controls whether to use pickled data as cache
+    # if set, will load the data from the pickled files
+    # and will not download data from spreadsheet
+    pickled = False
+    if(len(sys.argv) > 2):
+        if sys.argv[2] == "--cache":
+            pickled = True
+    main(pickled)
