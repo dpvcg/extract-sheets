@@ -252,20 +252,20 @@ dpv:SellTargettedAdvertisements a rdfs:Class ;
     rdfs:subClassOf dpv:CommercialInterest ;
     sw:term_status "accepted" .
 
-dpv:ServiceOptimisation a rdfs:Class ;
+dpv:ServiceOptimization a rdfs:Class ;
     dct:created "2018-12-10"^^xsd:date ;
     dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:description "Optimisation of service or activity"@en ;
+    dct:description "Optimization of service or activity"@en ;
     rdfs:isDefinedBy <https://www.w3.org/community/dpvcg/wiki/Purposes_for_handling_Personal_Data#High-level_categories_.28to-be-discussed.29> ;
     rdfs:subClassOf dpv:Purpose ;
     sw:term_status "accepted" .
 
-dpv:ServicePersonalisation a rdfs:Class ;
+dpv:ServicePersonalization a rdfs:Class ;
     dct:created "2018-12-10"^^xsd:date ;
     dct:creator "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
     dct:date-accepted "2019-04-05"^^xsd:date ;
-    dct:description "Personalisation of service or activity for the user"@en ;
+    dct:description "Personalization of service or activity for the user"@en ;
     rdfs:isDefinedBy <https://www.w3.org/community/dpvcg/wiki/Purposes_for_handling_Personal_Data#High-level_categories_.28to-be-discussed.29> ;
     rdfs:subClassOf dpv:Purpose ;
     sw:term_status "accepted" .

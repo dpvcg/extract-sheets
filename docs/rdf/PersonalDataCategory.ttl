@@ -506,6 +506,15 @@ dpv:FamilyStructure a rdfs:Class ;
     rdfs:subClassOf dpv:Family ;
     sw:term_status "accepted" .
 
+dpv:Favorite a rdfs:Class ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:creator "Elmar; Harshvardhan J. Pandit, Fajar" ;
+    dct:date-accepted "2019-06-04"^^xsd:date ;
+    dct:description "Information about an individual's favorites"@en ;
+    rdfs:isDefinedBy <https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf> ;
+    rdfs:subClassOf dpv:Preference ;
+    sw:term_status "accepted" .
+
 dpv:FavoriteColor a rdfs:Class ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:creator "Elmar; Harshvardhan J. Pandit, Fajar" ;
@@ -531,15 +540,6 @@ dpv:FavoriteMusic a rdfs:Class ;
     dct:description "Information about an individual's favorite music."@en ;
     rdfs:isDefinedBy <https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf> ;
     rdfs:subClassOf dpv:Favorite ;
-    sw:term_status "accepted" .
-
-dpv:Favourite a rdfs:Class ;
-    dct:created "2019-04-04"^^xsd:date ;
-    dct:creator "Elmar; Harshvardhan J. Pandit, Fajar" ;
-    dct:date-accepted "2019-06-04"^^xsd:date ;
-    dct:description "Information about an individual's favourites"@en ;
-    rdfs:isDefinedBy <https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf> ;
-    rdfs:subClassOf dpv:Preference ;
     sw:term_status "accepted" .
 
 dpv:Fetish a rdfs:Class ;

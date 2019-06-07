@@ -161,7 +161,7 @@
   <section id="sotd">
     <!-- sotd: Status of this document -->
     <p>This document was published by the Data Privacy Vocabularies and Controls Community Group (DPVCG) as a first public working draft.</p>
-    <p class="ednote">The DPVCG also requests participation regarding open issues and welcomes suggestions on their resolution or mitigation. The list of open issues and their discussions to date can be found at <a href="https://www.w3.org/community/dpvcg/track/issues/open">https://www.w3.org/community/dpvcg/track/issues/open</a>. Specifically, the DPVCG kindly requests proposals to extend its initial taxonomies by additional terms, where these are missing or need refinements in order to describe specific use cases of personal data handling.</p>
+    <p class="ednote">The DPVCG also requests participation regarding open issues and welcomes suggestions on their resolution or mitigation. The list of open issues and their discussions to date can be found at <a href="https://www.w3.org/community/dpvcg/track/issues/open">https://www.w3.org/community/dpvcg/track/issues/open</a>. Specifically, the DPVCG kindly requests proposals to extend its initial taxonomies by additional terms, where these are missing or need refinements in order to describe specific use cases of personal data handling. A list of issues at the time of creating this document can be found <a href="#issues">here</a>.</p>
     <p>In order to propose/approve new terms, please include the following in your email:</p>
       <ul>
         <li>term - suggested URI/identifier</li>
@@ -592,7 +592,7 @@ rdfs:seeAlso spl:AnyData
 <tr>
 <tr>
 <td>is Parent Class of:</td>
-<td><a href="#odrl:Action">odrl:Action<a></td>
+<td><a href="odrl:Action">odrl:Action</a></td>
 </tr>
 <tr>
 <td>in Range of:</td>
@@ -1282,10 +1282,10 @@ rdfs:seeAlso spl:AnyRecipient
 <code><a href="dpv:Family">:Family</a></code> | 
 <code><a href="dpv:FamilyHealthHistory">:FamilyHealthHistory</a></code> | 
 <code><a href="dpv:FamilyStructure">:FamilyStructure</a></code> | 
+<code><a href="dpv:Favorite">:Favorite</a></code> | 
 <code><a href="dpv:FavoriteColor">:FavoriteColor</a></code> | 
 <code><a href="dpv:FavoriteFood">:FavoriteFood</a></code> | 
 <code><a href="dpv:FavoriteMusic">:FavoriteMusic</a></code> | 
-<code><a href="dpv:Favourite">:Favourite</a></code> | 
 <code><a href="dpv:Fetish">:Fetish</a></code> | 
 <code><a href="dpv:Financial">:Financial</a></code> | 
 <code><a href="dpv:FinancialAccount">:FinancialAccount</a></code> | 
@@ -1861,7 +1861,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is SubClass of:</td>
-<td><a href="#dpv:Identifying">dpv:Identifying</a> &cap; <a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData</a></td>
+<td><a href="#dpv:Identifying">dpv:Identifying</a> &cap; <a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -3652,7 +3652,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is SubClass of:</td>
-<td><a href="#dpv:Ethnicity">dpv:Ethnicity</a> &cap; <a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData</a></td>
+<td><a href="#dpv:Ethnicity">dpv:Ethnicity</a> &cap; <a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -3908,6 +3908,51 @@ rdfs:seeAlso spl:AnyRecipient
 </table>
 </section>
 <section>
+<h4 id=dpv:Favorite>Favorite</h4>
+<table class="definition">
+<tbody>
+<tr>
+<th>Class:</th>
+<th><code><a href="#dpv:Favorite">dpv:Favorite</a></code></th>
+</tr>
+<tr>
+<td>Description:</td>
+<td>Information about an individual's favorites</td>
+</tr>
+<tr>
+<tr>
+<td>is SubClass of:</td>
+<td><a href="#dpv:Preference">dpv:Preference</a></td>
+</tr>
+<tr>
+<td>Source:</td>
+<td><a href="https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf">https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf</a></td>
+</tr>
+<tr>
+<td>Status:</td>
+<td>accepted</td>
+</tr>
+<tr>
+<td>Date Created:</td>
+<td>2019-04-04</td>
+</tr>
+<tr>
+<td>Date Approved:</td>
+<td>2019-06-04</td>
+</tr>
+<tr>
+<td>Approval Resolution:</td>
+<td><a href="https://www.w3.org/2019/06/04-dpvcg-minutes.html">https://www.w3.org/2019/06/04-dpvcg-minutes.html</a></td>
+</tr>
+<tr>
+<td>Contributor:</td>
+<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+</tr>
+</tbody>
+</thead>
+</table>
+</section>
+<section>
 <h4 id=dpv:FavoriteColor>Favorite Color</h4>
 <table class="definition">
 <tbody>
@@ -4013,51 +4058,6 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <td>is SubClass of:</td>
 <td><a href="#dpv:Favorite">dpv:Favorite</a></td>
-</tr>
-<tr>
-<td>Source:</td>
-<td><a href="https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf">https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf</a></td>
-</tr>
-<tr>
-<td>Status:</td>
-<td>accepted</td>
-</tr>
-<tr>
-<td>Date Created:</td>
-<td>2019-04-04</td>
-</tr>
-<tr>
-<td>Date Approved:</td>
-<td>2019-06-04</td>
-</tr>
-<tr>
-<td>Approval Resolution:</td>
-<td><a href="https://www.w3.org/2019/06/04-dpvcg-minutes.html">https://www.w3.org/2019/06/04-dpvcg-minutes.html</a></td>
-</tr>
-<tr>
-<td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
-</tr>
-</tbody>
-</thead>
-</table>
-</section>
-<section>
-<h4 id=dpv:Favourite>Favourite</h4>
-<table class="definition">
-<tbody>
-<tr>
-<th>Class:</th>
-<th><code><a href="#dpv:Favourite">dpv:Favourite</a></code></th>
-</tr>
-<tr>
-<td>Description:</td>
-<td>Information about an individual's favourites</td>
-</tr>
-<tr>
-<tr>
-<td>is SubClass of:</td>
-<td><a href="#dpv:Preference">dpv:Preference</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -5836,7 +5836,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is SubClass of:</td>
-<td><a href="#dpv:External">dpv:External</a> &cap; <a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData</a></td>
+<td><a href="#dpv:External">dpv:External</a> &cap; <a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -6382,7 +6382,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is SubClass of:</td>
-<td><a href="#dpv:KnowledgeBelief">dpv:KnowledgeBelief</a> &cap; <a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData</a></td>
+<td><a href="#dpv:KnowledgeBelief">dpv:KnowledgeBelief</a> &cap; <a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -6703,7 +6703,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is SubClass of:</td>
-<td><a href="#dpv:PublicLife">dpv:PublicLife</a> &cap; <a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData</a></td>
+<td><a href="#dpv:PublicLife">dpv:PublicLife</a> &cap; <a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -7216,7 +7216,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is SubClass of:</td>
-<td><a href="#dpv:Ethnicity">dpv:Ethnicity</a> &cap; <a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData</a></td>
+<td><a href="#dpv:Ethnicity">dpv:Ethnicity</a> &cap; <a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -7351,7 +7351,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is SubClass of:</td>
-<td><a href="#dpv:PublicLife">dpv:PublicLife</a> &cap; <a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData</a></td>
+<td><a href="#dpv:PublicLife">dpv:PublicLife</a> &cap; <a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -7396,7 +7396,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is SubClass of:</td>
-<td><a href="#dpv:KnowledgeBelief">dpv:KnowledgeBelief</a> &cap; <a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData</a></td>
+<td><a href="#dpv:KnowledgeBelief">dpv:KnowledgeBelief</a> &cap; <a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -7711,7 +7711,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is SubClass of:</td>
-<td><a href="#dpv:External">dpv:External</a> &cap; <a href="# dpv:SpecialCategoryPersonalData"> dpv:SpecialCategoryPersonalData</a></td>
+<td><a href="#dpv:External">dpv:External</a> &cap; <a href="#dpv:SpecialCategoryPersonalData">dpv:SpecialCategoryPersonalData</a></td>
 </tr>
 <tr>
 <td>Source:</td>
@@ -8804,8 +8804,8 @@ rdfs:seeAlso spl:AnyRecipient
 <code><a href="dpv:SellInsightsFromData">:SellInsightsFromData</a></code> | 
 <code><a href="dpv:SellProductsToDataSubject">:SellProductsToDataSubject</a></code> | 
 <code><a href="dpv:SellTargettedAdvertisements">:SellTargettedAdvertisements</a></code> | 
-<code><a href="dpv:ServiceOptimisation">:ServiceOptimisation</a></code> | 
-<code><a href="dpv:ServicePersonalisation">:ServicePersonalisation</a></code> | 
+<code><a href="dpv:ServiceOptimization">:ServiceOptimization</a></code> | 
+<code><a href="dpv:ServicePersonalization">:ServicePersonalization</a></code> | 
 <code><a href="dpv:ServiceProvision">:ServiceProvision</a></code> | 
 <code><a href="dpv:UserInterfacePersonalisation">:UserInterfacePersonalisation</a></code>
 </p>
@@ -10050,16 +10050,16 @@ rdfs:seeAlso spl:AnyRecipient
 </table>
 </section>
 <section>
-<h4 id=dpv:ServiceOptimisation>Service Optimisation</h4>
+<h4 id=dpv:ServiceOptimization>Service Optimization</h4>
 <table class="definition">
 <tbody>
 <tr>
 <th>Class:</th>
-<th><code><a href="#dpv:ServiceOptimisation">dpv:ServiceOptimisation</a></code></th>
+<th><code><a href="#dpv:ServiceOptimization">dpv:ServiceOptimization</a></code></th>
 </tr>
 <tr>
 <td>Description:</td>
-<td>Optimisation of service or activity</td>
+<td>Optimization of service or activity</td>
 </tr>
 <tr>
 <tr>
@@ -10095,16 +10095,16 @@ rdfs:seeAlso spl:AnyRecipient
 </table>
 </section>
 <section>
-<h4 id=dpv:ServicePersonalisation>Service Personalisation</h4>
+<h4 id=dpv:ServicePersonalization>Service Personalization</h4>
 <table class="definition">
 <tbody>
 <tr>
 <th>Class:</th>
-<th><code><a href="#dpv:ServicePersonalisation">dpv:ServicePersonalisation</a></code></th>
+<th><code><a href="#dpv:ServicePersonalization">dpv:ServicePersonalization</a></code></th>
 </tr>
 <tr>
 <td>Description:</td>
-<td>Personalisation of service or activity for the user</td>
+<td>Personalization of service or activity for the user</td>
 </tr>
 <tr>
 <tr>
@@ -13819,7 +13819,7 @@ rdfs:seeAlso spl:AnyRecipient
 <tr>
 <tr>
 <td>is Parent Class of:</td>
-<td><a href="#dpv:DataSubject">dpv:DataSubject<a></td>
+<td><a href="#dpv:DataSubject">dpv:DataSubject</a></td>
 </tr>
 <tr>
 <td>in Range of:</td>
@@ -13979,7 +13979,7 @@ rdfs:subClassOf prov:Agent
 <tr>
 <tr>
 <td>is Sub-Property of:</td>
-<td><a href="#dpv:hasExpiry">dpv:hasExpiry<a></td>
+<td><a href="#dpv:expiry">dpv:expiry<a></td>
 </tr>
 <tr>
 <td>Domain:</td>
@@ -14024,7 +14024,7 @@ rdfs:subClassOf prov:Agent
 <tr>
 <tr>
 <td>is Sub-Property of:</td>
-<td><a href="#dpv:hasExpiry">dpv:hasExpiry<a></td>
+<td><a href="#dpv:expiry">dpv:expiry<a></td>
 </tr>
 <tr>
 <td>Domain:</td>
@@ -14618,5 +14618,39 @@ rdfs:subClassOf prov:Agent
 </section>
 
   </section>    
+  <section class="appendix" id="issues">
+    <h2>Issues</h2>
+    <h3>General</h3>
+    <ol>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/2">Do we need to formulate a notion of compliance in scope of the cg?</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/3">Do we want to revisit a definition of "gdpr rights" in our definitions and taxonomies?</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/6">Should our taxonomy include a distinction/modeling of data subjects to whom gdpr applies (eu citizens and/or locatedin eu)</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/14">We may want to add a non-normative comment in the spec that/how the taxonomy can be used as skos.</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/18">Do we need further temporal annotations for the personal data handling class?</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/19">Do we need a generic mechanism to describe conditions, constraints and restrcitions to a specific processing or data category or can we re-use odrl's mechanism?</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/20">How to express sensity of data?</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/21">Ask for specific feedback on (un)ambiguity of the term descriptions</a></li>
+    </ol>
+    <h3>Personal Data Categories</h3>
+    <ol>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/15">Personal data cateories collected might be collected in an approximate manner (e.g. age vs. age range), should we provide a mechanism in the vocabulary to distinguish this?</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/23">Should we add more subclasses to communicationrecording (e.g. distinguishing chats, personalmessaging, videocommunication, telephony, etc.) and which ones?</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/24">Should we add more specific subclasses like countryofcitizenship, countryofresidence, countryofcurrentlocation to country and which ones?</a></li>
+    </ol>
+    <h3>Purposes</h3>
+    <ol>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/10">Are there mappings to gics from other coding systems naics/nace/isic ...</a></li>
+    </ol>
+    <h3>Consent</h3>
+    <ol>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/16">Do we need to further structure consent notice?</a></li>
+    </ol>
+    <h3>Recipients, Data Controllers, Data Subjects</h3>
+    <ol>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/9">Where are categories of data controllers used, where are they useful? (cf. recital 98, 99, 100)</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/22">We ask for particular feedback on whether and how to extend the list/taxonomy of controllers and recipients in the current vocabulary.</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/25">Should we explicitly note that the the controller is always a recipient of the data, if not, do we need to make this explicit inth vocabulary, by declaring it?</a></li>
+    </ol>
+  </section>
 </body>
 </html>

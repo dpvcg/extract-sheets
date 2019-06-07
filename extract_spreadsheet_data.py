@@ -24,6 +24,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 # The ID and range of a sample spreadsheet.
 DOCID = '13d1eRXZZBCw84vYGoCJeMU08rzkkzadDzxY3n2iOi8k'
 SHEET = 'BaseOntology'
+NAMESPACE = "dpv:"
 
 # These are the columns in the sheet
 FIELDS = (
@@ -148,14 +149,32 @@ def document_classes(classes, properties):
         if cl.super:
             filecontent.append('<tr>')
             filecontent.append('<td>is SubClass of:</td>')
-            scs = [f'<a href="#{sc}">{sc}</a>' for sc in cl.super.split(',')]
+            scs = []
+            for sc in cl.super.split(','):
+                sc = sc.strip()
+                if sc.startswith(NAMESPACE):
+                    scs.append(f'<a href="#{sc}">{sc}</a>')
+                else:
+                    link = sc
+                    if sc.startswith("dpv:"):
+                        link = sc.replace("dpv:", "https://w3.org/ns/dpv#")
+                    scs.append(f'<a href="{link}">{sc}</a>')
             scs = ' &cap; '.join(scs)
             filecontent.append(f'<td>{scs}</td>')
             filecontent.append('</tr>')
         if cl.sub:
             filecontent.append('<tr>')
             filecontent.append('<td>is Parent Class of:</td>')
-            scs = [f'<a href="#{sc}">{sc}<a>' for sc in cl.sub.split(',')]
+            scs = []
+            for sc in cl.sub.split(','):
+                sc = sc.strip()
+                if sc.startswith(NAMESPACE):
+                    scs.append(f'<a href="#{sc}">{sc}</a>')
+                else:
+                    link = sc
+                    if sc.startswith("dpv:"):
+                        link = sc.replace("dpv:", "https://w3.org/ns/dpv#")
+                    scs.append(f'<a href="{link}">{sc}</a>')
             scs = ', '.join(scs)
             filecontent.append(f'<td>{scs}</td>')
             filecontent.append('</tr>')
@@ -481,6 +500,8 @@ if __name__ == '__main__':
         exit('ERROR: no ontology to parse provided')
     else:
         SHEET = sys.argv[1]
+    if SHEET == "LegalBasis":
+        NAMESPACE = "dpv-gdpr:"
     # parameter 2 controls whether to use pickled data as cache
     # if set, will load the data from the pickled files
     # and will not download data from spreadsheet
