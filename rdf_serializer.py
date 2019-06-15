@@ -45,7 +45,9 @@ def validate_rdf(vocab):
     g = Graph()
     g.parse(f'./docs/rdf/{vocab}.ttl', format='ttl')
     g.serialize(f'./docs/rdf/{vocab}.ttl', format='ttl')
-    # TODO: add more formats
+    g.serialize(f'./docs/rdf/{vocab}.n3', format='n3')
+    g.serialize(f'./docs/rdf/{vocab}.xml', format='pretty-xml')
+    g.serialize(f'./docs/rdf/{vocab}.jsonld', format='json-ld')
 
 
 def detect_prefixes(code):
@@ -81,8 +83,11 @@ def combine_graphs(vocabs=VOCABS):
     vocabs.remove('LegalBasis')
     for vocab in vocabs:
         g.parse(f'./docs/rdf/{vocab}.ttl', format='ttl')
+        validate_rdf(vocab)
     g.serialize(f'./docs/rdf/dpv.ttl', format='ttl')
-    # TODO: add more formats
+    g.serialize(f'./docs/rdf/dpv.n3', format='n3')
+    g.serialize(f'./docs/rdf/dpv.xml', format='pretty-xml')
+    g.serialize(f'./docs/rdf/dpv.jsonld', format='json-ld')
 
 
 if __name__ == '__main__':
