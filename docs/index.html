@@ -3,8 +3,8 @@
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <title>DPVCG Vocabulary</title>
-  <script 
-  src='https://www.w3.org/Tools/respec/respec-w3c-common' 
+  <script
+  src='https://www.w3.org/Tools/respec/respec-w3c-common'
   class='remove'></script>
   <script class='remove'>
     var respecConfig = {
@@ -153,7 +153,7 @@
 </head>
 <body>
   <section id="abstract">
-    <p>The Data Privacy Vocabulary provides terms (classes and properties) to annotate and categorize instances of legally compliant personal data handling according to the EU General Data Protection Regulation. This scope could be extended by later versions to other data and privacy protection regulations. The vocabulary provides terms to describe which personal data Categories are undergoing a specified kind of processing by a specific data controller and/or transferred to some recipient for a particular purpose , based on a specific legal ground (e.g. consent, or other legal grounds such as legitimate interest, etc.), with specified technical and organisational measures and restrictions (e.g. storage locations and storage durations) in place.</p>
+    <p>The Data Privacy Vocabulary provides terms (classes and properties) to annotate and categorize instances of legally compliant personal data handling according to the EU General Data Protection Regulation. This scope could be extended by later versions to other data and privacy protection regulations. The vocabulary provides terms to describe which personal data Categories are undergoing a specified kind of processing by a specific data controller and/or transferred to some recipient for a particular purpose, based on a specific legal ground (e.g., consent, or other legal grounds such as legitimate interest, etc.), with specified technical and organisational measures and restrictions (e.g., storage locations and storage durations) in place.</p>
     <p style="text-align: center;">The namespace for DPV terms is <code>http://www.w3.org/ns/dpv#</code></p>
     <p style="text-align: center;">The suggested prefix for the DPV namespace is <code>dpv</code></p>
     <p style="text-align: center;">The DPV ontology is available <a href="rdf/dpv.ttl">here</a>.</p>
@@ -165,7 +165,7 @@
     <section class="ednote">
       <h5>Participation</h5>
       <p>The DPVCG requests participation regarding open issues and welcomes suggestions on their resolution or mitigation. The list of open issues and their discussions to date can be found at <a href="https://www.w3.org/community/dpvcg/track/issues/open">https://www.w3.org/community/dpvcg/track/issues/open</a>. Specifically, the DPVCG kindly requests proposals to extend its initial taxonomies by additional terms, where these are missing or need refinements in order to describe specific use cases of personal data handling. A list of issues at the time of creating this document can be found <a href="#issues">here</a>. Other forms of participation such as comments and feedback are also welcome.</p>
-      <p>While we welcome participation via any and all mediums - e.g. via <a href="https://github.com/dpvcg/dpv">Github</a> pull requests or issues, emails, papers, or reports - the formal resolution of contributions will be done via the DPVCG meeting calls and mailing lists. We therefore would suggest submitting submissions there once they reach the stage for formal approval.</p>
+      <p>While we welcome participation via any and all mediums - e.g., via <a href="https://github.com/dpvcg/dpv">Github</a> pull requests or issues, emails, papers, or reports - the formal resolution of contributions will be done via the DPVCG meeting calls and mailing lists. We therefore would suggest submitting submissions there once they reach the stage for formal approval.</p>
       <p><b>Interested participants should submit their suggestions, feedbacks, and comments by 31<sup>st</sup> July 2019 in order to have them formally reviewed according to the scheduled timeline.</b></p>
       <p>In order to propose/approve new terms, please include the following:</p>
         <ul>
@@ -175,8 +175,8 @@
           <li>domain/range - for properties include information about domain and range</li>
           <li>superclasses/subclasses - for classes include (if applicable) information about known sub/super-classes.</li>
           <li>superproperties/subproperties - for properties include (if applicable) information about known sub/super-properties.</li>
-          <li>related terms - include if applicable otherwise related terms from other vocabularies and explain how they are related (e.g. skos:broader/skos:narrower, rdfs:seeAlso).</li>
-          <li>source - mention where the new term originates from (e.g. from a legal regulation or from an existing ontology, if possible with a link confirming the reference.</li>
+          <li>related terms - include if applicable otherwise related terms from other vocabularies and explain how they are related (e.g., skos:broader/skos:narrower, rdfs:seeAlso).</li>
+          <li>source - mention where the new term originates from (e.g., from a legal regulation or from an existing ontology, if possible with a link confirming the reference.</li>
         </ul>
     </section>
   </section>
@@ -192,14 +192,14 @@
       <li>Consent</li>
       <li>Recipients, Data Controllers, Data Subjects</li>
     </ul>
-    <p>These terms are intended to annotate Legal Personal Data Handling in a machine-readable fashion, by specifying which personal data categories are undergoing a specific kind of processing, by a specific data controller and/or shared with some recipient for a particular purpose , based on a specific legal ground (e.g. consent or legitimate interest), with specific technical and organisational measures and restrictions (e.g. storage location and storage duration) in place.</p>
+    <p>These terms are intended to annotate Legal Personal Data Handling in a machine-readable fashion, by specifying which personal data categories are undergoing a specific kind of processing, by a specific data controller and/or shared with some recipient for a particular purpose, based on a specific legal ground (e.g., consent or legitimate interest), with specific technical and organisational measures and restrictions (e.g., storage location and storage duration) in place.</p>
     <p class="note">As the Legal Bases are dependant on legal jurisdictions, we provide the GDPR legal bases (based on Article 6 and Article 9) under a separate aligned vocabulary <a href="https://w3.org/ns/dpv-gdpr">here</a>.</p>
     <p>Descriptions and respective annotations of Legal Personal Data Handling could be used for example to:</p>
     <ol start="1">
-      <li>declare personal data handling policies ,</li>
+      <li>declare personal data handling policies,</li>
       <li>declare consent for a personal data handling policy (by a specific consent action),</li>
       <li>transparently log/document specific personal data handling actions by a data controller, and finally</li>
-      <li>to support automated checking of legal compliances of data handling ex ante (before data handling is actually performed), or ex post (i.e. check compliance to a certain policy and/or consent )</li>
+      <li>to support automated checking of legal compliances of data handling ex ante (before data handling is actually performed), or ex-post (i.e. check compliance to a certain policy and/or consent)</li>
     </ol>
   </section>
   <section id="namespaces">
@@ -354,7 +354,7 @@
   </section>
   <section id="vocab-base">
     <h2>Base Vocabulary</h2>
-    <p>The ‘Base Vocabulary’ describes the top-level classes defining a policy for legal personal data handling. Classes and properties for each top-level class are further elaborated using sub-vocabularies, e.g. the Personal Data taxonomy. While all concepts within the vocabulary share a single namespace, the modular approach makes it possible to use the sub-vocabularies without the <code><a href="#dpv:PersonalDataHandling">:PersonalDataHandling</a></code> class, for example to refer only to purposes. Exceptions to this are the NACE purpose taxonomy extending the <code><a href="#dpv:Sector">:Sector</a></code> concept in Purposes vocabulary, and the GDPR legal bases taxonomy extending the top-level <code><a href="#dpv:LegalBasis">:LegalBasis</a></code> class, which are provided under a separate namespace to indicate their specialisation.</p>
+    <p>The ‘Base Vocabulary’ describes the top-level classes defining a policy for legal personal data handling. Classes and properties for each top-level class are further elaborated using sub-vocabularies, e.g., the Personal Data taxonomy. While all concepts within the vocabulary share a single namespace, the modular approach makes it possible to use the sub-vocabularies without the <code><a href="#dpv:PersonalDataHandling">:PersonalDataHandling</a></code> class, for example to refer only to purposes. Exceptions to this are the NACE purpose taxonomy extending the <code><a href="#dpv:Sector">:Sector</a></code> concept in the Purposes vocabulary, and the GDPR legal bases taxonomy extending the top-level <code><a href="#dpv:LegalBasis">:LegalBasis</a></code> class, which are provided under a separate namespace to indicate their specialisation.</p>
     <figure>
       <img title="DPV Base Vocabulary" alt="DPV base vocabulary" src="./diagrams/personaldatahandling.png">
       <figcaption>Base Vocabulary</figcaption>
@@ -366,14 +366,14 @@
 <section id="baseontology-classes">
 <h3>Classes</h3>
 <p>
-<code><a href="dpv:DataController">:DataController</a></code> | 
-<code><a href="dpv:DataSubject">:DataSubject</a></code> | 
-<code><a href="dpv:LegalBasis">:LegalBasis</a></code> | 
-<code><a href="dpv:PersonalDataCategory">:PersonalDataCategory</a></code> | 
-<code><a href="dpv:PersonalDataHandling">:PersonalDataHandling</a></code> | 
-<code><a href="dpv:Processing">:Processing</a></code> | 
-<code><a href="dpv:Purpose">:Purpose</a></code> | 
-<code><a href="dpv:Recipient">:Recipient</a></code> | 
+<code><a href="dpv:DataController">:DataController</a></code> |
+<code><a href="dpv:DataSubject">:DataSubject</a></code> |
+<code><a href="dpv:LegalBasis">:LegalBasis</a></code> |
+<code><a href="dpv:PersonalDataCategory">:PersonalDataCategory</a></code> |
+<code><a href="dpv:PersonalDataHandling">:PersonalDataHandling</a></code> |
+<code><a href="dpv:Processing">:Processing</a></code> |
+<code><a href="dpv:Purpose">:Purpose</a></code> |
+<code><a href="dpv:Recipient">:Recipient</a></code> |
 <code><a href="dpv:TechnicalOrganisationalMeasure">:TechnicalOrganisationalMeasure</a></code>
 </p>
 
@@ -477,7 +477,7 @@
 </tr>
 <tr>
 <td>Description:</td>
-<td>A particular legal Basis, which permits personal Data handling (e.g. Consent, etc.)</td>
+<td>A particular legal Basis, which permits personal Data handling (e.g., Consent, etc.)</td>
 </tr>
 <tr>
 <tr>
@@ -577,7 +577,7 @@ rdfs:seeAlso spl:AnyData
 </tr>
 <tr>
 <td>Description:</td>
-<td>Top Class to describe a concrete instance of legal personal Data Handling of a defined class of Data Subjects, meaning that a personal Data Category is undergoing specified processing by a specific data controller and/or transferred to some recipient for a particular purpose, based on a specific legal ground, with specified security measures and restrictions (e.g. storage locations and storage durations).</td>
+<td>Top Class to describe a concrete instance of legal personal Data Handling of a defined class of Data Subjects, meaning that a personal Data Category is undergoing specified processing by a specific data controller and/or transferred to some recipient for a particular purpose, based on a specific legal ground, with specified security measures and restrictions (e.g., storage locations and storage durations).</td>
 </tr>
 <tr>
 <tr>
@@ -814,13 +814,13 @@ rdfs:seeAlso spl:AnyRecipient
 <section id="baseontology-properties">
 <h3>Properties</h3>
 <p>
-<code><a href="dpv:hasDataController">:hasDataController</a></code> | 
-<code><a href="dpv:hasDataSubject">:hasDataSubject</a></code> | 
-<code><a href="dpv:hasLegalBasis">:hasLegalBasis</a></code> | 
-<code><a href="dpv:hasPersonalDataCategory">:hasPersonalDataCategory</a></code> | 
-<code><a href="dpv:hasProcessing">:hasProcessing</a></code> | 
-<code><a href="dpv:hasPurpose">:hasPurpose</a></code> | 
-<code><a href="dpv:hasRecipient">:hasRecipient</a></code> | 
+<code><a href="dpv:hasDataController">:hasDataController</a></code> |
+<code><a href="dpv:hasDataSubject">:hasDataSubject</a></code> |
+<code><a href="dpv:hasLegalBasis">:hasLegalBasis</a></code> |
+<code><a href="dpv:hasPersonalDataCategory">:hasPersonalDataCategory</a></code> |
+<code><a href="dpv:hasProcessing">:hasProcessing</a></code> |
+<code><a href="dpv:hasPurpose">:hasPurpose</a></code> |
+<code><a href="dpv:hasRecipient">:hasRecipient</a></code> |
 <code><a href="dpv:hasTechnicalOrganisationalMeasure">:hasTechnicalOrganisationalMeasure</a></code>
 </p>
 
@@ -1249,175 +1249,175 @@ rdfs:seeAlso spl:AnyRecipient
   <section id="vocab-personal-data-categories">
     <h2>Personal Data Categories</h2>
     <p>DPVCG provides broad top-level personal data categories adapted from the taxonomy provided by EnterPrivacy. The top-level concepts in this taxonomy refer to the nature of information (financial, social, tracking) and to its inherent source (internal, external). Each top-level concept is represented in the DPVCG vocabulary as a Class, and is further elaborated by subclasses for referring to specific categories of information - such as preferences or demographics.</p>
-    <p>Regulations such as the GDPR allow information about personal data used in processing to be provided either as specific instances of persona data (e.g. “John Doe”) or as categories (e.g. name). Additionally, the class SpecialCategoryOfPersonalData represents categories that are ‘special’ or ‘sensitive’ and require additional conditions as per GDPR’s Article 9.</p>
-    <p>The categories defined in the personal data taxonomy can be used directly or further extended to refer to the scope of personal data used in processing. The taxonomy can be extended by subclassing the respective classes to depict specialised concepts, such as “likes regarding movies” or combined with classes to indicate specific contexts. The class DerivedPersonalData one such context where information has been derived from existing information, e.g. inference of opinions from social media. Additional classes can be defined to specify contexts such as use of machine learning, accuracy, and source.</p>
+    <p>Regulations such as the GDPR allow information about personal data used in processing to be provided either as specific instances of persona data (e.g., “John Doe”) or as categories (e.g., name). Additionally, the class SpecialCategoryOfPersonalData represents categories that are ‘special’ or ‘sensitive’ and require additional conditions as per GDPR’s Article 9.</p>
+    <p>The categories defined in the personal data taxonomy can be used directly or further extended to refer to the scope of personal data used in processing. The taxonomy can be extended by subclassing the respective classes to depict specialised concepts, such as “likes regarding movies” or combined with classes to indicate specific contexts. The class DerivedPersonalData one such context where information has been derived from existing information, e.g., inference of opinions from social media. Additional classes can be defined to specify contexts such as use of machine learning, accuracy, and source.</p>
     <p>While the taxonomy is by no means exhaustive, the aim is to provide a sufficient coverage of abstract categories of personal data which can be extended using the subclass mechanism to represent concepts used in the real-world.</p>
-    <p class="note">The property <code><a href="#dpv:hasPersonalDataCategory">:hasPersonalDataCategory</a></code> has the range <code><a href="#dpv:PersonalDataCategory">:PersonalDataCategory</a></code>, therefore, the object of any triple using this property would be inferred as an instance of <code><a href="#dpv:PersonalDataCategory">:PersonalDataCategory</a></code>. It is an open question for how to refer to a personal data category (class) using this property, as it would infer that class to be an instance as well as a subclass of <code><a href="#dpv:PersonalDataCategory">:PersonalDataCategory</a></code>. The question is if this is intended and whether it would be semantically correct to specify <code>dpv:hasPersonalDataCategory dpv:EmailAddress .</code>? Other alternative is to scope it within a blank node as: <code>dpv:hasPersonalDataCategory [ a dpv:EmailAddress] .</code>, whichthis would conflate it with instances of email address e.g. <code>< me@example.com > a dpv:EmailAddress</code>.</p>
+    <p class="note">The property <code><a href="#dpv:hasPersonalDataCategory">:hasPersonalDataCategory</a></code> has the range <code><a href="#dpv:PersonalDataCategory">:PersonalDataCategory</a></code>, therefore, the object of any triple using this property would be inferred as an instance of <code><a href="#dpv:PersonalDataCategory">:PersonalDataCategory</a></code>. It is an open question for how to refer to a personal data category (class) using this property, as it would infer that class to be an instance as well as a subclass of <code><a href="#dpv:PersonalDataCategory">:PersonalDataCategory</a></code>. The question is if this is intended and whether it would be semantically correct to specify <code>dpv:hasPersonalDataCategory dpv:EmailAddress .</code>? Other alternative is to scope it within a blank node as: <code>dpv:hasPersonalDataCategory [ a dpv:EmailAddress] .</code>, whichthis would conflate it with instances of email address e.g., <code>< me@example.com > a dpv:EmailAddress</code>.</p>
     <p style="text-align: center;">The DPV Personal Data Categories ontology is available as an individual module <a href="https://github.com/dpvcg/dpv">here</a>.</p>
 
 <section id="personaldatacategory-classes">
 <h3>Classes</h3>
 <p>
-<code><a href="dpv:Accent">:Accent</a></code> | 
-<code><a href="dpv:AccountIdentifier">:AccountIdentifier</a></code> | 
-<code><a href="dpv:Acquantaince">:Acquantaince</a></code> | 
-<code><a href="dpv:Age">:Age</a></code> | 
-<code><a href="dpv:ApartmentOwned">:ApartmentOwned</a></code> | 
-<code><a href="dpv:Association">:Association</a></code> | 
-<code><a href="dpv:Attitude">:Attitude</a></code> | 
-<code><a href="dpv:Authenticating">:Authenticating</a></code> | 
-<code><a href="dpv:BankAccount">:BankAccount</a></code> | 
-<code><a href="dpv:Behavioral">:Behavioral</a></code> | 
-<code><a href="dpv:Biometric">:Biometric</a></code> | 
-<code><a href="dpv:BloodType">:BloodType</a></code> | 
-<code><a href="dpv:BrowserFingerprint">:BrowserFingerprint</a></code> | 
-<code><a href="dpv:BrowsingBehavior">:BrowsingBehavior</a></code> | 
-<code><a href="dpv:CallLog">:CallLog</a></code> | 
-<code><a href="dpv:CarOwned">:CarOwned</a></code> | 
-<code><a href="dpv:Certification">:Certification</a></code> | 
-<code><a href="dpv:Character">:Character</a></code> | 
-<code><a href="dpv:Communication">:Communication</a></code> | 
-<code><a href="dpv:CommunicationsMetadata">:CommunicationsMetadata</a></code> | 
-<code><a href="dpv:Connection">:Connection</a></code> | 
-<code><a href="dpv:Contact">:Contact</a></code> | 
-<code><a href="dpv:Country">:Country</a></code> | 
-<code><a href="dpv:Credit">:Credit</a></code> | 
-<code><a href="dpv:Credit">:Credit</a></code> | 
-<code><a href="dpv:CreditCapacity">:CreditCapacity</a></code> | 
-<code><a href="dpv:CreditCardNumber">:CreditCardNumber</a></code> | 
-<code><a href="dpv:CreditRecord">:CreditRecord</a></code> | 
-<code><a href="dpv:CreditScore">:CreditScore</a></code> | 
-<code><a href="dpv:CreditStanding">:CreditStanding</a></code> | 
-<code><a href="dpv:CreditWorthiness">:CreditWorthiness</a></code> | 
-<code><a href="dpv:Criminal">:Criminal</a></code> | 
-<code><a href="dpv:CriminalCharge">:CriminalCharge</a></code> | 
-<code><a href="dpv:CriminalConviction">:CriminalConviction</a></code> | 
-<code><a href="dpv:CriminalPardon">:CriminalPardon</a></code> | 
-<code><a href="dpv:DNACode">:DNACode</a></code> | 
-<code><a href="dpv:Demeanor">:Demeanor</a></code> | 
-<code><a href="dpv:Demographic">:Demographic</a></code> | 
-<code><a href="dpv:DerivedPersonalData">:DerivedPersonalData</a></code> | 
-<code><a href="dpv:DeviceBased">:DeviceBased</a></code> | 
-<code><a href="dpv:Dialect">:Dialect</a></code> | 
-<code><a href="dpv:Disability">:Disability</a></code> | 
-<code><a href="dpv:DisciplinaryAction">:DisciplinaryAction</a></code> | 
-<code><a href="dpv:Dislike">:Dislike</a></code> | 
-<code><a href="dpv:Divorce">:Divorce</a></code> | 
-<code><a href="dpv:DrugTestResult">:DrugTestResult</a></code> | 
-<code><a href="dpv:EmailAddress">:EmailAddress</a></code> | 
-<code><a href="dpv:EmailContent">:EmailContent</a></code> | 
-<code><a href="dpv:EmploymentHistory">:EmploymentHistory</a></code> | 
-<code><a href="dpv:EthnicOrigin">:EthnicOrigin</a></code> | 
-<code><a href="dpv:Ethnicity">:Ethnicity</a></code> | 
-<code><a href="dpv:External">:External</a></code> | 
-<code><a href="dpv:Family">:Family</a></code> | 
-<code><a href="dpv:FamilyHealthHistory">:FamilyHealthHistory</a></code> | 
-<code><a href="dpv:FamilyStructure">:FamilyStructure</a></code> | 
-<code><a href="dpv:Favorite">:Favorite</a></code> | 
-<code><a href="dpv:FavoriteColor">:FavoriteColor</a></code> | 
-<code><a href="dpv:FavoriteFood">:FavoriteFood</a></code> | 
-<code><a href="dpv:FavoriteMusic">:FavoriteMusic</a></code> | 
-<code><a href="dpv:Fetish">:Fetish</a></code> | 
-<code><a href="dpv:Financial">:Financial</a></code> | 
-<code><a href="dpv:FinancialAccount">:FinancialAccount</a></code> | 
-<code><a href="dpv:FinancialAccountNumber">:FinancialAccountNumber</a></code> | 
-<code><a href="dpv:Fingerprint">:Fingerprint</a></code> | 
-<code><a href="dpv:Friend">:Friend</a></code> | 
-<code><a href="dpv:GPSCoordinate">:GPSCoordinate</a></code> | 
-<code><a href="dpv:Gender">:Gender</a></code> | 
-<code><a href="dpv:GeneralReputation">:GeneralReputation</a></code> | 
-<code><a href="dpv:Geographic">:Geographic</a></code> | 
-<code><a href="dpv:GroupMembership">:GroupMembership</a></code> | 
-<code><a href="dpv:HairColor">:HairColor</a></code> | 
-<code><a href="dpv:Health">:Health</a></code> | 
-<code><a href="dpv:HealthHistory">:HealthHistory</a></code> | 
-<code><a href="dpv:HealthRecord">:HealthRecord</a></code> | 
-<code><a href="dpv:Height">:Height</a></code> | 
-<code><a href="dpv:Historical">:Historical</a></code> | 
-<code><a href="dpv:HouseOwned">:HouseOwned</a></code> | 
-<code><a href="dpv:IPAddress">:IPAddress</a></code> | 
-<code><a href="dpv:Identifying">:Identifying</a></code> | 
-<code><a href="dpv:Income">:Income</a></code> | 
-<code><a href="dpv:IncomeBracket">:IncomeBracket</a></code> | 
-<code><a href="dpv:IndividualHealthHistory">:IndividualHealthHistory</a></code> | 
-<code><a href="dpv:Intention">:Intention</a></code> | 
-<code><a href="dpv:Interaction">:Interaction</a></code> | 
-<code><a href="dpv:Interest">:Interest</a></code> | 
-<code><a href="dpv:Internal">:Internal</a></code> | 
-<code><a href="dpv:Job">:Job</a></code> | 
-<code><a href="dpv:KnowledgeBelief">:KnowledgeBelief</a></code> | 
-<code><a href="dpv:Language">:Language</a></code> | 
-<code><a href="dpv:LifeHistory">:LifeHistory</a></code> | 
-<code><a href="dpv:Like">:Like</a></code> | 
-<code><a href="dpv:LinkClicked">:LinkClicked</a></code> | 
-<code><a href="dpv:LoanRecord">:LoanRecord</a></code> | 
-<code><a href="dpv:Location">:Location</a></code> | 
-<code><a href="dpv:MACAddress">:MACAddress</a></code> | 
-<code><a href="dpv:MaritalStatus">:MaritalStatus</a></code> | 
-<code><a href="dpv:Marriage">:Marriage</a></code> | 
-<code><a href="dpv:MedicalHealth">:MedicalHealth</a></code> | 
-<code><a href="dpv:MentalHealth">:MentalHealth</a></code> | 
-<code><a href="dpv:Name">:Name</a></code> | 
-<code><a href="dpv:OfficialID">:OfficialID</a></code> | 
-<code><a href="dpv:Offspring">:Offspring</a></code> | 
-<code><a href="dpv:Opinion">:Opinion</a></code> | 
-<code><a href="dpv:Ownership">:Ownership</a></code> | 
-<code><a href="dpv:PINCode">:PINCode</a></code> | 
-<code><a href="dpv:Parent">:Parent</a></code> | 
-<code><a href="dpv:Password">:Password</a></code> | 
-<code><a href="dpv:PersonalPossession">:PersonalPossession</a></code> | 
-<code><a href="dpv:Personality">:Personality</a></code> | 
-<code><a href="dpv:PhilosophicalBelief">:PhilosophicalBelief</a></code> | 
-<code><a href="dpv:PhysicalAddress">:PhysicalAddress</a></code> | 
-<code><a href="dpv:PhysicalCharacteristic">:PhysicalCharacteristic</a></code> | 
-<code><a href="dpv:PhysicalHealth">:PhysicalHealth</a></code> | 
-<code><a href="dpv:PhysicalTrait">:PhysicalTrait</a></code> | 
-<code><a href="dpv:Picture">:Picture</a></code> | 
-<code><a href="dpv:Piercing">:Piercing</a></code> | 
-<code><a href="dpv:PoliticalAffiliation">:PoliticalAffiliation</a></code> | 
-<code><a href="dpv:Preference">:Preference</a></code> | 
-<code><a href="dpv:Prescription">:Prescription</a></code> | 
-<code><a href="dpv:PrivacyPreference">:PrivacyPreference</a></code> | 
-<code><a href="dpv:Proclivitie">:Proclivitie</a></code> | 
-<code><a href="dpv:Professional">:Professional</a></code> | 
-<code><a href="dpv:ProfessionalEvaluation">:ProfessionalEvaluation</a></code> | 
-<code><a href="dpv:ProfessionalInterview">:ProfessionalInterview</a></code> | 
-<code><a href="dpv:PublicLife">:PublicLife</a></code> | 
-<code><a href="dpv:Purchase">:Purchase</a></code> | 
-<code><a href="dpv:PurchasesAndSpendingHabit">:PurchasesAndSpendingHabit</a></code> | 
-<code><a href="dpv:Race">:Race</a></code> | 
-<code><a href="dpv:Reference">:Reference</a></code> | 
-<code><a href="dpv:Relationship">:Relationship</a></code> | 
-<code><a href="dpv:Religion">:Religion</a></code> | 
-<code><a href="dpv:ReligiousBelief">:ReligiousBelief</a></code> | 
-<code><a href="dpv:Retina">:Retina</a></code> | 
-<code><a href="dpv:RoomNumber">:RoomNumber</a></code> | 
-<code><a href="dpv:Salary">:Salary</a></code> | 
-<code><a href="dpv:Sale">:Sale</a></code> | 
-<code><a href="dpv:School">:School</a></code> | 
-<code><a href="dpv:SecretText">:SecretText</a></code> | 
-<code><a href="dpv:Sexual">:Sexual</a></code> | 
-<code><a href="dpv:SexualHistory">:SexualHistory</a></code> | 
-<code><a href="dpv:SexualPreference">:SexualPreference</a></code> | 
-<code><a href="dpv:Sibling">:Sibling</a></code> | 
-<code><a href="dpv:SkinTone">:SkinTone</a></code> | 
-<code><a href="dpv:Social">:Social</a></code> | 
-<code><a href="dpv:SocialMediaCommunication">:SocialMediaCommunication</a></code> | 
-<code><a href="dpv:SocialNetwork">:SocialNetwork</a></code> | 
-<code><a href="dpv:SocialStatus">:SocialStatus</a></code> | 
-<code><a href="dpv:SpecialCategoryPersonalData">:SpecialCategoryPersonalData</a></code> | 
-<code><a href="dpv:Tattoo">:Tattoo</a></code> | 
-<code><a href="dpv:Tax">:Tax</a></code> | 
-<code><a href="dpv:TelephoneNumber">:TelephoneNumber</a></code> | 
-<code><a href="dpv:Thought">:Thought</a></code> | 
-<code><a href="dpv:Tracking">:Tracking</a></code> | 
-<code><a href="dpv:Transaction">:Transaction</a></code> | 
-<code><a href="dpv:Transactional">:Transactional</a></code> | 
-<code><a href="dpv:UID">:UID</a></code> | 
-<code><a href="dpv:Username">:Username</a></code> | 
-<code><a href="dpv:VoiceCommunicationRecording">:VoiceCommunicationRecording</a></code> | 
-<code><a href="dpv:VoiceMail">:VoiceMail</a></code> | 
-<code><a href="dpv:Weight">:Weight</a></code> | 
+<code><a href="dpv:Accent">:Accent</a></code> |
+<code><a href="dpv:AccountIdentifier">:AccountIdentifier</a></code> |
+<code><a href="dpv:Acquantaince">:Acquantaince</a></code> |
+<code><a href="dpv:Age">:Age</a></code> |
+<code><a href="dpv:ApartmentOwned">:ApartmentOwned</a></code> |
+<code><a href="dpv:Association">:Association</a></code> |
+<code><a href="dpv:Attitude">:Attitude</a></code> |
+<code><a href="dpv:Authenticating">:Authenticating</a></code> |
+<code><a href="dpv:BankAccount">:BankAccount</a></code> |
+<code><a href="dpv:Behavioral">:Behavioral</a></code> |
+<code><a href="dpv:Biometric">:Biometric</a></code> |
+<code><a href="dpv:BloodType">:BloodType</a></code> |
+<code><a href="dpv:BrowserFingerprint">:BrowserFingerprint</a></code> |
+<code><a href="dpv:BrowsingBehavior">:BrowsingBehavior</a></code> |
+<code><a href="dpv:CallLog">:CallLog</a></code> |
+<code><a href="dpv:CarOwned">:CarOwned</a></code> |
+<code><a href="dpv:Certification">:Certification</a></code> |
+<code><a href="dpv:Character">:Character</a></code> |
+<code><a href="dpv:Communication">:Communication</a></code> |
+<code><a href="dpv:CommunicationsMetadata">:CommunicationsMetadata</a></code> |
+<code><a href="dpv:Connection">:Connection</a></code> |
+<code><a href="dpv:Contact">:Contact</a></code> |
+<code><a href="dpv:Country">:Country</a></code> |
+<code><a href="dpv:Credit">:Credit</a></code> |
+<code><a href="dpv:Credit">:Credit</a></code> |
+<code><a href="dpv:CreditCapacity">:CreditCapacity</a></code> |
+<code><a href="dpv:CreditCardNumber">:CreditCardNumber</a></code> |
+<code><a href="dpv:CreditRecord">:CreditRecord</a></code> |
+<code><a href="dpv:CreditScore">:CreditScore</a></code> |
+<code><a href="dpv:CreditStanding">:CreditStanding</a></code> |
+<code><a href="dpv:CreditWorthiness">:CreditWorthiness</a></code> |
+<code><a href="dpv:Criminal">:Criminal</a></code> |
+<code><a href="dpv:CriminalCharge">:CriminalCharge</a></code> |
+<code><a href="dpv:CriminalConviction">:CriminalConviction</a></code> |
+<code><a href="dpv:CriminalPardon">:CriminalPardon</a></code> |
+<code><a href="dpv:DNACode">:DNACode</a></code> |
+<code><a href="dpv:Demeanor">:Demeanor</a></code> |
+<code><a href="dpv:Demographic">:Demographic</a></code> |
+<code><a href="dpv:DerivedPersonalData">:DerivedPersonalData</a></code> |
+<code><a href="dpv:DeviceBased">:DeviceBased</a></code> |
+<code><a href="dpv:Dialect">:Dialect</a></code> |
+<code><a href="dpv:Disability">:Disability</a></code> |
+<code><a href="dpv:DisciplinaryAction">:DisciplinaryAction</a></code> |
+<code><a href="dpv:Dislike">:Dislike</a></code> |
+<code><a href="dpv:Divorce">:Divorce</a></code> |
+<code><a href="dpv:DrugTestResult">:DrugTestResult</a></code> |
+<code><a href="dpv:EmailAddress">:EmailAddress</a></code> |
+<code><a href="dpv:EmailContent">:EmailContent</a></code> |
+<code><a href="dpv:EmploymentHistory">:EmploymentHistory</a></code> |
+<code><a href="dpv:EthnicOrigin">:EthnicOrigin</a></code> |
+<code><a href="dpv:Ethnicity">:Ethnicity</a></code> |
+<code><a href="dpv:External">:External</a></code> |
+<code><a href="dpv:Family">:Family</a></code> |
+<code><a href="dpv:FamilyHealthHistory">:FamilyHealthHistory</a></code> |
+<code><a href="dpv:FamilyStructure">:FamilyStructure</a></code> |
+<code><a href="dpv:Favorite">:Favorite</a></code> |
+<code><a href="dpv:FavoriteColor">:FavoriteColor</a></code> |
+<code><a href="dpv:FavoriteFood">:FavoriteFood</a></code> |
+<code><a href="dpv:FavoriteMusic">:FavoriteMusic</a></code> |
+<code><a href="dpv:Fetish">:Fetish</a></code> |
+<code><a href="dpv:Financial">:Financial</a></code> |
+<code><a href="dpv:FinancialAccount">:FinancialAccount</a></code> |
+<code><a href="dpv:FinancialAccountNumber">:FinancialAccountNumber</a></code> |
+<code><a href="dpv:Fingerprint">:Fingerprint</a></code> |
+<code><a href="dpv:Friend">:Friend</a></code> |
+<code><a href="dpv:GPSCoordinate">:GPSCoordinate</a></code> |
+<code><a href="dpv:Gender">:Gender</a></code> |
+<code><a href="dpv:GeneralReputation">:GeneralReputation</a></code> |
+<code><a href="dpv:Geographic">:Geographic</a></code> |
+<code><a href="dpv:GroupMembership">:GroupMembership</a></code> |
+<code><a href="dpv:HairColor">:HairColor</a></code> |
+<code><a href="dpv:Health">:Health</a></code> |
+<code><a href="dpv:HealthHistory">:HealthHistory</a></code> |
+<code><a href="dpv:HealthRecord">:HealthRecord</a></code> |
+<code><a href="dpv:Height">:Height</a></code> |
+<code><a href="dpv:Historical">:Historical</a></code> |
+<code><a href="dpv:HouseOwned">:HouseOwned</a></code> |
+<code><a href="dpv:IPAddress">:IPAddress</a></code> |
+<code><a href="dpv:Identifying">:Identifying</a></code> |
+<code><a href="dpv:Income">:Income</a></code> |
+<code><a href="dpv:IncomeBracket">:IncomeBracket</a></code> |
+<code><a href="dpv:IndividualHealthHistory">:IndividualHealthHistory</a></code> |
+<code><a href="dpv:Intention">:Intention</a></code> |
+<code><a href="dpv:Interaction">:Interaction</a></code> |
+<code><a href="dpv:Interest">:Interest</a></code> |
+<code><a href="dpv:Internal">:Internal</a></code> |
+<code><a href="dpv:Job">:Job</a></code> |
+<code><a href="dpv:KnowledgeBelief">:KnowledgeBelief</a></code> |
+<code><a href="dpv:Language">:Language</a></code> |
+<code><a href="dpv:LifeHistory">:LifeHistory</a></code> |
+<code><a href="dpv:Like">:Like</a></code> |
+<code><a href="dpv:LinkClicked">:LinkClicked</a></code> |
+<code><a href="dpv:LoanRecord">:LoanRecord</a></code> |
+<code><a href="dpv:Location">:Location</a></code> |
+<code><a href="dpv:MACAddress">:MACAddress</a></code> |
+<code><a href="dpv:MaritalStatus">:MaritalStatus</a></code> |
+<code><a href="dpv:Marriage">:Marriage</a></code> |
+<code><a href="dpv:MedicalHealth">:MedicalHealth</a></code> |
+<code><a href="dpv:MentalHealth">:MentalHealth</a></code> |
+<code><a href="dpv:Name">:Name</a></code> |
+<code><a href="dpv:OfficialID">:OfficialID</a></code> |
+<code><a href="dpv:Offspring">:Offspring</a></code> |
+<code><a href="dpv:Opinion">:Opinion</a></code> |
+<code><a href="dpv:Ownership">:Ownership</a></code> |
+<code><a href="dpv:PINCode">:PINCode</a></code> |
+<code><a href="dpv:Parent">:Parent</a></code> |
+<code><a href="dpv:Password">:Password</a></code> |
+<code><a href="dpv:PersonalPossession">:PersonalPossession</a></code> |
+<code><a href="dpv:Personality">:Personality</a></code> |
+<code><a href="dpv:PhilosophicalBelief">:PhilosophicalBelief</a></code> |
+<code><a href="dpv:PhysicalAddress">:PhysicalAddress</a></code> |
+<code><a href="dpv:PhysicalCharacteristic">:PhysicalCharacteristic</a></code> |
+<code><a href="dpv:PhysicalHealth">:PhysicalHealth</a></code> |
+<code><a href="dpv:PhysicalTrait">:PhysicalTrait</a></code> |
+<code><a href="dpv:Picture">:Picture</a></code> |
+<code><a href="dpv:Piercing">:Piercing</a></code> |
+<code><a href="dpv:PoliticalAffiliation">:PoliticalAffiliation</a></code> |
+<code><a href="dpv:Preference">:Preference</a></code> |
+<code><a href="dpv:Prescription">:Prescription</a></code> |
+<code><a href="dpv:PrivacyPreference">:PrivacyPreference</a></code> |
+<code><a href="dpv:Proclivitie">:Proclivitie</a></code> |
+<code><a href="dpv:Professional">:Professional</a></code> |
+<code><a href="dpv:ProfessionalEvaluation">:ProfessionalEvaluation</a></code> |
+<code><a href="dpv:ProfessionalInterview">:ProfessionalInterview</a></code> |
+<code><a href="dpv:PublicLife">:PublicLife</a></code> |
+<code><a href="dpv:Purchase">:Purchase</a></code> |
+<code><a href="dpv:PurchasesAndSpendingHabit">:PurchasesAndSpendingHabit</a></code> |
+<code><a href="dpv:Race">:Race</a></code> |
+<code><a href="dpv:Reference">:Reference</a></code> |
+<code><a href="dpv:Relationship">:Relationship</a></code> |
+<code><a href="dpv:Religion">:Religion</a></code> |
+<code><a href="dpv:ReligiousBelief">:ReligiousBelief</a></code> |
+<code><a href="dpv:Retina">:Retina</a></code> |
+<code><a href="dpv:RoomNumber">:RoomNumber</a></code> |
+<code><a href="dpv:Salary">:Salary</a></code> |
+<code><a href="dpv:Sale">:Sale</a></code> |
+<code><a href="dpv:School">:School</a></code> |
+<code><a href="dpv:SecretText">:SecretText</a></code> |
+<code><a href="dpv:Sexual">:Sexual</a></code> |
+<code><a href="dpv:SexualHistory">:SexualHistory</a></code> |
+<code><a href="dpv:SexualPreference">:SexualPreference</a></code> |
+<code><a href="dpv:Sibling">:Sibling</a></code> |
+<code><a href="dpv:SkinTone">:SkinTone</a></code> |
+<code><a href="dpv:Social">:Social</a></code> |
+<code><a href="dpv:SocialMediaCommunication">:SocialMediaCommunication</a></code> |
+<code><a href="dpv:SocialNetwork">:SocialNetwork</a></code> |
+<code><a href="dpv:SocialStatus">:SocialStatus</a></code> |
+<code><a href="dpv:SpecialCategoryPersonalData">:SpecialCategoryPersonalData</a></code> |
+<code><a href="dpv:Tattoo">:Tattoo</a></code> |
+<code><a href="dpv:Tax">:Tax</a></code> |
+<code><a href="dpv:TelephoneNumber">:TelephoneNumber</a></code> |
+<code><a href="dpv:Thought">:Thought</a></code> |
+<code><a href="dpv:Tracking">:Tracking</a></code> |
+<code><a href="dpv:Transaction">:Transaction</a></code> |
+<code><a href="dpv:Transactional">:Transactional</a></code> |
+<code><a href="dpv:UID">:UID</a></code> |
+<code><a href="dpv:Username">:Username</a></code> |
+<code><a href="dpv:VoiceCommunicationRecording">:VoiceCommunicationRecording</a></code> |
+<code><a href="dpv:VoiceMail">:VoiceMail</a></code> |
+<code><a href="dpv:Weight">:Weight</a></code> |
 <code><a href="dpv:WorkHistory">:WorkHistory</a></code>
 </p>
 
@@ -1460,7 +1460,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1505,7 +1505,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1550,7 +1550,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1595,7 +1595,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1640,7 +1640,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1656,7 +1656,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information about associations in a social network with other individuals, groups, or entities e.g. friend of a friend</td>
+<td>Information about associations in a social network with other individuals, groups, or entities, e.g., friend of a friend</td>
 </tr>
 <tr>
 <tr>
@@ -1685,7 +1685,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1730,7 +1730,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1775,7 +1775,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1820,7 +1820,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1865,7 +1865,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -1916,7 +1916,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -1961,7 +1961,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2006,7 +2006,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2051,7 +2051,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -2102,7 +2102,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2147,7 +2147,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2192,7 +2192,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2237,7 +2237,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2282,7 +2282,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2327,7 +2327,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -2378,7 +2378,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2394,7 +2394,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information that can be used for contacting an individual e.g. email address or phone number</td>
+<td>Information that can be used for contacting an individual, e.g., email address or phone number</td>
 </tr>
 <tr>
 <tr>
@@ -2423,7 +2423,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -2445,7 +2445,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information about an individual’s country e.g. residence, travel.</td>
+<td>Information about an individual’s country, e.g., residence, travel.</td>
 </tr>
 <tr>
 <tr>
@@ -2474,7 +2474,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Notes:</td>
@@ -2523,7 +2523,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2568,7 +2568,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2613,7 +2613,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2658,7 +2658,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2703,7 +2703,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2748,7 +2748,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2793,7 +2793,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2838,7 +2838,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2854,7 +2854,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information about an individual’s criminal activity e.g. criminal convictions or jail time</td>
+<td>Information about an individual’s criminal activity, e.g., criminal convictions or jail time</td>
 </tr>
 <tr>
 <tr>
@@ -2883,7 +2883,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -2934,7 +2934,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -2979,7 +2979,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3024,7 +3024,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3069,7 +3069,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3114,7 +3114,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3159,7 +3159,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3200,7 +3200,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -3251,7 +3251,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -3302,7 +3302,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3347,7 +3347,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3392,7 +3392,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3437,7 +3437,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3482,7 +3482,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3527,7 +3527,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3572,7 +3572,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3617,7 +3617,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3662,7 +3662,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3707,7 +3707,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3752,7 +3752,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3797,7 +3797,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3842,7 +3842,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3887,7 +3887,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3932,7 +3932,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -3977,7 +3977,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4022,7 +4022,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4067,7 +4067,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4112,7 +4112,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4157,7 +4157,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4202,7 +4202,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -4253,7 +4253,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4298,7 +4298,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4343,7 +4343,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4388,7 +4388,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4433,7 +4433,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4478,7 +4478,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4523,7 +4523,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4568,7 +4568,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4613,7 +4613,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4658,7 +4658,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4703,7 +4703,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -4754,7 +4754,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4799,7 +4799,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4844,7 +4844,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4889,7 +4889,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4934,7 +4934,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -4979,7 +4979,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5024,7 +5024,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5040,7 +5040,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information about financial income e.g. for individual or household or family</td>
+<td>Information about financial income, e.g., for individual or household or family</td>
 </tr>
 <tr>
 <tr>
@@ -5069,7 +5069,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5114,7 +5114,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5159,7 +5159,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5204,7 +5204,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5249,7 +5249,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5294,7 +5294,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5339,7 +5339,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5384,7 +5384,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5429,7 +5429,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5474,7 +5474,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5519,7 +5519,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5564,7 +5564,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5609,7 +5609,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -5660,7 +5660,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5705,7 +5705,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -5756,7 +5756,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5801,7 +5801,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5846,7 +5846,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5891,7 +5891,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5936,7 +5936,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -5952,7 +5952,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>A name associated with an individual e.g. given name, nickname.</td>
+<td>A name associated with an individual, e.g., given name, nickname.</td>
 </tr>
 <tr>
 <tr>
@@ -5981,7 +5981,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6026,7 +6026,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -6077,7 +6077,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6122,7 +6122,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6167,7 +6167,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6212,7 +6212,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6257,7 +6257,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6302,7 +6302,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6347,7 +6347,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6392,7 +6392,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6437,7 +6437,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6482,7 +6482,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6527,7 +6527,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -6578,7 +6578,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6623,7 +6623,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6639,7 +6639,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>A visual representation or image of an individual e.g. profile photo.</td>
+<td>A visual representation or image of an individual, e.g., profile photo.</td>
 </tr>
 <tr>
 <tr>
@@ -6668,7 +6668,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6713,7 +6713,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6758,7 +6758,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -6809,7 +6809,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -6860,7 +6860,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6905,7 +6905,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6950,7 +6950,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -6995,7 +6995,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7040,7 +7040,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7085,7 +7085,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7130,7 +7130,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7146,7 +7146,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information about purchases such as items bought e.g. grocery or clothing</td>
+<td>Information about purchases such as items bought, e.g., grocery or clothing</td>
 </tr>
 <tr>
 <tr>
@@ -7175,7 +7175,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -7197,7 +7197,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information about analysis of purchases made and money spent expressed as a habit e.g. monthly shopping trends</td>
+<td>Information about analysis of purchases made and money spent expressed as a habit, e.g., monthly shopping trends</td>
 </tr>
 <tr>
 <tr>
@@ -7226,7 +7226,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7271,7 +7271,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7316,7 +7316,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7361,7 +7361,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7406,7 +7406,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7451,7 +7451,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7496,7 +7496,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7541,7 +7541,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7586,7 +7586,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7602,7 +7602,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information about sales e.g. selling of goods or services</td>
+<td>Information about sales, e.g., selling of goods or services</td>
 </tr>
 <tr>
 <tr>
@@ -7631,7 +7631,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7676,7 +7676,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7721,7 +7721,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7766,7 +7766,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7811,7 +7811,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7856,7 +7856,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7901,7 +7901,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7946,7 +7946,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -7991,7 +7991,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8036,7 +8036,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -8087,7 +8087,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8132,7 +8132,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8177,7 +8177,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Notes:</td>
@@ -8226,7 +8226,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8242,7 +8242,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information about financial tax e.g. tax records or tax due</td>
+<td>Information about financial tax, e.g., tax records or tax due</td>
 </tr>
 <tr>
 <tr>
@@ -8271,7 +8271,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8316,7 +8316,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8361,7 +8361,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8377,7 +8377,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Personal data that can be used to track an individual or used as an identifier e.g. location or email</td>
+<td>Personal data that can be used to track an individual or used as an identifier, e.g., location or email</td>
 </tr>
 <tr>
 <tr>
@@ -8406,7 +8406,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8422,7 +8422,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Information about financial transactions e.g. bank transfers</td>
+<td>Information about financial transactions, e.g., bank transfers</td>
 </tr>
 <tr>
 <tr>
@@ -8451,7 +8451,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8496,7 +8496,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8541,7 +8541,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 <tr>
 <td>Related Terms:</td>
@@ -8592,7 +8592,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8608,7 +8608,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Recording of an individual's recorded communication (e.g. telephony, VoIP)</td>
+<td>Recording of an individual's recorded communication, (e.g., telephony, VoIP)</td>
 </tr>
 <tr>
 <tr>
@@ -8637,7 +8637,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar, Axel Polleres</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra, Axel Polleres</td>
 </tr>
 <tr>
 <td>Notes:</td>
@@ -8686,7 +8686,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8731,7 +8731,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8776,7 +8776,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Contributor:</td>
-<td>Elmar; Harshvardhan J. Pandit, Fajar</td>
+<td>Elmar Kiesling; Harshvardhan J. Pandit, Fajar J. Ekaputra</td>
 </tr>
 </tbody>
 </thead>
@@ -8787,7 +8787,7 @@ rdfs:seeAlso spl:AnyRecipient
   </section>
   <section id="vocab-purposes">
     <h2>Purposes</h2>
-    <p>DPVCG at the moment defines a hierarchically organized set of generic categories of data handling purposes. Regulations such as GDPR generally require a specific purpose to be declared in an understandable manner. We therefore suggest to declare the specific context as an instance of one or several dpv:Purpose categories and to always declare the specific purpose with a human readable description (e.g. by using <code>rdfs:label</code> and <code>rdfs:comment</code>). E.g.</p>
+    <p>DPVCG at present defines a hierarchically organized set of generic categories of data handling purposes. Regulations such as GDPR generally require a specific purpose to be declared in an understandable manner. We therefore suggest to declare the specific context as an instance of one or several dpv:Purpose categories and to always declare the specific purpose with a human readable description (e.g., by using <code>rdfs:label</code> and <code>rdfs:comment</code>). E.g.</p>
     <aside class="example" title="Creating Purposes with human-readable descriptions">
       <pre>:NewPurpose rdfs:subClassOf dpv:DeliveryOfGoods, dpv:FraudPreventionAndDetection ;
       rdfs:label “New Purpose” ;
@@ -8808,36 +8808,36 @@ rdfs:seeAlso spl:AnyRecipient
 <section id="purpose-classes">
 <h3>Classes</h3>
 <p>
-<code><a href="dpv:AcademicResearch">:AcademicResearch</a></code> | 
-<code><a href="dpv:AccessControl">:AccessControl</a></code> | 
-<code><a href="dpv:Beneficiary">:Beneficiary</a></code> | 
-<code><a href="dpv:CommercialInterest">:CommercialInterest</a></code> | 
-<code><a href="dpv:CommercialResearch">:CommercialResearch</a></code> | 
-<code><a href="dpv:Context">:Context</a></code> | 
-<code><a href="dpv:CreateProductRecommendations">:CreateProductRecommendations</a></code> | 
-<code><a href="dpv:CustomerCare">:CustomerCare</a></code> | 
-<code><a href="dpv:DeliveryOfGoods">:DeliveryOfGoods</a></code> | 
-<code><a href="dpv:FraudPreventionAndDetection">:FraudPreventionAndDetection</a></code> | 
-<code><a href="dpv:IdentityVerification">:IdentityVerification</a></code> | 
-<code><a href="dpv:ImproveExistingProductsAndServices">:ImproveExistingProductsAndServices</a></code> | 
-<code><a href="dpv:ImproveInternalCRMProcesses">:ImproveInternalCRMProcesses</a></code> | 
-<code><a href="dpv:IncreaseServiceRobustness">:IncreaseServiceRobustness</a></code> | 
-<code><a href="dpv:InternalResourceOptimisation">:InternalResourceOptimisation</a></code> | 
-<code><a href="dpv:NonCommercialResearch">:NonCommercialResearch</a></code> | 
-<code><a href="dpv:OptimisationForConsumer">:OptimisationForConsumer</a></code> | 
-<code><a href="dpv:OptimisationForController">:OptimisationForController</a></code> | 
-<code><a href="dpv:OptimiseUserInterface">:OptimiseUserInterface</a></code> | 
-<code><a href="dpv:PersonalisedBenefits">:PersonalisedBenefits</a></code> | 
-<code><a href="dpv:ResearchAndDevelopment">:ResearchAndDevelopment</a></code> | 
-<code><a href="dpv:Sector">:Sector</a></code> | 
-<code><a href="dpv:Security">:Security</a></code> | 
-<code><a href="dpv:SellDataToThirdParties">:SellDataToThirdParties</a></code> | 
-<code><a href="dpv:SellInsightsFromData">:SellInsightsFromData</a></code> | 
-<code><a href="dpv:SellProductsToDataSubject">:SellProductsToDataSubject</a></code> | 
-<code><a href="dpv:SellTargettedAdvertisements">:SellTargettedAdvertisements</a></code> | 
-<code><a href="dpv:ServiceOptimization">:ServiceOptimization</a></code> | 
-<code><a href="dpv:ServicePersonalization">:ServicePersonalization</a></code> | 
-<code><a href="dpv:ServiceProvision">:ServiceProvision</a></code> | 
+<code><a href="dpv:AcademicResearch">:AcademicResearch</a></code> |
+<code><a href="dpv:AccessControl">:AccessControl</a></code> |
+<code><a href="dpv:Beneficiary">:Beneficiary</a></code> |
+<code><a href="dpv:CommercialInterest">:CommercialInterest</a></code> |
+<code><a href="dpv:CommercialResearch">:CommercialResearch</a></code> |
+<code><a href="dpv:Context">:Context</a></code> |
+<code><a href="dpv:CreateProductRecommendations">:CreateProductRecommendations</a></code> |
+<code><a href="dpv:CustomerCare">:CustomerCare</a></code> |
+<code><a href="dpv:DeliveryOfGoods">:DeliveryOfGoods</a></code> |
+<code><a href="dpv:FraudPreventionAndDetection">:FraudPreventionAndDetection</a></code> |
+<code><a href="dpv:IdentityVerification">:IdentityVerification</a></code> |
+<code><a href="dpv:ImproveExistingProductsAndServices">:ImproveExistingProductsAndServices</a></code> |
+<code><a href="dpv:ImproveInternalCRMProcesses">:ImproveInternalCRMProcesses</a></code> |
+<code><a href="dpv:IncreaseServiceRobustness">:IncreaseServiceRobustness</a></code> |
+<code><a href="dpv:InternalResourceOptimisation">:InternalResourceOptimisation</a></code> |
+<code><a href="dpv:NonCommercialResearch">:NonCommercialResearch</a></code> |
+<code><a href="dpv:OptimisationForConsumer">:OptimisationForConsumer</a></code> |
+<code><a href="dpv:OptimisationForController">:OptimisationForController</a></code> |
+<code><a href="dpv:OptimiseUserInterface">:OptimiseUserInterface</a></code> |
+<code><a href="dpv:PersonalisedBenefits">:PersonalisedBenefits</a></code> |
+<code><a href="dpv:ResearchAndDevelopment">:ResearchAndDevelopment</a></code> |
+<code><a href="dpv:Sector">:Sector</a></code> |
+<code><a href="dpv:Security">:Security</a></code> |
+<code><a href="dpv:SellDataToThirdParties">:SellDataToThirdParties</a></code> |
+<code><a href="dpv:SellInsightsFromData">:SellInsightsFromData</a></code> |
+<code><a href="dpv:SellProductsToDataSubject">:SellProductsToDataSubject</a></code> |
+<code><a href="dpv:SellTargettedAdvertisements">:SellTargettedAdvertisements</a></code> |
+<code><a href="dpv:ServiceOptimization">:ServiceOptimization</a></code> |
+<code><a href="dpv:ServicePersonalization">:ServicePersonalization</a></code> |
+<code><a href="dpv:ServiceProvision">:ServiceProvision</a></code> |
 <code><a href="dpv:UserInterfacePersonalisation">:UserInterfacePersonalisation</a></code>
 </p>
 
@@ -8851,7 +8851,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Research conducted in an academic context e.g. within universities</td>
+<td>Research conducted in an academic context, e.g., within universities</td>
 </tr>
 <tr>
 <tr>
@@ -8953,7 +8953,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>self.DataSubject, self.DataController, society ? ( --- under consideration ---)</td>
+<td>self.DataSubject, self.DataController, society ? ( --- under consideration --- )</td>
 </tr>
 <tr>
 <tr>
@@ -9031,7 +9031,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Research conducted in a commercial setting e.g. in a company</td>
+<td>Research conducted in a commercial setting, e.g., in a company</td>
 </tr>
 <tr>
 <tr>
@@ -9082,7 +9082,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Used to scope the purpose, e.g. restriction to a certain business sector</td>
+<td>Used to scope the purpose, e.g., restriction to a certain business sector</td>
 </tr>
 <tr>
 <tr>
@@ -9123,7 +9123,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>To create product recommendations e.g. suggest similar products</td>
+<td>To create product recommendations, e.g., suggest similar products</td>
 </tr>
 <tr>
 <tr>
@@ -9507,7 +9507,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Optimisation of internal resources used by the organisation e.g. resource usage</td>
+<td>Optimisation of internal resources used by the organisation, e.g., resource usage</td>
 </tr>
 <tr>
 <tr>
@@ -9552,7 +9552,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Research conducted in a non-commercial setting e.g. for a non-profit-organisation (NGO)</td>
+<td>Research conducted in a non-commercial setting, e.g., for a non-profit-organisation (NGO)</td>
 </tr>
 <tr>
 <tr>
@@ -9828,7 +9828,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Used to indicate the sector of a purpose e.g. Agriculture, Advertising (specified e.g. in the form of NACE codes)</td>
+<td>Used to indicate the sector of a purpose, e.g., Agriculture, Advertising (specified e.g., in the form of NACE codes)</td>
 </tr>
 <tr>
 <tr>
@@ -10264,8 +10264,8 @@ rdfs:seeAlso spl:AnyRecipient
 <section id="purpose-properties">
 <h3>Properties</h3>
 <p>
-<code><a href="dpv:hasBeneficiary">:hasBeneficiary</a></code> | 
-<code><a href="dpv:hasContext">:hasContext</a></code> | 
+<code><a href="dpv:hasBeneficiary">:hasBeneficiary</a></code> |
+<code><a href="dpv:hasContext">:hasContext</a></code> |
 <code><a href="dpv:hasSector">:hasSector</a></code>
 </p>
 
@@ -10279,7 +10279,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Cui bono? Who is the ultimate beneficiary of this purpose, here a stakeholder can be declared, e.g. the DataSubjects themselves or the Data Controller. ( --- under consideration --- )</td>
+<td>Cui bono? Who is the ultimate beneficiary of this purpose, here a stakeholder can be declared, e.g., the DataSubjects themselves or the Data Controller. ( --- under consideration --- )</td>
 </tr>
 <tr>
 <tr>
@@ -10401,38 +10401,38 @@ rdfs:seeAlso spl:AnyRecipient
 <section id="processing-classes">
 <h3>Classes</h3>
 <p>
-<code><a href="dpv:Acquire">:Acquire</a></code> | 
-<code><a href="dpv:Adapt">:Adapt</a></code> | 
-<code><a href="dpv:Align">:Align</a></code> | 
-<code><a href="dpv:Alter">:Alter</a></code> | 
-<code><a href="dpv:Analyse">:Analyse</a></code> | 
-<code><a href="dpv:Anonymise">:Anonymise</a></code> | 
-<code><a href="dpv:Collect">:Collect</a></code> | 
-<code><a href="dpv:Combine">:Combine</a></code> | 
-<code><a href="dpv:Consult">:Consult</a></code> | 
-<code><a href="dpv:Copy">:Copy</a></code> | 
-<code><a href="dpv:Derive">:Derive</a></code> | 
-<code><a href="dpv:Destruct">:Destruct</a></code> | 
-<code><a href="dpv:Disclose">:Disclose</a></code> | 
-<code><a href="dpv:DiscloseByTransmission">:DiscloseByTransmission</a></code> | 
-<code><a href="dpv:Disseminate">:Disseminate</a></code> | 
-<code><a href="dpv:Erase">:Erase</a></code> | 
-<code><a href="dpv:MakeAvailable">:MakeAvailable</a></code> | 
-<code><a href="dpv:Move">:Move</a></code> | 
-<code><a href="dpv:Obtain">:Obtain</a></code> | 
-<code><a href="dpv:Organise">:Organise</a></code> | 
-<code><a href="dpv:Profiling">:Profiling</a></code> | 
-<code><a href="dpv:PseudoAnonymise">:PseudoAnonymise</a></code> | 
-<code><a href="dpv:Record">:Record</a></code> | 
-<code><a href="dpv:Remove">:Remove</a></code> | 
-<code><a href="dpv:Restrict">:Restrict</a></code> | 
-<code><a href="dpv:Retrieve">:Retrieve</a></code> | 
-<code><a href="dpv:Share">:Share</a></code> | 
-<code><a href="dpv:Store">:Store</a></code> | 
-<code><a href="dpv:Structure">:Structure</a></code> | 
-<code><a href="dpv:Transfer">:Transfer</a></code> | 
-<code><a href="dpv:Transform">:Transform</a></code> | 
-<code><a href="dpv:Transmit">:Transmit</a></code> | 
+<code><a href="dpv:Acquire">:Acquire</a></code> |
+<code><a href="dpv:Adapt">:Adapt</a></code> |
+<code><a href="dpv:Align">:Align</a></code> |
+<code><a href="dpv:Alter">:Alter</a></code> |
+<code><a href="dpv:Analyse">:Analyse</a></code> |
+<code><a href="dpv:Anonymise">:Anonymise</a></code> |
+<code><a href="dpv:Collect">:Collect</a></code> |
+<code><a href="dpv:Combine">:Combine</a></code> |
+<code><a href="dpv:Consult">:Consult</a></code> |
+<code><a href="dpv:Copy">:Copy</a></code> |
+<code><a href="dpv:Derive">:Derive</a></code> |
+<code><a href="dpv:Destruct">:Destruct</a></code> |
+<code><a href="dpv:Disclose">:Disclose</a></code> |
+<code><a href="dpv:DiscloseByTransmission">:DiscloseByTransmission</a></code> |
+<code><a href="dpv:Disseminate">:Disseminate</a></code> |
+<code><a href="dpv:Erase">:Erase</a></code> |
+<code><a href="dpv:MakeAvailable">:MakeAvailable</a></code> |
+<code><a href="dpv:Move">:Move</a></code> |
+<code><a href="dpv:Obtain">:Obtain</a></code> |
+<code><a href="dpv:Organise">:Organise</a></code> |
+<code><a href="dpv:Profiling">:Profiling</a></code> |
+<code><a href="dpv:PseudoAnonymise">:PseudoAnonymise</a></code> |
+<code><a href="dpv:Record">:Record</a></code> |
+<code><a href="dpv:Remove">:Remove</a></code> |
+<code><a href="dpv:Restrict">:Restrict</a></code> |
+<code><a href="dpv:Retrieve">:Retrieve</a></code> |
+<code><a href="dpv:Share">:Share</a></code> |
+<code><a href="dpv:Store">:Store</a></code> |
+<code><a href="dpv:Structure">:Structure</a></code> |
+<code><a href="dpv:Transfer">:Transfer</a></code> |
+<code><a href="dpv:Transform">:Transform</a></code> |
+<code><a href="dpv:Transmit">:Transmit</a></code> |
 <code><a href="dpv:Use">:Use</a></code>
 </p>
 
@@ -11847,11 +11847,11 @@ rdfs:seeAlso spl:AnyRecipient
 <section id="processing-properties">
 <h3>Properties</h3>
 <p>
-<code><a href="dpv:innovativeUseOfNewSolutions">:innovativeUseOfNewSolutions</a></code> | 
-<code><a href="dpv:isAutomatedDecisionMaking">:isAutomatedDecisionMaking</a></code> | 
-<code><a href="dpv:isEvaluationScoring">:isEvaluationScoring</a></code> | 
-<code><a href="dpv:isLargeScale">:isLargeScale</a></code> | 
-<code><a href="dpv:isMatchingCombining">:isMatchingCombining</a></code> | 
+<code><a href="dpv:innovativeUseOfNewSolutions">:innovativeUseOfNewSolutions</a></code> |
+<code><a href="dpv:isAutomatedDecisionMaking">:isAutomatedDecisionMaking</a></code> |
+<code><a href="dpv:isEvaluationScoring">:isEvaluationScoring</a></code> |
+<code><a href="dpv:isLargeScale">:isLargeScale</a></code> |
+<code><a href="dpv:isMatchingCombining">:isMatchingCombining</a></code> |
 <code><a href="dpv:isSystematicMonitoring">:isSystematicMonitoring</a></code>
 </p>
 
@@ -11869,7 +11869,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Comments:</td>
-<td>e.g. combining fingerprint & face scan for access control. What is concidered new/innovative is of course subject to change over time.</td>
+<td>e.g., combining fingerprint & face scan for access control. What is concidered new/innovative is of course subject to change over time.</td>
 </tr>
 <tr>
 <tr>
@@ -12160,35 +12160,35 @@ rdfs:seeAlso spl:AnyRecipient
 <section id="technicalorganisationalmeasure-classes">
 <h3>Classes</h3>
 <p>
-<code><a href="dpv:AccessControlMethod">:AccessControlMethod</a></code> | 
-<code><a href="dpv:Anonymization">:Anonymization</a></code> | 
-<code><a href="dpv:AuthenticationProtocols">:AuthenticationProtocols</a></code> | 
-<code><a href="dpv:AuthorisationProcedure">:AuthorisationProcedure</a></code> | 
-<code><a href="dpv:Certification">:Certification</a></code> | 
-<code><a href="dpv:CertificationSeal">:CertificationSeal</a></code> | 
-<code><a href="dpv:CodeOfConduct">:CodeOfConduct</a></code> | 
-<code><a href="dpv:Contract">:Contract</a></code> | 
-<code><a href="dpv:DeIdentification">:DeIdentification</a></code> | 
-<code><a href="dpv:DesignStandard">:DesignStandard</a></code> | 
-<code><a href="dpv:EncryptionInRest">:EncryptionInRest</a></code> | 
-<code><a href="dpv:EncryptionInTransfer">:EncryptionInTransfer</a></code> | 
-<code><a href="dpv:GuidelinesPrinciple">:GuidelinesPrinciple</a></code> | 
-<code><a href="dpv:LegalAgreement">:LegalAgreement</a></code> | 
-<code><a href="dpv:NDA">:NDA</a></code> | 
-<code><a href="dpv:OrganisationalMeasure">:OrganisationalMeasure</a></code> | 
-<code><a href="dpv:PrivacyByDefault">:PrivacyByDefault</a></code> | 
-<code><a href="dpv:PrivacyByDesign">:PrivacyByDesign</a></code> | 
-<code><a href="dpv:PseudoAnonymization">:PseudoAnonymization</a></code> | 
-<code><a href="dpv:PseudonymisationEncryption">:PseudonymisationEncryption</a></code> | 
-<code><a href="dpv:RegularityOfRecertification">:RegularityOfRecertification</a></code> | 
-<code><a href="dpv:RiskManagementProcedure">:RiskManagementProcedure</a></code> | 
-<code><a href="dpv:Seal">:Seal</a></code> | 
-<code><a href="dpv:StaffTraining">:StaffTraining</a></code> | 
-<code><a href="dpv:StorageDeletion">:StorageDeletion</a></code> | 
-<code><a href="dpv:StorageDuration">:StorageDuration</a></code> | 
-<code><a href="dpv:StorageLocation">:StorageLocation</a></code> | 
-<code><a href="dpv:StorageRestoration">:StorageRestoration</a></code> | 
-<code><a href="dpv:StorageRestriction">:StorageRestriction</a></code> | 
+<code><a href="dpv:AccessControlMethod">:AccessControlMethod</a></code> |
+<code><a href="dpv:Anonymization">:Anonymization</a></code> |
+<code><a href="dpv:AuthenticationProtocols">:AuthenticationProtocols</a></code> |
+<code><a href="dpv:AuthorisationProcedure">:AuthorisationProcedure</a></code> |
+<code><a href="dpv:Certification">:Certification</a></code> |
+<code><a href="dpv:CertificationSeal">:CertificationSeal</a></code> |
+<code><a href="dpv:CodeOfConduct">:CodeOfConduct</a></code> |
+<code><a href="dpv:Contract">:Contract</a></code> |
+<code><a href="dpv:DeIdentification">:DeIdentification</a></code> |
+<code><a href="dpv:DesignStandard">:DesignStandard</a></code> |
+<code><a href="dpv:EncryptionInRest">:EncryptionInRest</a></code> |
+<code><a href="dpv:EncryptionInTransfer">:EncryptionInTransfer</a></code> |
+<code><a href="dpv:GuidelinesPrinciple">:GuidelinesPrinciple</a></code> |
+<code><a href="dpv:LegalAgreement">:LegalAgreement</a></code> |
+<code><a href="dpv:NDA">:NDA</a></code> |
+<code><a href="dpv:OrganisationalMeasure">:OrganisationalMeasure</a></code> |
+<code><a href="dpv:PrivacyByDefault">:PrivacyByDefault</a></code> |
+<code><a href="dpv:PrivacyByDesign">:PrivacyByDesign</a></code> |
+<code><a href="dpv:PseudoAnonymization">:PseudoAnonymization</a></code> |
+<code><a href="dpv:PseudonymisationEncryption">:PseudonymisationEncryption</a></code> |
+<code><a href="dpv:RegularityOfRecertification">:RegularityOfRecertification</a></code> |
+<code><a href="dpv:RiskManagementProcedure">:RiskManagementProcedure</a></code> |
+<code><a href="dpv:Seal">:Seal</a></code> |
+<code><a href="dpv:StaffTraining">:StaffTraining</a></code> |
+<code><a href="dpv:StorageDeletion">:StorageDeletion</a></code> |
+<code><a href="dpv:StorageDuration">:StorageDuration</a></code> |
+<code><a href="dpv:StorageLocation">:StorageLocation</a></code> |
+<code><a href="dpv:StorageRestoration">:StorageRestoration</a></code> |
+<code><a href="dpv:StorageRestriction">:StorageRestriction</a></code> |
 <code><a href="dpv:TechnicalMeasure">:TechnicalMeasure</a></code>
 </p>
 
@@ -12701,7 +12701,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Encryption of data in transit e.g. when being transferred from one location to another, including sharing</td>
+<td>Encryption of data in transit, e.g., when being transferred from one location to another, including sharing</td>
 </tr>
 <tr>
 <tr>
@@ -12836,7 +12836,7 @@ rdfs:seeAlso spl:AnyRecipient
 </tr>
 <tr>
 <td>Description:</td>
-<td>Non-disclosure Agreements e.g. preserving confidentiality of information</td>
+<td>Non-disclosure Agreements e.g., preserving confidentiality of information</td>
 </tr>
 <tr>
 <tr>
@@ -13570,9 +13570,9 @@ rdfs:seeAlso spl:AnyRecipient
 <section id="technicalorganisationalmeasure-properties">
 <h3>Properties</h3>
 <p>
-<code><a href="dpv:duration">:duration</a></code> | 
-<code><a href="dpv:location">:location</a></code> | 
-<code><a href="dpv:measureImplementedBy">:measureImplementedBy</a></code> | 
+<code><a href="dpv:duration">:duration</a></code> |
+<code><a href="dpv:location">:location</a></code> |
+<code><a href="dpv:measureImplementedBy">:measureImplementedBy</a></code> |
 <code><a href="dpv:storage">:storage</a></code>
 </p>
 
@@ -13786,7 +13786,7 @@ rdfs:seeAlso spl:AnyRecipient
 <section id="consent-classes">
 <h3>Classes</h3>
 <p>
-<code><a href="dpv:Consent">:Consent</a></code> | 
+<code><a href="dpv:Consent">:Consent</a></code> |
 <code><a href="dpv:LegalEntity">:LegalEntity</a></code>
 </p>
 
@@ -13890,18 +13890,18 @@ rdfs:subClassOf prov:Agent
 <section id="consent-properties">
 <h3>Properties</h3>
 <p>
-<code><a href="dpv:consentNotice">:consentNotice</a></code> | 
-<code><a href="dpv:expiry">:expiry</a></code> | 
-<code><a href="dpv:expiryCondition">:expiryCondition</a></code> | 
-<code><a href="dpv:expiryTime">:expiryTime</a></code> | 
-<code><a href="dpv:isExplicit">:isExplicit</a></code> | 
-<code><a href="dpv:provisionBy">:provisionBy</a></code> | 
-<code><a href="dpv:provisionByJustification">:provisionByJustification</a></code> | 
-<code><a href="dpv:provisionMethod">:provisionMethod</a></code> | 
-<code><a href="dpv:provisionTime">:provisionTime</a></code> | 
-<code><a href="dpv:withdrawalBy">:withdrawalBy</a></code> | 
-<code><a href="dpv:withdrawalByJustification">:withdrawalByJustification</a></code> | 
-<code><a href="dpv:withdrawalMethod">:withdrawalMethod</a></code> | 
+<code><a href="dpv:consentNotice">:consentNotice</a></code> |
+<code><a href="dpv:expiry">:expiry</a></code> |
+<code><a href="dpv:expiryCondition">:expiryCondition</a></code> |
+<code><a href="dpv:expiryTime">:expiryTime</a></code> |
+<code><a href="dpv:isExplicit">:isExplicit</a></code> |
+<code><a href="dpv:provisionBy">:provisionBy</a></code> |
+<code><a href="dpv:provisionByJustification">:provisionByJustification</a></code> |
+<code><a href="dpv:provisionMethod">:provisionMethod</a></code> |
+<code><a href="dpv:provisionTime">:provisionTime</a></code> |
+<code><a href="dpv:withdrawalBy">:withdrawalBy</a></code> |
+<code><a href="dpv:withdrawalByJustification">:withdrawalByJustification</a></code> |
+<code><a href="dpv:withdrawalMethod">:withdrawalMethod</a></code> |
 <code><a href="dpv:withdrawalTime">:withdrawalTime</a></code>
 </p>
 
@@ -13919,7 +13919,7 @@ rdfs:subClassOf prov:Agent
 </tr>
 <tr>
 <td>Comments:</td>
-<td>The actual notice that the Data Subject received to consent to, either a text or link to a document, which should be usable to decide whether the form or consent was compliant to legislation, e.g. documenting how the user has been informed about rights and implications (such as, right to data portability,right to recitffy, right to erasure, right to restrict processing, right to object, rights regarding automated decision making or profiling, processors, third parties, sub-processors, outside-EEA transfers, automated decision-making, or other necessary details of the privacy-policy). Can be TextOrDocumentOrURI.</td>
+<td>The actual notice that the Data Subject received to consent to, either a text or link to a document, which should be usable to decide whether the form or consent was compliant to legislation, e.g., documenting how the user has been informed about rights and implications (such as, right to data portability,right to recitffy, right to erasure, right to restrict processing, right to object, rights regarding automated decision making or profiling, processors, third parties, sub-processors, outside-EEA transfers, automated decision-making, or other necessary details of the privacy-policy). Can be TextOrDocumentOrURI.</td>
 </tr>
 <tr>
 <tr>
@@ -14148,7 +14148,7 @@ rdfs:subClassOf prov:Agent
 </tr>
 <tr>
 <td>Comments:</td>
-<td>Normally this would be the dataSubject, but in some exceptional cases, the consent might be given on behalf by someone else, e.g. parents of minors.</td>
+<td>Normally this would be the dataSubject, but in some exceptional cases, the consent might be given on behalf by someone else, e.g., parents of minors.</td>
 </tr>
 <tr>
 <tr>
@@ -14197,7 +14197,7 @@ rdfs:subClassOf prov:Agent
 </tr>
 <tr>
 <td>Comments:</td>
-<td>This field can be used to proivde a justification why the provision was provided by another DataSubject or legal entity,  e.g. declariing the relationship (parent, guardian), in combination with the field provisionBy</td>
+<td>This field can be used to proivde a justification why the provision was provided by another DataSubject or legal entity, e.g., declariing the relationship (parent, guardian), in combination with the field provisionBy</td>
 </tr>
 <tr>
 <tr>
@@ -14242,7 +14242,7 @@ rdfs:subClassOf prov:Agent
 </tr>
 <tr>
 <td>Comments:</td>
-<td>Can be used to record information of how consent was provided e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc.</td>
+<td>Can be used to record information of how consent was provided e.g., by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc.</td>
 </tr>
 <tr>
 <tr>
@@ -14332,7 +14332,7 @@ rdfs:subClassOf prov:Agent
 </tr>
 <tr>
 <td>Comments:</td>
-<td>Normally this would be the dataSubject, but in some exceptional cases, the consent might be withdraawn on behalf by someone else, e.g. parents of minors.</td>
+<td>Normally this would be the dataSubject, but in some exceptional cases, the consent might be withdraawn on behalf by someone else, e.g., parents of minors.</td>
 </tr>
 <tr>
 <tr>
@@ -14381,7 +14381,7 @@ rdfs:subClassOf prov:Agent
 </tr>
 <tr>
 <td>Comments:</td>
-<td>This field can be used to proivde a justification why the weithdrawal was done by another DataSubject or legal entity, e.g. declariing the relationship (parent, guardian), in combination with the field withdrawalBy</td>
+<td>This field can be used to proivde a justification why the weithdrawal was done by another DataSubject or legal entity, e.g., declaring the relationship (parent, guardian), in combination with the field withdrawalBy</td>
 </tr>
 <tr>
 <tr>
@@ -14426,7 +14426,7 @@ rdfs:subClassOf prov:Agent
 </tr>
 <tr>
 <td>Comments:</td>
-<td>Can be used to record information of how to withdraw consent, e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc.</td>
+<td>Can be used to record information of how to withdraw consent, e.g., by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc.</td>
 </tr>
 <tr>
 <tr>
@@ -14514,8 +14514,8 @@ rdfs:subClassOf prov:Agent
 <section id="recipientsdatacontrollersdatasubjects-classes">
 <h3>Classes</h3>
 <p>
-<code><a href="dpv:Child">:Child</a></code> | 
-<code><a href="dpv:DataProcessor">:DataProcessor</a></code> | 
+<code><a href="dpv:Child">:Child</a></code> |
+<code><a href="dpv:DataProcessor">:DataProcessor</a></code> |
 <code><a href="dpv:ThirdParty">:ThirdParty</a></code>
 </p>
 
@@ -14664,8 +14664,8 @@ rdfs:subClassOf prov:Agent
     </ol>
     <h3>Personal Data Categories</h3>
     <ol>
-      <li><a href="https://www.w3.org/community/dpvcg/track/issues/15">Personal data cateories collected might be collected in an approximate manner (e.g. age vs. age range), should we provide a mechanism in the vocabulary to distinguish this?</a></li>
-      <li><a href="https://www.w3.org/community/dpvcg/track/issues/23">Should we add more subclasses to communicationrecording (e.g. distinguishing chats, personalmessaging, videocommunication, telephony, etc.) and which ones?</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/15">Personal data cateories collected might be collected in an approximate manner (e.g., age vs. age range), should we provide a mechanism in the vocabulary to distinguish this?</a></li>
+      <li><a href="https://www.w3.org/community/dpvcg/track/issues/23">Should we add more subclasses to communicationrecording (e.g., distinguishing chats, personalmessaging, videocommunication, telephony, etc.) and which ones?</a></li>
       <li><a href="https://www.w3.org/community/dpvcg/track/issues/24">Should we add more specific subclasses like countryofcitizenship, countryofresidence, countryofcurrentlocation to country and which ones?</a></li>
     </ol>
     <h3>Purposes</h3>
